@@ -35,7 +35,7 @@ yarn:
 build:
 	docker-compose exec ${CONTAINER_NAME} yarn build
 
-install:
+install-react-app:
 	docker-compose exec ${CONTAINER_NAME} yarn
 	docker-compose exec ${CONTAINER_NAME} npx create-react-app frontend --template typescript
 	cp -R frontend/. ./
@@ -45,3 +45,11 @@ install:
 
 api:
 	yarn generate:api-client
+
+install:
+	cp .env.local.sample .env.local
+	cp .env.sample .env
+	docker-compose up -d --build
+	docker-compose exec ${CONTAINER_NAME} yarn
+	docker-compose exec ${CONTAINER_NAME} yarn build
+	docker-compose exec ${CONTAINER_NAME} yarn start	
