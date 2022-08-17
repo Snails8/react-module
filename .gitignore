@@ -1,0 +1,12 @@
+/.idea/
+
+/.docker/Dockerfile
+/docker-compose.yaml
+Dockerfile
+
+.env
+
+# IDE
+.idea
+.vscode/configurationCache.log
+.vscode/targets.log

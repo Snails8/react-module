@@ -1,0 +1,144 @@
+//// Header
+header {
+  color: #ffffff;
+  background-color: #2FB5AA;
+}
+
+nav {
+  padding: 0.3rem;
+
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #ffffff;
+  }
+
+  .dropdown-item {
+    a {
+      color: #333333;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #333333;
+    }
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 65px;
+  left: 0;
+  width: 15%;
+  height: 100%;
+  z-index: 100;
+  padding-bottom: 52px;
+  overflow: scroll;
+  border-right: 1px solid #CCCCCC;
+  //padding: 48px 0 0;
+
+  ul li.nav-item {
+    margin-top: 10px;
+  }
+
+  /** SideBar Accordion */
+  li .submenu  {
+    list-style: none;
+    margin: 0;
+    padding: 0 1rem 0 1rem;
+  }
+
+  .nav-link {
+    font-weight: 500;
+    color: var(--bs-dark);
+  }
+
+  .nav-link:hover {
+    color: var(--bs-primary);
+  }
+}
+
+.container-box {
+  padding: 52px 0 0 15%;
+  width: 100%;
+  height: 100%;
+}
+
+//.side-bar {
+//  height: 100% !important;
+//  display: flex;
+//  flex-direction: column;
+//  border-right: 1px solid;
+//  border-radius: 0;
+//  border-color: rgba(64, 194, 133, 0.693);
+//  background-color: rgb(255, 255, 255);
+//  transition: 0.8s ease;
+//}
+//.toggle-menu {
+//  height: 50px;
+//  border-top-right-radius: 10rem;
+//  border-bottom-right-radius: 9rem;
+//  width: 10px;
+//  position: absolute;
+//  outline: none;
+//  z-index: 1;
+//  background-color: rgba(64, 194, 133, 0.693);
+//  border-color: rgba(64, 194, 133, 0.693);
+//  border-left: 0;
+//}
+
+.tab {
+  max-width: 1000px;
+  margin: auto;
+  padding: 30px;
+}
+
+.top-tab {
+  margin-bottom: 100px;
+
+  ul[role="tablist"] {
+    display: flex;
+    padding: 0;
+
+    li {
+      margin-top: 0;
+      margin-bottom: 0;
+      list-style: none;
+      background-color: #ddd;
+
+      a {
+        display: block;
+        padding: 10px 30px;
+        text-decoration: none;
+        color: #000;
+
+        &[aria-selected="true"] {
+          background-color: #000;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  div[role="tabpanel"] {
+    padding: 20px 40px;
+    border: 1px solid #ccc;
+    p {
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    b {
+      font-weight: normal;
+      font-size: 22px;
+    }
+    button {
+      margin-bottom: 20px;
+      padding: 5px 20px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+    }
+  }
+}

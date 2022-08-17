@@ -1,0 +1,30 @@
+.form_container {
+    background-color: #f8f8f8;
+    border-collapse: collapse; 
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /*縦に落ちてくれる*/
+}
+
+.form_item {
+    border-bottom: solid 1px #C0C0C0;
+    width: 100%;
+    border-collapse: collapse; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_inner {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.form_label {
+    font-weight: bold;
+    letter-spacing: 0;
+    margin-left: 70px; /* 左からの幅*/
+    margin-right: 30px;
+    margin-top: 20px;
+    width: 100px;
+}

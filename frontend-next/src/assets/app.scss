@@ -1,0 +1,13 @@
+// bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// tailwind CSS
+//@import "../../node_modules/tailwindcss";
+//
+//@import "~tailwindcss/base.css";
+//@import "~tailwindcss/components.css";
+//@import "~tailwindcss/utilities.css";
+
+// 各種定義
+@import "setting";
+@import "common";

@@ -1,0 +1,8 @@
+.base {
+    position: fixed;
+    height: 100%;
+    width: 250px;
+    background-color: white;
+    border-right: 1px solid #CCCCCC;
+    z-index: 100;
+}

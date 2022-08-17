@@ -1,0 +1,22 @@
+version: '3'
+services:
+  front-app:
+    container_name: front-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      PORT: '3000'
+      HOST: '0.0.0.0'
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+    stdin_open: true
+    tty: true
+    restart: always
+    networks:
+      - api
+networks:
+  api:
+    external: true
