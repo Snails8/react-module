@@ -1,8 +1,8 @@
-# go-api-sample
+# react-module
 
-https://github.com/golang-standards/project-layout/blob/master/README_ja.md
 
 ## setup
 ```
 make setup
 ```
+
