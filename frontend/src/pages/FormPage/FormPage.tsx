@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { CheckBox } from "../../components/atoms/Checkbox/Checkbox";
 import { FormText } from "../../components/atoms/InputText/inputText";
 import { BasePage } from "../../components/templates/BasePage/BasePage";
 import styles from "./FormPage.module.css"
@@ -9,6 +10,9 @@ export const FormPage:React.FC = () => {
 
     const [name, setName] = useState<string>('');
     const [email, setEmail] = useState<string>('');
+
+    // checkbox
+    const [checked, setChecked] = useState(false);
     
     async function handleSubmit(e: any) {
         e.preventDefault();
@@ -79,6 +83,12 @@ export const FormPage:React.FC = () => {
                     </div>
                 </div>
             </div>
+
+            <CheckBox
+                id='test-from'
+                label='checkbox'
+                onChangeHandler={(value) => setChecked(value)}
+            />
 
             <div>
                 <button type="submit" className="btn btn-success">保存</button>
