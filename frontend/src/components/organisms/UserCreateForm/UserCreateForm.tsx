@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FormText } from "../../atoms/FormText/FormText";
+import { FormText } from "../../atoms/InputText/inputText";
 
 import styles from "./UserCreateForm.module.css"
 

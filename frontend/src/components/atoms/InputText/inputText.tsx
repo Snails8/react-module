@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./FormText.module.css"
+import styles from "./InputText.module.css"
 
 export interface FormTextProps {
     type:         string

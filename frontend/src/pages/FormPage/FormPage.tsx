@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FormText } from "../../components/atoms/FormText/FormText";
+import { FormText } from "../../components/atoms/InputText/inputText";
 import { BasePage } from "../../components/templates/BasePage/BasePage";
 import styles from "./FormPage.module.css"
 
