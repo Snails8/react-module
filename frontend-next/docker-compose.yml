@@ -1,7 +1,7 @@
 version: '3'
 services:
-  front-app:
-    container_name: front-app
+  next-app:
+    container_name: next-app
     build:
       context: .
       dockerfile: Dockerfile
@@ -15,8 +15,3 @@ services:
     stdin_open: true
     tty: true
     restart: always
-    networks:
-      - api
-networks:
-  api:
-    external: true
