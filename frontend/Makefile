@@ -2,12 +2,15 @@ DC := docker-compose exec front-app
 CONTAINER_NAME := front-app
 ARG := $1
 
+# =======================================================
+# docker cmd
+# =======================================================
 up:
 	docker-compose up -d --build
 	make yarn
 
 down:
-	docker compose -f docker-compose.yaml -p ${CONTAINER_NAME} down
+	docker compose down
 
 stop:
 	docker-compose stop
@@ -26,6 +29,15 @@ ps:
 front-app:
 	docker-compose exec ${CONTAINER_NAME} /bin/ash
 
+# =======================================================
+# yarn cmd
+# =======================================================
+yarn:
+	docker-compose exec ${CONTAINER_NAME} yarn start
+
+build:
+	docker-compose exec ${CONTAINER_NAME} yarn build
+
 add:
 	docker-compose exec ${CONTAINER_NAME} yarn install ${ARG}
 
@@ -34,12 +46,6 @@ storybook:
 # =======================================================
 # setup
 # =======================================================
-yarn:
-	docker-compose exec ${CONTAINER_NAME} yarn start
-
-build:
-	docker-compose exec ${CONTAINER_NAME} yarn build
-
 install-react-app:
 	docker-compose exec ${CONTAINER_NAME} yarn
 	docker-compose exec ${CONTAINER_NAME} npx create-react-app frontend --template typescript
