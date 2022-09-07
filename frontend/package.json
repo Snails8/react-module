@@ -24,12 +24,24 @@
     "type-check": "tsc",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "generate:api-client": "docker run --rm -v \"${PWD}/..:/local\" openapitools/openapi-generator-cli:v5.1.1 generate -i /local/openapi/test.yaml -g typescript-fetch -o /local/frontend/src/api-client --additional-properties=typescriptThreePlus=true"
+    "generate:api-client": "docker run --rm -v \"${PWD}/..:/local\" openapitools/openapi-generator-cli:v5.1.1 generate -i /local/openapi/test.yaml -g typescript-fetch -o /local/frontend/src/api-client --additional-properties=typescriptThreePlus=true",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "browserslist": {
@@ -45,9 +57,22 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/builder-webpack5": "^6.5.10",
+    "@storybook/manager-webpack5": "^6.5.10",
+    "@storybook/node-logger": "^6.5.10",
+    "@storybook/preset-create-react-app": "^4.1.2",
+    "@storybook/react": "^6.5.10",
+    "@storybook/testing-library": "^0.0.13",
     "add": "^2.0.6",
     "axios": "^0.27.2",
+    "babel-plugin-named-exports-order": "^0.0.2",
     "http-proxy-middleware": "^2.0.6",
+    "prop-types": "^15.8.1",
+    "webpack": "^5.74.0",
     "yarn": "^1.22.19"
   }
 }

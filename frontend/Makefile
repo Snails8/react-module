@@ -26,6 +26,11 @@ ps:
 front-app:
 	docker-compose exec ${CONTAINER_NAME} /bin/ash
 
+add:
+	docker-compose exec ${CONTAINER_NAME} yarn install ${ARG}
+
+storybook:
+	docker-compose exec ${CONTAINER_NAME} yarn storybook
 # =======================================================
 # setup
 # =======================================================
