@@ -39,7 +39,7 @@ build:
 	docker-compose exec ${CONTAINER_NAME} yarn build
 
 add:
-	docker-compose exec ${CONTAINER_NAME} yarn install ${ARG}
+	docker-compose exec ${CONTAINER_NAME} yarn add ${ARG}
 
 storybook:
 	docker-compose exec ${CONTAINER_NAME} yarn storybook
