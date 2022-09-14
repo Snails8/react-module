@@ -5,6 +5,7 @@ import { BasePage } from "../../components/templates/BasePage/BasePage"
 import { RadioButton } from '../../components/atoms/RadioButton/RadioButton';
 import { FormText } from '../../components/atoms/InputText/inputText';
 import { LoadingSpinner } from '../../components/atoms/LoadingSpinner/LoadingSpiner';
+import { Label } from '../../components/atoms/Label/Label';
 
 export const AtomPage = () => {
   return (
@@ -59,6 +60,15 @@ export const AtomPage = () => {
         <div className={`${styles.content}`}>
           <h5>LoadingSpinner</h5>
           <LoadingSpinner
+          />
+        </div>
+
+        <div className={`${styles.content}`}>
+          <h5>Label</h5>
+          <Label
+            text='label'
+            color='green'
+            width={100}
           />
         </div>
 
