@@ -34,6 +34,11 @@ export const Sidebar: React.FC = ({
                     <div className={ `${styles.sidebar_text}`} >page4</div>
                 </div>
             </Link>
+            <Link to="/atoms">
+                <div className={ `${styles.sidebar_item}` }>
+                    <div className={ `${styles.sidebar_text}`} >atom・component検証</div>
+                </div>
+            </Link>
             <Link to="/form">
                 <div className={ `${styles.sidebar_item}` }>
                     <div className={ `${styles.sidebar_text}`} >フォーム検証</div>
