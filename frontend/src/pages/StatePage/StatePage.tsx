@@ -1,31 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import { BasePage } from "../../components/templates/BasePage/BasePage";
 import { useTestUseEffect } from "../../hooks/useTestUseEffect";
+import { useCounter } from "./useCounter.hooks";
+import { useReload } from "./useReload.hooks";
 
 export const StatePage:React.FC = ({
 
 }) => {
-    const [reloadText, setReloadText] = useState<string>("") 
-    
-    useEffect(() => {
-        window.addEventListener('beforeunload', (e) => {
-            // console.log("reloadりろーど時に実行される")
-            localStorage.setItem('reload', "reloaded")
-        })
-        
-        if (localStorage.getItem('reload') === "reloaded") {
-            setReloadText(localStorage.getItem('reload') as string)
-        }
+    // reload時のみ処理する
+    const reloadText = useReload();
 
-        localStorage.setItem('reload', "")
-    },[])
-
-    // ref検証
-    const [count, setCount] = useState(0);
-    const countRef = useRef(0);
+    const [counter] = useCounter();
 
     // useEffect検証
-    useTestUseEffect(count);
+    useTestUseEffect(counter.count);
 
     return (
         <>
@@ -40,11 +28,11 @@ export const StatePage:React.FC = ({
 
             <h3>useRefとuseStateを検証する</h3>
             <div>
-                <div>カウント（useState）: {count}</div>
-                <button onClick={() => setCount(count + 1)}>カウントアップ（useState）</button>
+                <div>カウント（useState）: {counter.count}</div>
+                <button onClick={counter.incrementCount}>カウントアップ（useState）</button>
 
-                <div>カウント（useRef）: {countRef.current}</div>
-                <button onClick={() => countRef.current++}>カウントアップ（useRef）</button>
+                <div>カウント（useRef）: {counter.countRef.current}</div>
+                <button onClick={counter.doubleCountRef}>カウントアップ（useRef）</button>
             </div>
         </BasePage>
         </>
