@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./InputText.module.css"
 
-export interface FormTextProps {
+export interface InputTextProps {
     type:         string
     id:           string
     defaultValue: string
@@ -12,7 +12,7 @@ export interface FormTextProps {
     onChangeHandler: (value: string) => void
 }
 
-export const FormText: React.FC<FormTextProps> = ({
+export const InputText: React.FC<InputTextProps> = ({
     type,
     id,
     defaultValue,
