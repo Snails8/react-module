@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CheckBox } from "../../components/atoms/Checkbox/Checkbox";
-import { FormText } from "../../components/atoms/InputText/inputText";
+import { InputText } from "../../components/atoms/InputText/InputText";
 import { BasePage } from "../../components/templates/BasePage/BasePage";
 import styles from "./FormPage.module.css"
 
@@ -51,7 +51,7 @@ export const FormPage:React.FC = () => {
                 <div className={`${styles.form_item}`}>
                     <div className={`${styles.container_inner}`}>
                         <span className={`${styles.form_label}`}>名前</span>
-                            <FormText
+                            <InputText
                                 type="text"
                                 id="name"
                                 defaultValue={name}
@@ -68,7 +68,7 @@ export const FormPage:React.FC = () => {
                 <div className={`${styles.form_item}`}>
                     <div className={`${styles.container_inner}`}>
                         <span className={`${styles.form_label}`}>メール</span>
-                            <FormText
+                            <InputText
                                 type="email"
                                 id="email"
                                 defaultValue={email}
