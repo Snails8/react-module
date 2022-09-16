@@ -3,11 +3,15 @@ import { Button } from "../../components/atoms/Button/Button"
 import { CheckBox } from "../../components/atoms/Checkbox/Checkbox"
 import { BasePage } from "../../components/templates/BasePage/BasePage"
 import { RadioButton } from '../../components/atoms/RadioButton/RadioButton';
-import { FormText } from '../../components/atoms/InputText/inputText';
+import { InputText } from '../../components/atoms/InputText/InputText';
 import { LoadingSpinner } from '../../components/atoms/LoadingSpinner/LoadingSpiner';
 import { Label } from '../../components/atoms/Label/Label';
+import { useTypeConverter } from '../../hooks/useTypeConverter';
 
 export const AtomPage = () => {
+
+  const hoge = useTypeConverter();
+
   return (
     <>
       <BasePage>
@@ -44,7 +48,7 @@ export const AtomPage = () => {
 
         <div className={`${styles.content}`}>
           <h5>input text</h5>
-          <FormText
+          <InputText
             type='text'
             id='text'
             defaultValue='sample'
@@ -70,6 +74,36 @@ export const AtomPage = () => {
             color='green'
             width={100}
           />
+        </div>
+
+        <div className={`${styles.content}`}>
+          <h5>Label2</h5>
+          nothing
+        </div>
+
+        <div className={`${styles.content}`}>
+          <h5>ErrorPanel</h5>
+          nothing
+        </div>
+
+        <div className={`${styles.content}`}>
+          <h5>Logo</h5>
+          nothing
+        </div>
+
+        <div className={`${styles.content}`}>
+          <h5>Notification field</h5>
+          nothing
+        </div>
+
+        <div className={`${styles.content}`}>
+          <h5>toast</h5>
+          nothing
+        </div>
+
+        <div className={`${styles.content}`}>
+          <h5>card</h5>
+          nothing
         </div>
 
       </BasePage>
