@@ -64,6 +64,11 @@ export const Sidebar: React.FC = ({
                     <div className={ `${styles.sidebar_text}`} >ユーザー管理</div>
                 </div>
             </Link>
+            <Link to="/download-file">
+                <div className={ `${styles.sidebar_item}` }>
+                    <div className={ `${styles.sidebar_text}`} >CSV・Excel 関連</div>
+                </div>
+            </Link>
         </SidebarBg>
     )
 }

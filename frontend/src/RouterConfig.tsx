@@ -16,6 +16,7 @@ import { FormPage } from "./pages/FormPage/FormPage";
 import { Fishes } from "./pages/Fishes/FishesPage";
 import { UseMemoPage } from "./pages/UseMemoPage/UseMemoPage";
 import { AtomPage } from "./pages/AtomPage/AtomPage";
+import { DownloadCSVExcel } from "./pages/DownloadCSVExcel/DounloadCSVExcel";
 
 
 export const RouterConfig:React.VFC =() => {
@@ -43,6 +44,7 @@ export const RouterConfig:React.VFC =() => {
           <Route path="parent-tab" element={<ParentTabPage />} />
           <Route path="child-tab" element={<ChildTabPage />} />  
           <Route path="atoms" element={<AtomPage />} />
+          <Route path="download-file" element={<DownloadCSVExcel />} />
         </Routes>
       </BrowserRouter>
     </>
