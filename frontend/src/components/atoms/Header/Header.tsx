@@ -1,18 +1,15 @@
-import React from 'react';
-
 import styles from './Header.module.css'
 
-export interface HeaderProps {
-    pageTitle: string
+type HeaderProps = {
+  pageTitle: string
 }
 
-export const Header: React.FC<HeaderProps> = ({
-    pageTitle 
-}) => {
-
-    return (
-        <div className={`${styles.base}` }>
-            {pageTitle}
-        </div>
-    )
+export const Header = (
+  props: HeaderProps 
+) => {
+  return (
+    <div className={`${styles.base}` }>
+      {props.pageTitle}
+    </div>
+  )
 }
