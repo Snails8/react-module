@@ -16,7 +16,7 @@ import { FormPage } from "./pages/FormPage/FormPage";
 import { Fishes } from "./pages/Fishes/FishesPage";
 import { UseMemoPage } from "./pages/UseMemoPage/UseMemoPage";
 import { AtomPage } from "./pages/AtomPage/AtomPage";
-import { DownloadCSVExcel } from "./pages/DownloadCSVExcel/DounloadCSVExcel";
+import { DownloadCSVExcel } from "./pages/DownloadCSVExcel/DownloadCSVExcel";
 
 
 export const RouterConfig:React.VFC =() => {

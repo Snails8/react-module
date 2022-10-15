@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./DownloadCSVExcel.module.css";
 import ExcelJS from "exceljs";
 import { BasePage } from "../../components/templates/BasePage/BasePage";
@@ -47,6 +47,23 @@ export const DownloadCSVExcel: React.FC = () => {
     a.click();
     a.remove();
   };
+
+  const [hoge, setHoge] = useState('')
+    
+  // useEffect(() => {
+  //   window.addEventListener('load',() => {
+  //     ''
+  //   })
+  //   setHoge('reload')
+  //   console.log('test')
+  // },[hoge])
+
+  while (hoge == '') {
+    window.addEventListener('load',() => {
+      ''
+    })
+    console.log('test')
+  }
 
   return (
     <>
