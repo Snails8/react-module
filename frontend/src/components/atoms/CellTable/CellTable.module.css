@@ -1,0 +1,21 @@
+.table {
+  border-collapse: collapse;
+}
+.item1 {
+  border: 1px solid grey;
+  padding: 3px 10px;
+  background: #ddd;
+  text-align: center;
+  width: 50px;
+}
+.item2 {
+  border: 1px solid grey;
+  padding: 3px 10px;
+  background: #ddd;
+  width: 100px;
+}
+.value1 {
+  border: 1px solid grey;
+  padding: 3px 10px;
+  cursor: pointer;
+}
