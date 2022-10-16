@@ -41,6 +41,11 @@ export const Sidebar = () => {
           <div className={ `${styles.sidebar_text}`} >フォーム検証</div>
         </div>
       </Link>
+      <Link to="/memo">
+        <div className={ `${styles.sidebar_item}` }>
+          <div className={ `${styles.sidebar_text}`} >memo検証</div>
+        </div>
+      </Link>
       <Link to="/useMemo">
         <div className={ `${styles.sidebar_item}` }>
           <div className={ `${styles.sidebar_text}`} >useMemo検証</div>

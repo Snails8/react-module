@@ -18,6 +18,7 @@ import { UseMemoPage } from "./pages/UseMemoPage/UseMemoPage";
 import { AtomPage } from "./pages/AtomPage/AtomPage";
 import { DownloadCSVExcel } from "./pages/DownloadCSVExcel/DownloadCSVExcel";
 import { UseCallBackPage } from "./pages/UseCallBackPage/UseCallBackPage";
+import { MemoPage } from "./pages/MemoPage/MemoPage";
 
 
 export const RouterConfig:React.VFC =() => {
@@ -41,6 +42,7 @@ export const RouterConfig:React.VFC =() => {
           <Route path="users/create" element={<UserCreate />} />
           <Route path="form" element={<FormPage />} />
           <Route path="states" element={<StatePage />} />
+          <Route path="memo" element={<MemoPage />} />
           <Route path="useMemo" element={<UseMemoPage />} />
           <Route path="useCallback" element={<UseCallBackPage />} />
           <Route path="parent-tab" element={<ParentTabPage />} />

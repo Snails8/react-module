@@ -1,4 +1,4 @@
-import React, { memo, useState } from "react";
+import React from "react";
 import { BasePage } from "../../components/templates/BasePage/BasePage";
 import { useTestUseEffect } from "../../hooks/useTestUseEffect";
 import { useCounter } from "./useCounter.hooks";
@@ -33,52 +33,7 @@ export const StatePage:React.FC = ({
           <div>カウント（useRef）: {counter.countRef.current}</div>
           <button onClick={counter.doubleCountRef}>カウントアップ（useRef）</button>
         </div>
-
-        <div>
-          <p>useMemo検証</p>
-          <Parent />
-        </div>
       </BasePage>
     </>
-  )
-}
-
-type FizzProps = {
-  isFizz: boolean    
-}
-
-const Fizz = (props: FizzProps) => {
-  const {isFizz} = props
-  console.log(`Fizzが再描写されました, isFizz=${isFizz}`)
-
-  return <span>{isFizz ? 'Fizz' : ''}</span>
-}
-
-type BuzzProps = {
-  isBuzz: boolean
-}
-
-const Buzz = memo<BuzzProps>((props) => {
-  const {isBuzz} = props
-  console.log(`Buzzが再描写されました, isBuzz=${isBuzz}`)
-
-  return <span>{isBuzz ? 'Buzz' : ''}</span>
-})
-
-export const Parent = () => {
-  const [count, setCount] = useState(1)
-  const isFizz = count % 3 === 0
-  const isBuzz = count % 5 === 0
-  
-  return (
-    <div>
-      <button onClick={() => setCount((c) => c +1 )}>+1</button>
-      <p>{`現在のカウント： ${count}`}</p>
-
-      <p>
-        <Fizz isFizz={isFizz} />
-        <Buzz isBuzz={isBuzz} />
-      </p>
-    </div>
   )
 }
