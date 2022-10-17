@@ -4,43 +4,49 @@ import { BasePage } from "../../components/templates/BasePage/BasePage";
 export const UseMemoPage = ({
 
 }) => {
-    const [value, setValue] = useState(0);
-    const [count, setCount] = useState(0);
+  const [text, setText] = useState('');
+  const [items, setItems] = useState<string[]>([]);
 
-    // Usage
-    const memorizedValue = useMemo(() => {
-        return highCostProcessing(value)
-    },[value]);
+  const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setText(e.target.value)
+  }
 
-    return (
-        <>
-            <BasePage>
-                <h3>useMemo 検証</h3>
-                <ul>
-                    <li>入力値が変わるたびに highCostProcessing が呼ばれる</li>
-                    <li>useMemoを使用しているので、、条件を満たさない限り動作しなくなる</li>
-                    <li>よってレンダリング後はvalueが変更された時のみ再計算される</li>
-                    <p>内部では、countが変化してもコールバック関数内部で呼ばれているhighCostProcessingは呼ばれず、キャッシュされた値を返してる</p>
-                <p>⚠︎あまりコストのかからない計算をメモ化すると値を再計算するか判定する処理の方がコストがかかる場合がある</p>
-                </ul>
+  const onClickButton = () => {
+    setItems((prevItems) => {
+      return [...prevItems, text] // 現在の入力値をitemsに格納(一回目: [111], 二回目 [111, 2222]...)
+    })
+    setText('')
+  }
 
-                <div>{memorizedValue}</div>
-                <input type="text" onChange={(e:React.ChangeEvent<HTMLInputElement>) => {
-                    const targetValue: number = Number(e.target.value);
-                    setValue(targetValue);
-                }} />
-                <button onClick={() => setCount(count + 1)}>更新する</button>
-            </BasePage>
-        </>
-    )
+  console.log(items)
+
+  // 再描写のたびに関数を実行する(ex) [111, 2222] => 111322224 )
+  const numberOfCharacter1 = items.reduce((sub, item) => sub + item + item.length, '')
+
+  // itemsが新しくなった時のみ関数を実行する
+  const numberOfCharacter2 = useMemo(() => {
+    console.log('render: numberOfCharacter2')
+    return items.reduce((sub, item) => sub + item + item.length, '')
+  },[items])
+
+  return (
+    <>
+      <BasePage>
+        <p>UseMemoSample</p>
+        <div>
+          <input value={text} onChange={onChangeInput} />
+          <button onClick={onClickButton}>add</button>
+        </div>
+        <div>
+          {items.map((item, index) => (
+            <p key={index}>{item}</p>
+          ))}
+        </div>
+        <div>
+          <p>Total Number of Characters 1: {numberOfCharacter1}</p>
+          <p>Total Number of Characters 2: {numberOfCharacter2}</p>
+        </div>
+      </BasePage>
+    </>
+  )
 }
-
-
-const highCostProcessing = (inputValue: number) => {
-    let calculateValue = Number(inputValue);
-    for (let i = 0; i < 1000; i++) {
-        calculateValue += 1;
-    }
-    console.log("Finished");
-    return calculateValue;
-};
