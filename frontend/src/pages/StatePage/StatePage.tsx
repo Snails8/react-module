@@ -4,9 +4,7 @@ import { useTestUseEffect } from "../../hooks/useTestUseEffect";
 import { useCounter } from "./useCounter.hooks";
 import { useReload } from "./useReload.hooks";
 
-export const StatePage:React.FC = ({
-
-}) => {
+export const StatePage:React.FC = () => {
   // reload時のみ処理する
   const reloadText = useReload();
 

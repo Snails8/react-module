@@ -1,9 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { BasePage } from "../../components/templates/BasePage/BasePage";
 
-export const UseMemoPage = ({
-
-}) => {
+export const UseMemoPage = () => {
   const [text, setText] = useState('');
   const [items, setItems] = useState<string[]>([]);
 
