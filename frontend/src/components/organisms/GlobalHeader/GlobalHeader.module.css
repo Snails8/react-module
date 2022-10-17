@@ -1,0 +1,54 @@
+.headerContainer {
+  align-items: center;
+  color: white;
+  background-color: var(--di-header-background-color);
+  font-size: xx-large;  /* 文字 大きさ */
+  padding-left: 20px;  /* 文字 左の余白を追加*/
+  display: flex;
+  height: 70px;
+  width: 100%;
+}
+
+.logoContainer {
+  height: 40px;
+  margin-left: 10px;
+  width: 202.5px;
+}
+
+.userContainer {
+  align-items: center;
+  border-radius: 5px;
+  display: flex;
+  height: 36px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: 16px;
+  position: relative;
+  transition: background-color 0.3s ease-out;
+  width: 170px;
+}
+.userContainer:hover {
+  background-color: #23384d;
+}
+.userContainer:hover {
+  background-color: #4a5b6c;
+}
+
+.userIconContainer {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.userNameContainer {
+  color: #fff;
+  font-size: large;
+  margin-left: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 200px;
+  width: 100px;
+}

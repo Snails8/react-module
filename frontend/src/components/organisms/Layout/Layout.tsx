@@ -7,7 +7,7 @@ export interface LayoutProps {
 }
 
 export const Layout: React.FC<LayoutProps> = ({
-    headerTitle
+  headerTitle
 }) => {
     return (
         <>
