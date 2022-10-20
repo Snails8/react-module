@@ -1,22 +1,21 @@
-import React from 'react'
-import styles from './Label.module.css'
+import { memo } from 'react';
+import styles from './Label.module.css';
 
-interface LabelProps {
+type LabelProps = {
   text: string
   color: string
   width: number
 }
 
-export const Label: React.FC<LabelProps> = ({
-  text,
-  color,
-  width,
-}) => (
-
-  <div 
-    className={`${styles.label}`}
-    style={{ color: color, width: width, borderColor: color }}
-  >
-    {text}
-  </div>
-)
+export const Label = memo((props: LabelProps) => {
+  const {text, color, width} = props;
+  
+  return (
+    <div 
+      className={`${styles.label}`}
+      style={{ color: color, width: width, borderColor: color }}
+    >
+      {text}
+    </div>
+  );
+});
