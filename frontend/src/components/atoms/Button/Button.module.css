@@ -1,4 +1,67 @@
 .button {
-    border-radius: 3px;
-    letter-spacing: 0.49px;
+  border-radius: 3px;
+  background-color: #f8f4f4;
+  border: 1px solid #cecece;
+  letter-spacing: 0.49px;
+  transition: background-color 0.3s ease-out;
+}
+
+.button:hover {
+  background-color: #fcf7f7;
+}
+
+/* primary */
+.primary_button {
+  background-color: #245fb3;
+  color: #fff;
+  border-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  letter-spacing: 0.49px;
+  transition: background-color 0.3s ease-out;
+}
+.primary_button:hover {
+  background-color: #3e81ce;
+}
+
+/* secondary */
+.secondary_button {
+  background-color: #fff;
+  color: #245fb3;
+  border-color: #245fb3;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  letter-spacing: 0.49px;
+  transition: background-color 0.3s ease-out;
+}
+.secondary_button:hover {
+  background-color: #3e81ce;
+}
+
+/* green */
+.green_button {
+  background-color: green;
+  color: #fff;
+  border-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  letter-spacing: 0.49px;
+  transition: background-color 0.3s ease-out;
+}
+.green_button:hover {
+  background-color: #00ff00;
+}
+
+/* tertiary */
+.primary_button {
+  background-color: #f8f4f4;
+  color: #cecece;
+  border-color: #cecece;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  letter-spacing: 0.49px;
+  transition: background-color 0.3s ease-out;
+}
+.button:hover {
+  background-color: #fcf7f7;
 }
