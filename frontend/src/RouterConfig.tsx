@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { SamplePage2 } from "./pages/pageB";
-import { Dashboard } from "./pages/dashboard/Dashboard";
+
 import { Training } from "./pages/Training/Training";
 import { NotFound } from "./pages/NotFound/notFound";
 import { SamplePage3 } from "./pages/pageC";
@@ -19,6 +19,7 @@ import { Atoms } from "./pages/Atoms/Atoms";
 import { DownloadCSVExcel } from "./pages/DownloadCSVExcel/DownloadCSVExcel";
 import { UseCallBackPage } from "./pages/UseCallBackPage/UseCallBackPage";
 import { MemoPage } from "./pages/MemoPage/MemoPage";
+import { Dashboard } from "./pages/Dashboard/Dashboard";
 
 
 export const RouterConfig:React.VFC =() => {
