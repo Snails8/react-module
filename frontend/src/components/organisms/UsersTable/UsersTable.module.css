@@ -16,6 +16,17 @@
     text-align: left;
 }
 
+/* -------- body --------------*/
+.table_row {
+    background-color: #fff;
+    border-top: 1px solid var(--di-table-border-color);
+    cursor: auto;
+    height: 40px;
+}
+.table_row:hover {
+  background-color: var(--di-table-body-bg-hover-color);
+}
+
 /* 中央に揃える */
 .td {
     border-top: solid 1px  #cacaca;  /* こいつを指定することで枠線が有効になる*/
