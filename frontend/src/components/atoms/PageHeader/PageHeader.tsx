@@ -12,17 +12,17 @@ export const PageHeader = memo((props: PageHeaderProps) => {
   const navigate = useNavigate();
 
   return (
-    <div className={`${styles.header}`}>
+    <div className={styles.header}>
       {backLink ? (
-        <div className={`${styles.back_link_container}`}>
+        <div className={styles.back_link_container}>
           <Link to="#" onClick={() => navigate(-1)}>
-            <div className={`${styles.back_link}`}>
+            <div className={styles.back_link}>
               戻る
             </div>
           </Link>
         </div>
       ): null}
-      <div className={`${styles.title}`}>{title}</div>
+      <h1 className={styles.title}>{title}</h1>
     </div>
-  )
-})
+  );
+});
