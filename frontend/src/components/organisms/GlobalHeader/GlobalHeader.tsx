@@ -13,7 +13,8 @@ export const GlobalHeader = memo((props: HeaderProps ) => {
     <div className={styles.container }>
       <Link to="/">
         <div className={styles.logo_container}>
-          aaaa
+          <div style={{  color: "#fff" }}>Sample</div>
+          
           {/* <Logo logoPath={whiteLogo} /> */}
         </div>
       </Link>
