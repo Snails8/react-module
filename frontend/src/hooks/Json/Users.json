@@ -1,0 +1,8 @@
+{
+  "users": [
+    {"id": 1, "name": "テスト太郎", "email": "test.taro@sample.com", "role": "operator"},
+    {"id": 2, "name": "テスト管理", "email": "test.manager@sample.com", "role": "manager"},
+    {"id": 3, "name": "テスト次郎", "email": "test.jiro@sample.com", "role": "operator"},
+    {"id": 4, "name": "テスト三郎", "email": "test.subro@sample.com", "role": "operator"}
+  ]
+}

@@ -22,7 +22,14 @@ export interface User {
      * @memberof User
      */
     email: string;
+
+    role: string
 }
+
+export enum UserRole  {
+  Manager = 'manager',
+  Operator = 'operator'
+};
 
 export const useUsers = () => {
     const [users, setUsers] = useState<User[]>([]);
