@@ -1,0 +1,9 @@
+.container {
+  background-color: #f7f7f7;
+  height: calc(100% - var(--global-header-height));
+  padding-left: var(--sidebar-padding-left);
+  padding-top: var(--global-header-height);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
