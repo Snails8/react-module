@@ -1,5 +1,4 @@
 import React from "react";
-import { BasePage } from "../../components/templates/BasePage/BasePage";
 
 import { useEffect, useState } from 'react';
 
@@ -8,6 +7,7 @@ import {
 } from '../../hooks';
 import { Link, useLocation } from "react-router-dom";
 import { FishesTable } from "../../components/organisms/FishesTable/FishTable";
+import { Layout } from "../../components/templates/_Layout/Layout";
 
 export const Fishes:React.FC = () => {
   const location = useLocation()
@@ -40,7 +40,7 @@ export const Fishes:React.FC = () => {
 
     return (
         <>
-          <BasePage>
+          <Layout>
           {isSave?.isSave === true ?
             <h5>成功</h5> : ''
           }
@@ -49,7 +49,7 @@ export const Fishes:React.FC = () => {
           />
           <Link to="/fishes/create">作成</Link>
           
-          </BasePage>
+          </Layout>
         </>
     )
 }

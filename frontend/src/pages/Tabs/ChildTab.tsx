@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BasePage } from "../../components/templates/BasePage/BasePage";
+import { Layout } from "../../components/templates/_Layout/Layout";
 
 export const ChildTabPage:React.FC =() => {
     const [message, setMessage] = useState(JSON.parse(localStorage.getItem('key') as string))
@@ -24,7 +24,7 @@ export const ChildTabPage:React.FC =() => {
     
     return (
         <>
-        <BasePage>
+        <Layout>
             <h3>子タブ</h3>
             <h4>localStorageで親 → 子 を同期する</h4>
             <p>受け取ったメッセージ：「{message}」</p>
@@ -38,7 +38,7 @@ export const ChildTabPage:React.FC =() => {
 
             <h5>window.openerで親windowを初期化する</h5>
             <button onClick={(e) =>  window.opener.location.reload()}>親側で再度API通信</button>
-        </BasePage>
+        </Layout>
         </>
     )
 }

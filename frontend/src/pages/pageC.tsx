@@ -1,5 +1,5 @@
 import React from "react";
-import { BasePage } from "../components/templates/BasePage/BasePage";
+import { Layout } from "../components/templates/_Layout/Layout";
 
 type Props = {
   Message: string 
@@ -7,8 +7,8 @@ type Props = {
 
 export const SamplePage3:React.FC<Props> = (props) => {
   return (
-    <BasePage>
+    <Layout>
       <p>{props.Message}</p>
-    </BasePage>
+    </Layout>
   )  
 }

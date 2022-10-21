@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CheckBox } from "../../components/atoms/Checkbox/Checkbox";
 import { InputText } from "../../components/atoms/InputText/InputText";
-import { BasePage } from "../../components/templates/BasePage/BasePage";
+import { Layout } from "../../components/templates/_Layout/Layout";
 import styles from "./FormPage.module.css"
 
 export const FormPage:React.FC = () => {
@@ -45,7 +45,7 @@ export const FormPage:React.FC = () => {
 
     return (
         <>
-            <BasePage>
+            <Layout>
             <form onSubmit={handleSubmit}>
             <div className={`${styles.form_container}`}>
                 <div className={`${styles.form_item}`}>
@@ -94,7 +94,7 @@ export const FormPage:React.FC = () => {
                 <button type="submit" className="btn btn-success">保存</button>
             </div>
         </form>
-            </BasePage>
+        </Layout>
         </>
     )
 }

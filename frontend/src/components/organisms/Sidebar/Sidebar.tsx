@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import { SidebarBg } from "../../atoms/Sidebar/Sidebar";
 
 import styles from './Sidebar.module.css'
 
 export const Sidebar = () => { 
   return (
-    <SidebarBg>
+    <div className={styles.container}>
       <Link to="/training">
         <div className={ `${styles.sidebar_item}` }>
           <div className={ `${styles.sidebar_text}`} >training</div>
@@ -76,6 +75,6 @@ export const Sidebar = () => {
           <div className={ `${styles.sidebar_text}`} >CSV・Excel 関連</div>
         </div>
       </Link>
-    </SidebarBg>
+    </div>
   )
 }

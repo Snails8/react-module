@@ -1,5 +1,5 @@
 import React from "react";
-import { BasePage } from "../../components/templates/BasePage/BasePage";
+import { Layout } from "../../components/templates/_Layout/Layout";
 import { useTestUseEffect } from "../../hooks/useTestUseEffect";
 import { useCounter } from "./useCounter.hooks";
 import { useReload } from "./useReload.hooks";
@@ -15,7 +15,7 @@ export const StatePage:React.FC = () => {
 
   return (
     <>
-      <BasePage>
+      <Layout>
         <h3>状態保持の検証</h3>
         <h3>ブラウザのリロードを感知してリロード時のみ状態を保持する</h3>
         <span>status:{reloadText}</span>
@@ -31,7 +31,7 @@ export const StatePage:React.FC = () => {
           <div>カウント（useRef）: {counter.countRef.current}</div>
           <button onClick={counter.doubleCountRef}>カウントアップ（useRef）</button>
         </div>
-      </BasePage>
+      </Layout>
     </>
   )
 }

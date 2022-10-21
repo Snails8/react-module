@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { BasePage } from "../../components/templates/BasePage/BasePage";
+import { Layout } from "../../components/templates/_Layout/Layout";
 
 export const UseMemoPage = () => {
   const [text, setText] = useState('');
@@ -29,7 +29,7 @@ export const UseMemoPage = () => {
 
   return (
     <>
-      <BasePage>
+      <Layout>
         <p>UseMemoSample</p>
         <div>
           <input value={text} onChange={onChangeInput} />
@@ -44,7 +44,7 @@ export const UseMemoPage = () => {
           <p>Total Number of Characters 1: {numberOfCharacter1}</p>
           <p>Total Number of Characters 2: {numberOfCharacter2}</p>
         </div>
-      </BasePage>
+      </Layout>
     </>
   )
 }

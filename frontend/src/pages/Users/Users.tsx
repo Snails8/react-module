@@ -1,6 +1,5 @@
 import React from "react";
 import { UsersTable } from "../../components/organisms/UsersTable/UsersTable";
-import { BasePage } from "../../components/templates/BasePage/BasePage";
 
 import { useEffect, useState } from 'react';
 
@@ -9,6 +8,7 @@ import {
   useUsers
 } from '../../hooks';
 import { Link, useLocation } from "react-router-dom";
+import { Layout } from "../../components/templates/_Layout/Layout";
 
 export const Users:React.FC = () => {
   const location = useLocation()
@@ -44,7 +44,7 @@ export const Users:React.FC = () => {
 
     return (
         <>
-          <BasePage>
+          <Layout>
           {isSave?.isSave === true ?
             <h5>成功</h5> : ''
           }
@@ -52,7 +52,7 @@ export const Users:React.FC = () => {
             <UsersTable 
               users={users}
             />  
-          </BasePage>
+          </Layout>
         </>
     )
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./DownloadCSVExcel.module.css";
 import ExcelJS from "exceljs";
-import { BasePage } from "../../components/templates/BasePage/BasePage";
+import { Layout } from "../../components/templates/_Layout/Layout";
 
 export const DownloadCSVExcel: React.FC = () => {
   const handlerClickDownloadButton = async (e: 
@@ -67,7 +67,7 @@ export const DownloadCSVExcel: React.FC = () => {
 
   return (
     <>
-      <BasePage>
+      <Layout>
         <header>
           <h1>データ出力</h1>
         </header>
@@ -77,7 +77,7 @@ export const DownloadCSVExcel: React.FC = () => {
         <button onClick={(e) => handlerClickDownloadButton(e, "csv")}>
           CSV形式
         </button>
-      </BasePage>
+      </Layout>
     </>
   );
 };

@@ -1,11 +1,11 @@
-import { memo, useState } from "react"
-import { BasePage } from "../../components/templates/BasePage/BasePage"
+import { memo, useState } from "react";
+import { Layout } from "../../components/templates/_Layout/Layout";
 
 export const MemoPage = () => {
   return (
-    <BasePage>
+    <Layout>
       <Parent />
-    </BasePage>
+    </Layout>
   )
 }
 

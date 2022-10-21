@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { createSearchParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
-import { BasePage } from '../../components/templates/BasePage/BasePage';
+import { Layout } from '../../components/templates/_Layout/Layout';
 
 export const Dashboard: React.FC = () => {
     const [message, setMessage] = useState("")
@@ -26,7 +26,7 @@ export const Dashboard: React.FC = () => {
 
     return (
         <>
-          <BasePage>
+          <Layout>
             <h1>Sample Home</h1>
             <nav>
               <ul>
@@ -41,7 +41,7 @@ export const Dashboard: React.FC = () => {
               {Math.round(123.456 * 100) /100 }
               <button onClick={() => navigate("page1")}>SamplePage1</button>
             </nav>  
-          </BasePage>
+          </Layout>
         </>  
     )
 }

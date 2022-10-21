@@ -1,15 +1,15 @@
 import React from "react";
 import { UserCreateForm } from "../../components/organisms/UserCreateForm/UserCreateForm";
-import { BasePage } from "../../components/templates/BasePage/BasePage";
+import { Layout } from "../../components/templates/_Layout/Layout";
 
 export const UserCreate:React.FC = () => {
 
     return (
         <>
-            <BasePage>
+            <Layout>
                 <UserCreateForm 
                 />  
-            </BasePage>
+            </Layout>
         </>
     )
 }

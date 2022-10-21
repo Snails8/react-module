@@ -1,12 +1,12 @@
 import styles from './AtomPage.module.css';
 import { Button } from "../../components/atoms/Button/Button"
 import { CheckBox } from "../../components/atoms/Checkbox/Checkbox"
-import { BasePage } from "../../components/templates/BasePage/BasePage"
 import { RadioButton } from '../../components/atoms/RadioButton/RadioButton';
 import { InputText } from '../../components/atoms/InputText/InputText';
 import { LoadingSpinner } from '../../components/atoms/LoadingSpinner/LoadingSpiner';
 import { Label } from '../../components/atoms/Label/Label';
 import { useTypeConverter } from '../../hooks/useTypeConverter';
+import { Layout } from '../../components/templates/_Layout/Layout';
 
 export const AtomPage = () => {
 
@@ -14,7 +14,7 @@ export const AtomPage = () => {
 
   return (
     <>
-      <BasePage>
+      <Layout>
         <h2>atoms</h2>
 
         <div className={`${styles.content}`}>
@@ -57,7 +57,7 @@ export const AtomPage = () => {
             height={20}
             padding={15}
             onChangeHandler={() => console.log('text')}
-          />  
+          /> 
         </div>
 
         <h3>Web design</h3>
@@ -106,7 +106,7 @@ export const AtomPage = () => {
           nothing
         </div>
 
-      </BasePage>
+      </Layout>
     </>
   )
 }

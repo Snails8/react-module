@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { BasePage } from "../../components/templates/BasePage/BasePage";
+import { Layout } from "../../components/templates/_Layout/Layout";
 
 export const ParentTabPage:React.FC =() => {
     const [message, setMessage] = useState('message')
@@ -23,7 +23,7 @@ export const ParentTabPage:React.FC =() => {
 
     return (
         <>
-        <BasePage>
+        <Layout>
             <h3>親タブ</h3>
             <button onClick={() => window.open("child-tab")}>別タブで開く</button>
 
@@ -37,7 +37,7 @@ export const ParentTabPage:React.FC =() => {
             <label>text</label>
             <input type="text" name="childString" id="childString" defaultValue={childString}
             />
-        </BasePage>    
+        </Layout>
         </>
     )
 }

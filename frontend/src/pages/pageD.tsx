@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Outlet, Link, useNavigate, useParams, NavLink} from "react-router-dom";
-import { BasePage } from "../components/templates/BasePage/BasePage";
+import { Layout } from "../components/templates/_Layout/Layout";
 
 export const SamplePage4:FC = () => {
     const active = {
@@ -21,7 +21,7 @@ export const SamplePage4:FC = () => {
 
     return (
     <>
-      <BasePage>
+      <Layout>
         <h3>Sample Page 4</h3>
         <ul>
           <li><NavLink to="child1" style={({isActive}) => linkStyle(isActive)}>Show Child1</NavLink></li>
@@ -30,7 +30,7 @@ export const SamplePage4:FC = () => {
         </ul>
         <button onClick={()=> navigate("") }>clear</button>
         <Outlet  />
-      </BasePage>
+      </Layout>
     </>
   );
 }
