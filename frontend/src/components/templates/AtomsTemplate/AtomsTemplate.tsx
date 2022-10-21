@@ -10,7 +10,7 @@ import styles from './AtomsTemplate.module.css';
 export const AtomsTemplate = () => {
   return (
     <>
-    <Layout>
+    <Layout isContainerDesign={true}>
       <h2>atoms</h2>
 
       <div className={styles.content}>

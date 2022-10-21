@@ -46,7 +46,7 @@ export const Users:React.FC = () => {
 
     return (
         <>
-          <Layout>
+          <Layout isContainerDesign={true}>
           {isSave?.isSave === true ?
             <h5>成功</h5> : ''
           }
