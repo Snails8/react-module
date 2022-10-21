@@ -1,5 +1,4 @@
 import React from "react";
-
 import { useEffect, useState } from 'react';
 
 import {
@@ -10,8 +9,8 @@ import { FishesTable } from "../../components/organisms/FishesTable/FishTable";
 import { Layout } from "../../components/templates/_Layout/Layout";
 
 export const Fishes:React.FC = () => {
-  const location = useLocation()
-  const [isSave, setIsSave] = useState<{isSave: boolean}>(location.state as {isSave: boolean})
+  const location = useLocation();
+  const [isSave, setIsSave] = useState<{isSave: boolean}>(location.state as {isSave: boolean});
 
   useEffect(() => {
     if(location.state) {
@@ -20,7 +19,7 @@ export const Fishes:React.FC = () => {
     } else {
       setIsSave({isSave: false})
     }
-  },[])
+  },[]);
 
   const [fishes, setFishes] = useState<Fish[]>([]);  
   useEffect(() => {
@@ -36,11 +35,11 @@ export const Fishes:React.FC = () => {
           const errData = {
           }
       })
-  }, [])
+  }, []);
 
     return (
         <>
-          <Layout>
+          <Layout isContainerDesign={true}>
           {isSave?.isSave === true ?
             <h5>成功</h5> : ''
           }
@@ -51,5 +50,5 @@ export const Fishes:React.FC = () => {
           
           </Layout>
         </>
-    )
-}
+    );
+};
