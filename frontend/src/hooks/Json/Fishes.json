@@ -1,0 +1,14 @@
+{
+  "fishes": [
+    {"id": 1, "name": "オイカワ", "type": "omnivorous", "habitat": "river", "endangeredStatus": "LC"},
+    {"id": 2, "name": "カワムツ", "type": "omnivorous", "habitat": "river", "endangeredStatus": "LC"},
+    {"id": 3, "name": "ウグイ", "type": "omnivorous", "habitat": "river", "endangeredStatus": "LC"},
+    {"id": 4, "name": "ヤマメ", "type": "omnivorous", "habitat": "river", "endangeredStatus": "LC"},
+    {"id": 5, "name": "イワナ", "type": "omnivorous", "habitat": "river", "endangeredStatus": "LC"},
+    {"id": 6, "name": "エゾイワナ", "type": "omnivorous", "habitat": "river", "endangeredStatus": "LC"},
+    {"id": 7, "name": "マルタウグイ", "type": "omnivorous", "habitat": "river", "endangeredStatus": "LC"},
+    {"id": 8, "name": "ヒメマス", "type": "omnivorous", "habitat": "river", "endangeredStatus": "LC"},
+    {"id": 9, "name": "ドジョウ", "type": "omnivorous", "habitat": "river", "endangeredStatus": "LC"},
+    {"id": 10, "name": "エゾドジョウ", "type": "omnivorous", "habitat": "river", "endangeredStatus": "LC"}
+  ]
+}
