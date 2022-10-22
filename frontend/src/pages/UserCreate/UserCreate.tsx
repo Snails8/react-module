@@ -1,15 +1,11 @@
 import React from "react";
-import { UserCreateForm } from "../../components/organisms/UserCreateForm/UserCreateForm";
-import { Layout } from "../../components/templates/_Layout/Layout";
+import { UserCreateTemplate } from "../../components/templates/UserCreate/UserCreateTemplate";
 
 export const UserCreate:React.FC = () => {
 
-    return (
-        <>
-            <Layout>
-                <UserCreateForm 
-                />  
-            </Layout>
-        </>
-    );
+  return (
+    <>
+      <UserCreateTemplate />
+    </>
+  );
 };
