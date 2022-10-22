@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Button.module.css"
+import styles from "./Button.module.css";
 
 export interface ButtonProps {
     label: string
@@ -24,5 +24,5 @@ export const Button: React.FC<ButtonProps> = ({
             style={{ color: color, width: width, height: height }}
             onClick={handleClick}
         >{label}</button>
-    )
-}
+    );
+};

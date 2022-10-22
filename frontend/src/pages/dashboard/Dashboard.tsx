@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { createSearchParams } from 'react-router-dom'
+import { createSearchParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { Layout } from '../../components/templates/_Layout/Layout';
 
 export const Dashboard: React.FC = () => {
-    const [message, setMessage] = useState("")
+    const [message, setMessage] = useState("");
   
     useEffect(() => {
       fetch('/api/v1/', {
         method: 'GET', 
       })
       .then(res => res.json() )
-      .then(data => {setMessage(data)})
-    }, [])
+      .then(data => {setMessage(data);});
+    }, []);
   
-    console.log(message)
+    console.log(message);
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const params: string = createSearchParams({
       name: "sample",
@@ -43,5 +43,5 @@ export const Dashboard: React.FC = () => {
             </nav>  
           </Layout>
         </>  
-    )
-}
+    );
+};

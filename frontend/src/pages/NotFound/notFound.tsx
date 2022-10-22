@@ -1,8 +1,7 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 
 export const NotFound = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <>
       <h1>404</h1>
@@ -11,4 +10,4 @@ export const NotFound = () => {
       <button onClick={() => navigate("/")}>トップに戻る</button>
     </>
   );
-}
+};

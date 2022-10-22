@@ -15,7 +15,7 @@ export const StatePage:React.FC = () => {
 
   return (
     <>
-      <Layout>
+      <Layout isContainerDesign={true}>
         <h3>状態保持の検証</h3>
         <h3>ブラウザのリロードを感知してリロード時のみ状態を保持する</h3>
         <span>status:{reloadText}</span>
@@ -33,5 +33,5 @@ export const StatePage:React.FC = () => {
         </div>
       </Layout>
     </>
-  )
-}
+  );
+};

@@ -29,7 +29,7 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
                     if(disabled === true) return;
 
                     setValue(e.target.check);
-                    onChangeHandler(e.target.check)
+                    onChangeHandler(e.target.check);
                     // onChangeHandler(true);
                 }}
             />
@@ -37,5 +37,5 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
                 <label>{label}</label> : null
             }
         </div>
-    )    
-}
+    );
+};

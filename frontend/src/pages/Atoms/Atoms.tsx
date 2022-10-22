@@ -7,5 +7,5 @@ export const Atoms = () => {
 
   return (
     <AtomsTemplate />
-  )
-}
+  );
+};

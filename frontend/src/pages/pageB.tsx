@@ -3,10 +3,9 @@ import { useSearchParams } from "react-router-dom";
 import { Layout } from "../components/templates/_Layout/Layout";
 
 export const SamplePage2:React.FC =() => {
+    const [searchParams] = useSearchParams();
 
-    const [searchParams] = useSearchParams()
-
-    const query1 = searchParams.get("name")
+    const query1 = searchParams.get("name");
     const query2 = searchParams.get("type");
 
     return (
@@ -18,5 +17,5 @@ export const SamplePage2:React.FC =() => {
             <button onClick={() => window.open("page3")}>別タブで開く</button>
         </Layout>
         </>
-    )
-}
+    );
+};

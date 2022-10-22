@@ -6,35 +6,35 @@ export const MemoPage = () => {
     <Layout>
       <Parent />
     </Layout>
-  )
-}
+  );
+};
 
 type FizzProps = {
   isFizz: boolean    
 }
 
 const Fizz = (props: FizzProps) => {
-  const {isFizz} = props
-  console.log(`Fizzが再描写されました, isFizz=${isFizz}`)
+  const {isFizz} = props;
+  console.log(`Fizzが再描写されました, isFizz=${isFizz}`);
 
-  return <span>{isFizz ? 'Fizz' : ''}</span>
-}
+  return <span>{isFizz ? 'Fizz' : ''}</span>;
+};
 
 type BuzzProps = {
   isBuzz: boolean
 }
 
 const Buzz = memo<BuzzProps>((props) => {
-  const {isBuzz} = props
-  console.log(`Buzzが再描写されました, isBuzz=${isBuzz}`)
+  const {isBuzz} = props;
+  console.log(`Buzzが再描写されました, isBuzz=${isBuzz}`);
 
-  return <span>{isBuzz ? 'Buzz' : ''}</span>
-})
+  return <span>{isBuzz ? 'Buzz' : ''}</span>;
+});
 
 const Parent = () => {
-  const [count, setCount] = useState(1)
-  const isFizz = count % 3 === 0
-  const isBuzz = count % 5 === 0
+  const [count, setCount] = useState(1);
+  const isFizz = count % 3 === 0;
+  const isBuzz = count % 5 === 0;
   
   return (
     <div>
@@ -46,5 +46,5 @@ const Parent = () => {
         <Buzz isBuzz={isBuzz} />
       </p>
     </div>
-  )
-}
+  );
+};

@@ -35,10 +35,10 @@ export const useTypeConverter = (
   };
 
   const stringToDate = (value: string): Date => {
-    const date = new Date(value)
+    const date = new Date(value);
 
-    return date
-  }
+    return date;
+  };
 
 
   return {

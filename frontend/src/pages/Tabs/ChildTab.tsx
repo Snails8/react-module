@@ -2,29 +2,29 @@ import React, { useState, useEffect } from "react";
 import { Layout } from "../../components/templates/_Layout/Layout";
 
 export const ChildTabPage:React.FC =() => {
-    const [message, setMessage] = useState(JSON.parse(localStorage.getItem('key') as string))
-    const [childString, setChildString] = useState('')
+    const [message, setMessage] = useState(JSON.parse(localStorage.getItem('key') as string));
+    const [childString, setChildString] = useState('');
 
     useEffect(() => {
-        window.addEventListener('storage', storageChange)
-    })
+        window.addEventListener('storage', storageChange);
+    });
 
     const storageChange = (e:any) => {
-        setMessage(JSON.parse(localStorage.getItem('key') as string))
-    }
+        setMessage(JSON.parse(localStorage.getItem('key') as string));
+    };
 
 
     useEffect(() => {
         if (window.opener == null) {
-            return window.close()
+            return window.close();
         } else {
-            window.opener.document.getElementById("childString").value = childString
+            window.opener.document.getElementById("childString").value = childString;
         }
-    },[childString])
+    },[childString]);
     
     return (
         <>
-        <Layout>
+        <Layout isContainerDesign={true}>
             <h3>子タブ</h3>
             <h4>localStorageで親 → 子 を同期する</h4>
             <p>受け取ったメッセージ：「{message}」</p>
@@ -40,5 +40,5 @@ export const ChildTabPage:React.FC =() => {
             <button onClick={(e) =>  window.opener.location.reload()}>親側で再度API通信</button>
         </Layout>
         </>
-    )
-}
+    );
+};

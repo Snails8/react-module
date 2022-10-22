@@ -2,28 +2,28 @@ import React, { useEffect, useRef, useState } from "react";
 import { Layout } from "../../components/templates/_Layout/Layout";
 
 export const ParentTabPage:React.FC =() => {
-    const [message, setMessage] = useState('message')
-    const [childString, setChildString] = useState('')
+    const [message, setMessage] = useState('message');
+    const [childString, setChildString] = useState('');
 
     useEffect(() => {
         localStorage.setItem('key', JSON.stringify(message));
-    },[message])
+    },[message]);
 
     const handleChange = (e: any) => {
-        setMessage(e.currentTarget.value)
+        setMessage(e.currentTarget.value);
         localStorage.setItem('key', JSON.stringify(message));
-    }
+    };
     
     // TODO::子の変化を感知できてない(JavaScriptで値を変えた場合onchangeイベントは発生しない)
     useEffect(() => {
         window.addEventListener('input', () => {
-            console.log("子から受け取った値が変化しているのを感知")
-        })
-    }, [childString])
+            console.log("子から受け取った値が変化しているのを感知");
+        });
+    }, [childString]);
 
     return (
         <>
-        <Layout>
+        <Layout isContainerDesign={true}>
             <h3>親タブ</h3>
             <button onClick={() => window.open("child-tab")}>別タブで開く</button>
 
@@ -39,5 +39,5 @@ export const ParentTabPage:React.FC =() => {
             />
         </Layout>
         </>
-    )
-}
+    );
+};

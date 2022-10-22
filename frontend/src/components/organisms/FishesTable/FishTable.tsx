@@ -1,7 +1,7 @@
 import React from "react";
 import { Fish } from "../../../hooks";
 
-import styles from "./FishesTable.module.css"
+import styles from "./FishesTable.module.css";
 
 export interface UsersTableProps {
   /**
@@ -31,11 +31,11 @@ export const FishesTable: React.FC<UsersTableProps> = ({
                     <td className={`${styles.td}`}>{fish.name}</td>
                     <td className={`${styles.td}`}>test</td>
                   </tr>
-                )
+                );
               })
             ): (<div>データが存在しません</div>)
           }
         </tbody>
       </table>    
-  )
-}
+  );
+};

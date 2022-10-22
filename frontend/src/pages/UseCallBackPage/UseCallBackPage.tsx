@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react"
+import React, { useCallback, useState } from "react";
 import { Layout } from "../../components/templates/_Layout/Layout";
 
 type ButtonProps = {
@@ -6,44 +6,44 @@ type ButtonProps = {
 }
 
 const DecrementButton  = (props:ButtonProps) => {
-  const { onClick } = props
+  const { onClick } = props;
 
-  console.log('DecrementButtonが再描写されました')
+  console.log('DecrementButtonが再描写されました');
 
-  return <button onClick={onClick}>Decrement</button>
-}
+  return <button onClick={onClick}>Decrement</button>;
+};
 
 const IncrementButton = React.memo((props: ButtonProps) => {
-  const { onClick } = props
+  const { onClick } = props;
 
-  console.log('IncrementButtonが再描写されました')
+  console.log('IncrementButtonが再描写されました');
 
-  return <button onClick={onClick}>Increment</button>
-})
+  return <button onClick={onClick}>Increment</button>;
+});
 
 const DoubleButton = React.memo((props: ButtonProps) => {
-  const { onClick } = props
+  const { onClick } = props;
 
-  console.log('DoubleButtonが再描写されました')
+  console.log('DoubleButtonが再描写されました');
 
-  return <button onClick={onClick}>Double</button>
-})
+  return <button onClick={onClick}>Double</button>;
+});
 
 export const UseCallBackPage = () => {
-  const [count, setCount] = useState<number>(0)
+  const [count, setCount] = useState<number>(0);
 
   const decrement = () => {
-    setCount((c) => c - 1)
-  }
+    setCount((c) => c - 1);
+  };
 
   const increment = () => {
-    setCount((c) => c + 1)
-  }
+    setCount((c) => c + 1);
+  };
 
   // useCallback で関数をメモ化(第二引数は殻の配列なので、常につねに同じ関数を返す)
   const double = useCallback(() => {
-    setCount((c) => c * 2)
-  },[])
+    setCount((c) => c * 2);
+  },[]);
 
   return (
     <Layout>
@@ -64,5 +64,5 @@ export const UseCallBackPage = () => {
       <IncrementButton onClick={increment} /> {/* メモ化コンポーネントに関数を返す */}
       <DoubleButton onClick={double} />       {/* メモ化コンポーネントにメモ化した関数を返す */}
     </Layout>
-  )
-}
+  );
+};

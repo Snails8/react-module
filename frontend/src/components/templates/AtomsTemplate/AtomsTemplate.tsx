@@ -98,5 +98,5 @@ export const AtomsTemplate = () => {
 
     </Layout>
   </>
-  )
-}
+  );
+};

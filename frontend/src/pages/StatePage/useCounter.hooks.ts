@@ -21,5 +21,5 @@ export const useCounter = (): [Counter] => {
       incrementCount,
       doubleCountRef,
     }
-  ]
-}
+  ];
+};

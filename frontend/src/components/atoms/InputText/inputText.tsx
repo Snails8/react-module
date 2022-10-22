@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./InputText.module.css"
+import styles from "./InputText.module.css";
 
 export interface InputTextProps {
     type:         string
@@ -31,8 +31,8 @@ export const InputText: React.FC<InputTextProps> = ({
             className={`${styles.input}`} 
             style={{ width: width, height: height, padding: padding }}
             onChange={(e: any) => {
-                onChangeHandler(e.target.value)
+                onChangeHandler(e.target.value);
             }}
         />
-    )
-}
+    );
+};

@@ -10,5 +10,5 @@ export const SamplePage3:React.FC<Props> = (props) => {
     <Layout>
       <p>{props.Message}</p>
     </Layout>
-  )  
-}
+  );
+};

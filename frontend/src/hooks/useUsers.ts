@@ -61,16 +61,16 @@ export const useUsers = () => {
         })
         .then(res => res.json())
         .then((data) => {
-            setUsers(data)
+            setUsers(data);
         },
         (error) => {
             console.log(error);
             const errData = {
-            }
-        })
-    }, [])
+            };
+        });
+    }, []);
 
     return {
         users: users
-    }
-}
+    };
+};

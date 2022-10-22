@@ -48,7 +48,7 @@ export const DownloadCSVExcel: React.FC = () => {
     a.remove();
   };
 
-  const [hoge, setHoge] = useState('')
+  const [hoge, setHoge] = useState('');
     
   // useEffect(() => {
   //   window.addEventListener('load',() => {
@@ -60,9 +60,9 @@ export const DownloadCSVExcel: React.FC = () => {
 
   while (hoge == '') {
     window.addEventListener('load',() => {
-      ''
-    })
-    console.log('test')
+      '';
+    });
+    console.log('test');
   }
 
   return (

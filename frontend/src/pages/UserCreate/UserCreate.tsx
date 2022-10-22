@@ -11,5 +11,5 @@ export const UserCreate:React.FC = () => {
                 />  
             </Layout>
         </>
-    )
-}
+    );
+};

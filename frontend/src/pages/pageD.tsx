@@ -6,18 +6,18 @@ export const SamplePage4:FC = () => {
     const active = {
         fontWeight: "bold",
         color: "#d57276"
-    }
+    };
 
     const inactive = {
         fontWeight: "normal",
         color: "#65b2c6"       
-    }
+    };
 
     const navigate = useNavigate();
 
     const linkStyle = (isActive:boolean) => {
         return isActive ? active : inactive;
-    }
+    };
 
     return (
     <>
@@ -33,14 +33,14 @@ export const SamplePage4:FC = () => {
       </Layout>
     </>
   );
-}
+};
 
 export const SamplePage4Child1:FC = () => {
   return <h3>Sample Page 4 Child1</h3>;
-}
+};
 export const SamplePage4Child2:FC = () => {
   return <h3>Sample Page 4 Child2</h3>;
-}
+};
 
 export const SamplePage4Child3:FC = () => {
     type Param = {
@@ -54,4 +54,4 @@ export const SamplePage4Child3:FC = () => {
         <p>{`cildid=${params?.cildid}`}</p>
       </>
     );
-  }
+};

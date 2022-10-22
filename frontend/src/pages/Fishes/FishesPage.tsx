@@ -14,10 +14,10 @@ export const Fishes:React.FC = () => {
 
   useEffect(() => {
     if(location.state) {
-      console.log(location.state)
-      setIsSave({isSave: true})
+      console.log(location.state);
+      setIsSave({isSave: true});
     } else {
-      setIsSave({isSave: false})
+      setIsSave({isSave: false});
     }
   },[]);
 
@@ -28,13 +28,13 @@ export const Fishes:React.FC = () => {
       })
       .then(res => res.json())
       .then((data) => {
-        setFishes(data.fishes)
+        setFishes(data.fishes);
       },
       (error) => {
           console.log(error);
           const errData = {
-          }
-      })
+          };
+      });
   }, []);
 
     return (

@@ -54,4 +54,4 @@ export const RouterConfig:React.VFC =() => {
       </BrowserRouter>
     </>
   );
-}
+};
