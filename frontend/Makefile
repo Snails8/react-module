@@ -32,10 +32,13 @@ front-app:
 # =======================================================
 # yarn cmd
 # =======================================================
-yarn:
+yarn-install:
+	docker-compose exec ${CONTAINER_NAME} yarn install
+
+yarn-start:
 	docker-compose exec ${CONTAINER_NAME} yarn start
 
-build:
+yarn-build:
 	docker-compose exec ${CONTAINER_NAME} yarn build
 
 add:
