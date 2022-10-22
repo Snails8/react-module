@@ -1,12 +1,9 @@
 import React from "react";
 import { useEffect, useState } from 'react';
 
-import {
-  Fish,
-} from '../../hooks';
-import { Link, useLocation } from "react-router-dom";
-import { FishesTable } from "../../components/organisms/FishesTable/FishTable";
-import { Layout } from "../../components/templates/_Layout/Layout";
+import {Fish,} from '../../hooks';
+import { FishesTemplate } from "../../components/templates/FishesTemplate/FishesTemplate";
+import { useLocation } from "react-router-dom";
 
 export const Fishes:React.FC = () => {
   const location = useLocation();
@@ -37,18 +34,9 @@ export const Fishes:React.FC = () => {
       });
   }, []);
 
-    return (
-        <>
-          <Layout isContainerDesign={true}>
-          {isSave?.isSave === true ?
-            <h5>成功</h5> : ''
-          }
-          <FishesTable 
-            fishes={fishes}
-          />
-          <Link to="/fishes/create">作成</Link>
-          
-          </Layout>
-        </>
-    );
+  return (
+    <>
+      <FishesTemplate fishes={fishes}/>
+    </>
+  );
 };
