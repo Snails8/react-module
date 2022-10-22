@@ -20,6 +20,7 @@ import { DownloadCSVExcel } from "./pages/_Sample/DownloadCSVExcel/DownloadCSVEx
 import { UseCallBackPage } from "./pages/_Inspect/UseCallBackPage/UseCallBackPage";
 import { MemoPage } from "./pages/_Inspect/MemoPage/MemoPage";
 import { Dashboard } from "./pages/Dashboard/Dashboard";
+import { Inspect } from "./pages/_Inspect/Inspect";
 
 
 export const RouterConfig:React.VFC =() => {
@@ -50,6 +51,7 @@ export const RouterConfig:React.VFC =() => {
           <Route path="child-tab" element={<ChildTabPage />} />  
           <Route path="atoms" element={<Atoms />} />
           <Route path="download-file" element={<DownloadCSVExcel />} />
+          <Route path="inspects" element={<Inspect />} />
         </Routes>
       </BrowserRouter>
     </>

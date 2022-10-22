@@ -9,6 +9,11 @@ export const Sidebar = () => {
     <div className={styles.container}>
       <Link to="/training">
         <div className={ styles.sidebar_item }>
+          <div className={ styles.sidebar_text} >React等 調査・検証</div>
+        </div>
+      </Link>
+      <Link to="/training">
+        <div className={ styles.sidebar_item }>
           <div className={ styles.sidebar_text} >training</div>
         </div>
       </Link>
@@ -42,7 +47,7 @@ export const Sidebar = () => {
           <div className={ styles.sidebar_text} >フォーム検証</div>
         </div>
       </Link>
-      <div className={styles.sidebar_item} onClick={() => setClickStatePage}>
+      <div className={styles.sidebar_item} onClick={() => setClickStatePage(true)}>
         <div className={ styles.sidebar_item }>
           <div className={ styles.sidebar_text} >hooks検証</div>
         </div>
