@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout } from "../components/templates/_Layout/Layout";
+import { Layout } from "../../../components/templates/_Layout/Layout";
 
 type Props = {
   Message: string 

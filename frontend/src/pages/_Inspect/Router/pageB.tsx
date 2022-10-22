@@ -1,6 +1,6 @@
 import React from "react";
 import { useSearchParams } from "react-router-dom";
-import { Layout } from "../components/templates/_Layout/Layout";
+import { Layout } from "../../../components/templates/_Layout/Layout";
 
 export const SamplePage2:React.FC =() => {
     const [searchParams] = useSearchParams();

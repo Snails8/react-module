@@ -1,5 +1,5 @@
 import { memo, useState } from "react";
-import { Layout } from "../../components/templates/_Layout/Layout";
+import { Layout } from "../../../components/templates/_Layout/Layout";
 
 export const MemoPage = () => {
   return (

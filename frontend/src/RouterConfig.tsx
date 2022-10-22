@@ -1,24 +1,24 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { SamplePage2 } from "./pages/pageB";
+import { SamplePage2 } from "./pages/_Inspect/Router/pageB";
 
 import { Training } from "./pages/Training/Training";
 import { NotFound } from "./pages/NotFound/notFound";
-import { SamplePage3 } from "./pages/pageC";
-import { SamplePage4, SamplePage4Child1, SamplePage4Child2, SamplePage4Child3 } from "./pages/pageD";
+import { SamplePage3 } from "./pages/_Inspect/Router/pageC";
+import { SamplePage4, SamplePage4Child1, SamplePage4Child2, SamplePage4Child3 } from "./pages/_Inspect/Router/pageD";
 import { Users } from "./pages/Users/Users";
-import { ChildTabPage } from "./pages/Tabs/ChildTab";
-import { ParentTabPage } from "./pages/Tabs/ParentTab";
+import { ChildTabPage } from "./pages/_Sample/Tabs/ChildTab";
+import { ParentTabPage } from "./pages/_Sample/Tabs/ParentTab";
 import { UserCreate } from "./pages/UserCreate/UserCreate";
-import { StatePage } from "./pages/StatePage/StatePage";
-import { FormPage } from "./pages/FormPage/FormPage";
+import { StatePage } from "./pages/_Inspect/StatePage/StatePage";
+import { FormPage } from "./pages/_Sample/FormPage/FormPage";
 import { Fishes } from "./pages/Fishes/FishesPage";
-import { UseMemoPage } from "./pages/UseMemoPage/UseMemoPage";
-import { Atoms } from "./pages/Atoms/Atoms";
-import { DownloadCSVExcel } from "./pages/DownloadCSVExcel/DownloadCSVExcel";
-import { UseCallBackPage } from "./pages/UseCallBackPage/UseCallBackPage";
-import { MemoPage } from "./pages/MemoPage/MemoPage";
+import { UseMemoPage } from "./pages/_Inspect/UseMemoPage/UseMemoPage";
+import { Atoms } from "./pages/_Sample/Atoms/Atoms";
+import { DownloadCSVExcel } from "./pages/_Sample/DownloadCSVExcel/DownloadCSVExcel";
+import { UseCallBackPage } from "./pages/_Inspect/UseCallBackPage/UseCallBackPage";
+import { MemoPage } from "./pages/_Inspect/MemoPage/MemoPage";
 import { Dashboard } from "./pages/Dashboard/Dashboard";
 
 

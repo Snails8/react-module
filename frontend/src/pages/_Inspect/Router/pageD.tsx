@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Outlet, Link, useNavigate, useParams, NavLink} from "react-router-dom";
-import { Layout } from "../components/templates/_Layout/Layout";
+import { Layout } from "../../../components/templates/_Layout/Layout";
 
 export const SamplePage4:FC = () => {
     const active = {

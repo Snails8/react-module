@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { CheckBox } from "../../components/atoms/Checkbox/Checkbox";
-import { InputText } from "../../components/atoms/InputText/InputText";
-import { Layout } from "../../components/templates/_Layout/Layout";
+import { CheckBox } from "../../../components/atoms/Checkbox/Checkbox";
+import { InputText } from "../../../components/atoms/InputText/InputText";
+import { Layout } from "../../../components/templates/_Layout/Layout";
 import styles from "./FormPage.module.css";
 
 export const FormPage:React.FC = () => {

@@ -1,6 +1,6 @@
 import React from "react";
-import { Layout } from "../../components/templates/_Layout/Layout";
-import { useTestUseEffect } from "../../hooks/useTestUseEffect";
+import { Layout } from "../../../components/templates/_Layout/Layout";
+import { useTestUseEffect } from "../../../hooks/useTestUseEffect";
 import { useCounter } from "./useCounter.hooks";
 import { useReload } from "./useReload.hooks";
 

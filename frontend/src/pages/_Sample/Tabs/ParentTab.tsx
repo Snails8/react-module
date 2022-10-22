@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Layout } from "../../components/templates/_Layout/Layout";
+import { Layout } from "../../../components/templates/_Layout/Layout";
 
 export const ParentTabPage:React.FC =() => {
     const [message, setMessage] = useState('message');
