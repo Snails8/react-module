@@ -7,7 +7,7 @@ ARG := $1
 # =======================================================
 up:
 	docker-compose up -d --build
-	make yarn
+	make yarn-start
 
 down:
 	docker compose down
