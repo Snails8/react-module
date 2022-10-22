@@ -2,11 +2,12 @@
   align-items: center;
   color: white;
   background-color: black;
-  font-size: xx-large;  /* 文字 大きさ */
-  padding-left: 20px;  /* 文字 左の余白を追加*/
   display: flex;
+  position: fixed;
   height: var(--global-header-height);
   width: 100%;
+  padding-left: 20px;  /* 文字 左の余白を追加*/
+  font-size: xx-large;  /* 文字 大きさ */
 }
 
 .logo_container {
