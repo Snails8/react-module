@@ -15,9 +15,7 @@ export const AtomsTemplate = () => {
 
       <div className={styles.content}>
         <h5>button</h5>
-        <Button label="label" color="red" width={100} height={25}
-          handleClick={() => console.log('clicked')}
-        />
+        <Button label="label" colorType='primary' width={100} height={25} handleClick={() => console.log('clicked')}/>
       </div>
 
       <div className={styles.content}>
