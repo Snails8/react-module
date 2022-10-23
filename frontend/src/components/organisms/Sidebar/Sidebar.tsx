@@ -1,17 +1,18 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { Link } from "react-router-dom";
-
 import styles from './Sidebar.module.css';
 
-export const Sidebar = () => {
-  const [clickStatePage, setClickStatePage] = useState(false);
+type SidebarProps = {
+  currentPath?: string
+}
+
+export const Sidebar = memo((props: SidebarProps) => {
+  const currentPath = location.pathname;
+  const [clickStatePage, setClickStatePage] = useState(currentPath.startsWith('/inspects'));
+  const [clickSamplePage, setClickSamplePage] = useState(currentPath.startsWith('/samples'));
+  
   return (
     <div className={styles.container}>
-      <Link to="/training">
-        <div className={ styles.sidebar_item }>
-          <div className={ styles.sidebar_text} >React等 調査・検証</div>
-        </div>
-      </Link>
       <Link to="/training">
         <div className={ styles.sidebar_item }>
           <div className={ styles.sidebar_text} >training</div>
@@ -22,36 +23,23 @@ export const Sidebar = () => {
           <div className={ styles.sidebar_text} >fishes</div>
         </div>
       </Link>
-      <Link to="/page2">
-        <div className={ styles.sidebar_item }>
-          <div className={ styles.sidebar_text} >page2</div>
-        </div>
-      </Link>
-      <Link to="/page3">
-        <div className={ styles.sidebar_item }>
-          <div className={ styles.sidebar_text} >page3</div>
-        </div>
-      </Link>
-      <Link to="/page4">
-        <div className={ styles.sidebar_item }>
-          <div className={ styles.sidebar_text} >page4</div>
-        </div>
-      </Link>
       <Link to="/atoms">
         <div className={ styles.sidebar_item }>
-          <div className={ styles.sidebar_text} >atom・component検証</div>
+          <div className={ styles.sidebar_text} >atoms 検証</div>
         </div>
       </Link>
-      <Link to="/form">
+      <Link to="/users">
         <div className={ styles.sidebar_item }>
-          <div className={ styles.sidebar_text} >フォーム検証</div>
+          <div className={ styles.sidebar_text} >ユーザー管理</div>
         </div>
       </Link>
-      <div className={styles.sidebar_item} onClick={() => setClickStatePage(true)}>
-        <div className={ styles.sidebar_item }>
-          <div className={ styles.sidebar_text} >hooks検証</div>
+      <Link to="/inspects">
+        <div className={styles.sidebar_item} onClick={() => setClickStatePage(!clickStatePage)}>
+          <div className={ styles.sidebar_item }>
+            <div className={ styles.sidebar_text} >hooks検証</div>
+          </div>
         </div>
-      </div>
+      </Link>
       { clickStatePage &&
         <div>
           <Link to="/memo">
@@ -76,21 +64,32 @@ export const Sidebar = () => {
           </Link>
         </div>
       }
-      <Link to="/parent-tab">
-        <div className={ styles.sidebar_item }>
-          <div className={ styles.sidebar_text} >タブ間通信検証</div>
+      <Link to="/samples">
+        <div className={styles.sidebar_item} onClick={() => setClickStatePage(!clickSamplePage)}>
+          <div className={ styles.sidebar_item }>
+            <div className={ styles.sidebar_text} >実装 sample</div>
+          </div>
         </div>
       </Link>
-      <Link to="/users">
-        <div className={ styles.sidebar_item }>
-          <div className={ styles.sidebar_text} >ユーザー管理</div>
+      { clickSamplePage && 
+        <div>
+          <Link to="/form">
+            <div className={ styles.sidebar_item }>
+              <div className={ styles.sidebar_text} >フォーム検証</div>
+            </div>
+          </Link>
+          <Link to="/parent-tab">
+            <div className={ styles.sidebar_item }>
+              <div className={ styles.sidebar_text} >タブ間通信検証</div>
+            </div>
+          </Link>
+          <Link to="/download-file">
+            <div className={ styles.sidebar_item }>
+              <div className={ styles.sidebar_text} >CSV・Excel 関連</div>
+            </div>
+          </Link>
         </div>
-      </Link>
-      <Link to="/download-file">
-        <div className={ styles.sidebar_item }>
-          <div className={ styles.sidebar_text} >CSV・Excel 関連</div>
-        </div>
-      </Link>
+      }
     </div>
   );
-};
+});
