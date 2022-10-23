@@ -39,7 +39,7 @@ export const useFishes = () => {
             const errData = {
             };
         });
-    }, [])
+    }, []);
 
     return {
         fishes: fishes
