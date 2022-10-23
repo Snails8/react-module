@@ -14,8 +14,6 @@ export const Dashboard: React.FC = () => {
       .then(res => res.json() )
       .then(data => {setMessage(data);});
     }, []);
-  
-    console.log(message);
 
     const navigate = useNavigate();
 
@@ -38,7 +36,6 @@ export const Dashboard: React.FC = () => {
                 <li><Link to="page4">Sample Page4</Link></li>
               </ul>
 
-              {Math.round(123.456 * 100) /100 }
               <button onClick={() => navigate("page1")}>SamplePage1</button>
             </nav>  
           </Layout>
