@@ -1,10 +1,9 @@
-import React from "react";
-import { Layout } from "../../components/templates/_Layout/Layout";
+import { TrainingTemplate } from "../../components/templates/TrainingTemplate/TrainingTemplate";
 
-export const Training:React.FC = () => {
+export const Training = () => {
+  const trainingData = require( "../../hooks/Json/Training.json");
+  
   return (
-    <Layout isContainerDesign={true}>
-      <h3>Sample Page 1</h3>
-    </Layout>
+    <TrainingTemplate trainingData={trainingData}/>
   );
 };
