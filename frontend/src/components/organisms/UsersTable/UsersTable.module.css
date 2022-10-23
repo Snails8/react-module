@@ -19,12 +19,12 @@
 /* -------- body --------------*/
 .table_row {
     background-color: #fff;
-    border-top: 1px solid var(--di-table-border-color);
+    border-top: 1px solid #ccc;
     cursor: auto;
     height: 40px;
 }
 .table_row:hover {
-  background-color: var(--di-table-body-bg-hover-color);
+  background-color: #fafafa;
 }
 
 /* 中央に揃える */
