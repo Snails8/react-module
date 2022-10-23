@@ -4,6 +4,6 @@ export const Training = () => {
   const trainingData = require( "../../hooks/Json/Training.json");
   
   return (
-    <TrainingTemplate trainingData={trainingData}/>
+    <TrainingTemplate trainingData={trainingData.training}/>
   );
 };
