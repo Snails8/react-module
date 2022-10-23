@@ -1,6 +1,6 @@
 import { Button } from '../../atoms/Button/Button';
 import { CheckBox } from '../../atoms/Checkbox/Checkbox';
-import { InputText } from '../../atoms/InputText/InputText';
+import { Input } from '../../atoms/Input/Input';
 import { Label } from '../../atoms/Label/Label';
 import { LoadingSpinner } from '../../atoms/LoadingSpinner/LoadingSpiner';
 import { RadioButton } from '../../atoms/RadioButton/RadioButton';
@@ -36,7 +36,7 @@ export const AtomsTemplate = () => {
 
       <div className={styles.content}>
         <h5>input text</h5>
-        <InputText
+        <Input
           type='text'
           id='text'
           defaultValue='sample'

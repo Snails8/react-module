@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { InputText } from "../../atoms/InputText/InputText";
+import { Input } from "../../atoms/Input/Input";
 
 import styles from "./UserCreateForm.module.css";
 
@@ -45,7 +45,7 @@ export const UserCreateForm:React.FC = () => {
         <div className={`${styles.form_item}`}>
           <div className={`${styles.container_inner}`}>
               <span className={`${styles.form_label}`}>名前</span>
-                  <InputText
+                  <Input
                       type="text"
                       id="name"
                       defaultValue={name}
@@ -62,7 +62,7 @@ export const UserCreateForm:React.FC = () => {
         <div className={`${styles.form_item}`}>
           <div className={`${styles.container_inner}`}>
               <span className={`${styles.form_label}`}>メール</span>
-                  <InputText
+                  <Input
                       type="email"
                       id="email"
                       defaultValue={email}
