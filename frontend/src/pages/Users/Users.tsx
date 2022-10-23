@@ -1,33 +1,13 @@
-import UsersJson from "./../../hooks/Json/Users.json";
+
 import { UsersTemplate } from "../../components/templates/UsersTemplate/UsersTemplate";
+import { useUsers } from "../../hooks";
 
-export const Users:React.FC = () => {
-
-  // TODO::コンパイルを通すため一時的にany
-  // 解消方法はfetch の型がany になってしまうのでその修正
-  // const users = useUsers();
-  // const [users, setUsers] = useState<User[]>([]);
-  
-  // useEffect(() => {
-  //     fetch('http://localhost:7001/api/v1/users',{
-  //         method: 'GET'
-  //     })
-  //     .then(res => res.json())
-  //     .then((data) => {
-  //       setUsers(data.users)
-  //     },
-  //     (error) => {
-  //         console.log(error);
-  //         const errData = {
-  //         }
-  //     })
-  // }, [])
-
-  const users = UsersJson.users;
+export const Users = () => {
+  const users = useUsers();
 
   return (
     <>
-      <UsersTemplate users={users} />
+      <UsersTemplate users={users.users} />
     </>
   );
 };

@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-
+import { useCallback, useEffect, useState } from 'react';
+import UsersJson from "./Json/Users.json";
 import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from "axios";
 export interface User {
     /**
@@ -32,45 +32,75 @@ export enum UserRole  {
 };
 
 export const useUsers = () => {
-    const [users, setUsers] = useState<User[]>([]);
+  const users = process.env.IS_BACKEND ? getUsersFromAPI() : getUsersFromJson();
 
-    useEffect(() => {
-        // const url = 'http://localhost:7001/api/v1/users'
-        // const options: AxiosRequestConfig = {
-        //     url: url,
-        //     method: "GET"
-        // }
-
-        // axios(options)
-        //     .then((res: AxiosResponse<User[]>) => {
-        //         const {data, status} = res
-        //         setUsers(data)
-
-        //         // data.map((user) => {
-        //         //     const userdata = {name: user.name, id: user.id}
-        //         //     users.push(userdata)
-        //         // })
-        //         // setUsers(users)
-        //     })
-        //     .catch((e: AxiosError<{ error: string }>) => {
-        //         console.log(e.message);
-        //     });
-
-        fetch('http://localhost:7001/api/v1/users',{
-            method: 'GET'
-        })
-        .then(res => res.json())
-        .then((data) => {
-            setUsers(data);
-        },
-        (error) => {
-            console.log(error);
-            const errData = {
-            };
-        });
-    }, []);
-
-    return {
-        users: users
-    };
+  return {
+    users: users
+  };
 };
+
+const getUsersFromJson = (): User[] => {
+  return UsersJson.users;
+};
+
+const getUsersFromAPI = ():User[] => {
+  const [users, setUsers] = useState<User[]>([]);
+
+  useEffect(() => {
+    // const url = 'http://localhost:7001/api/v1/users'
+    // const options: AxiosRequestConfig = {
+    //     url: url,
+    //     method: "GET"
+    // }
+
+    // axios(options)
+    //     .then((res: AxiosResponse<User[]>) => {
+    //         const {data, status} = res
+    //         setUsers(data)
+
+    //         // data.map((user) => {
+    //         //     const userdata = {name: user.name, id: user.id}
+    //         //     users.push(userdata)
+    //         // })
+    //         // setUsers(users)
+    //     })
+    //     .catch((e: AxiosError<{ error: string }>) => {
+    //         console.log(e.message);
+    //     });
+
+    fetch('http://localhost:7001/api/v1/users',{
+        method: 'GET'
+    })
+    .then(res => res.json())
+    .then((data) => {
+        setUsers(data);
+    },
+    (error) => {
+        console.log(error);
+        const errData = {
+        };
+    });
+  }, []);
+
+  return users;
+};
+
+  // TODO::コンパイルを通すため一時的にany
+  // 解消方法はfetch の型がany になってしまうのでその修正
+  // const users = useUsers();
+  // const [users, setUsers] = useState<User[]>([]);
+  
+  // useEffect(() => {
+  //     fetch('http://localhost:7001/api/v1/users',{
+  //         method: 'GET'
+  //     })
+  //     .then(res => res.json())
+  //     .then((data) => {
+  //       setUsers(data.users)
+  //     },
+  //     (error) => {
+  //         console.log(error);
+  //         const errData = {
+  //         }
+  //     })
+  // }, [])
