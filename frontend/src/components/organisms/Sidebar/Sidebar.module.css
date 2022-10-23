@@ -8,7 +8,7 @@
   z-index: 100;
 }
 
-.sidebar_item {
+.link_container {
   align-items: center;
   cursor: pointer;
   display: flex;
@@ -18,15 +18,11 @@
   width: 176px;
 }
 
-.sidebar_item :hover {
+.link_container :hover {
   background-color: #a0a0a0;
 }
 
-.sidebar_item :active {
-  background-color: #a0a0a0;
-}
-
-.selected_color {
+.link_container :active {
   background-color: #a0a0a0;
 }
 
@@ -34,7 +30,12 @@
   background-color: #a0a0a0;
 }
 
-.sidebar_text {
+.selected_color {
+  background-color: #a0a0a0;
+}
+
+/* ---- label ---- */
+.label {
   color: black;
   font-size: 20px;
 }
