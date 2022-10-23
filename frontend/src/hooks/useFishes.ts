@@ -32,16 +32,16 @@ export const useFishes = () => {
         })
         .then(res => res.json())
         .then((data) => {
-            setFishes(data)
+            setFishes(data);
         },
         (error) => {
             console.log(error);
             const errData = {
-            }
-        })
+            };
+        });
     }, [])
 
     return {
         fishes: fishes
-    }
-}
+    };
+};
