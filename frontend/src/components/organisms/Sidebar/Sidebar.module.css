@@ -4,7 +4,7 @@
   position: fixed;
   height: 100%;
   width: var(--sidebar-padding-left);
-  top: 70px; /** global-headerとの調整 */
+  top: var(--global-header-height); /** global-headerとの調整 */
   z-index: 100;
 }
 
@@ -15,7 +15,6 @@
   height: 56px;
   padding-left: 24px;
   transition: background-color 0.3s ease-out;
-  width: 176px;
 }
 
 .link_container :hover {
@@ -26,16 +25,13 @@
   background-color: #a0a0a0;
 }
 
-.selected_color {
-  background-color: #a0a0a0;
-}
-
-.selected_color {
-  background-color: #a0a0a0;
-}
-
 /* ---- label ---- */
 .label {
   color: black;
   font-size: 20px;
+}
+
+/* link */
+.link {
+  text-decoration: none; /** link下線 の表示をなしに */
 }
