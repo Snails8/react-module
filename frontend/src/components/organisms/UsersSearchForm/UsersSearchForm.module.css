@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  margin: 30px 0;
+}
+
+/* ----- input ------- */
+.input_container {
+  align-items: flex-end;
+  display: flex;
+}
+
+.input {
+  margin-right: 16px;
+  display:flex;
+  flex-flow: column; /** 縦並びに */
+}
+
+/* ------ checkbox -------- */
+.checkbox_container {
+  margin-left: 30px;
+  margin-top: 25px; /** inputとの調整 */
+}
+
+.checkbox {
+  margin-right: 25px;
+}
+
+/* ------ button -------- */
+.button_container {
+  margin-left: 30px;
+  margin-top: 25px;
+}
