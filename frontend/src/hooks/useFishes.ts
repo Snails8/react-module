@@ -1,9 +1,18 @@
 import { useEffect, useState } from 'react';
 import FishData from "./Json/Fishes.json";
 
+export enum habitatType  {
+  River = 'river',
+  Sea = 'sea'
+};
+
+export enum eatType  {
+  Omnivorous = 'omnivorous',
+  Carnivorous = 'carnivorous'
+};
+
 export interface Fish {
     /**
-     * 
      * @type {number}
      * @memberof Fish
      */
@@ -44,18 +53,18 @@ const getFishesFromAPI = (): Fish[] => {
   const [fishes, setFishes] = useState<Fish[]>([]);
 
   useEffect(() => {
-      fetch('http://localhost:7001/api/v1/fishes',{
-          method: 'GET'
-      })
-      .then(res => res.json())
-      .then((data) => {
-          setFishes(data);
-      },
-      (error) => {
-          console.log(error);
-          const errData = {
-          };
-      });
+    fetch('http://localhost:7001/api/v1/fishes',{
+        method: 'GET'
+    })
+    .then(res => res.json())
+    .then((data) => {
+        setFishes(data);
+    },
+    (error) => {
+        console.log(error);
+        const errData = {
+        };
+    });
   }, []);
 
   return fishes;

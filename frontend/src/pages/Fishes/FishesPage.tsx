@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from 'react';
 
-import {Fish,} from '../../hooks';
+import {Fish, useFishes,} from '../../hooks';
 import { FishesTemplate } from "../../components/templates/FishesTemplate/FishesTemplate";
 import { useLocation } from "react-router-dom";
 
@@ -18,21 +18,7 @@ export const Fishes:React.FC = () => {
     }
   },[]);
 
-  const [fishes, setFishes] = useState<Fish[]>([]);  
-  useEffect(() => {
-      fetch('http://localhost:7001/api/v1/fishes',{
-          method: 'GET'
-      })
-      .then(res => res.json())
-      .then((data) => {
-        setFishes(data.fishes);
-      },
-      (error) => {
-          console.log(error);
-          const errData = {
-          };
-      });
-  }, []);
+  const fishes = useFishes().fishes;
 
   return (
     <>
