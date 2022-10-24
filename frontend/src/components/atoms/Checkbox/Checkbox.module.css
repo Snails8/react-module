@@ -4,19 +4,21 @@
 }
 
 .checkbox {
-  height: 15px;
+  height: 20px;
   width: 15px;
   margin: 0;
-
   border-color: #acacac;
   border-radius: 1px;
   border-style: solid;
   border-width: 1px;
-
   display: block;
-
+}
+.checkbox:checked {
+  background-color: #245fb3;
+  border-color: #245fb3;
 }
 
 .label {
+  margin-left: 8px;
   cursor: pointer;
 }
