@@ -1,11 +1,14 @@
 import React from "react";
-import { UserCreateTemplate } from "../../components/templates/UserCreate/UserCreateTemplate";
+import { UserCreateForm } from "../../components/organisms/UserCreateForm/UserCreateForm";
+import { Layout } from "../../components/templates/_Layout/Layout";
 
-export const UserCreate:React.FC = () => {
+export const UserCreate = () => {
 
   return (
     <>
-      <UserCreateTemplate />
+      <Layout isContainerDesign={true}>
+        <UserCreateForm />  
+      </Layout>
     </>
   );
 };
