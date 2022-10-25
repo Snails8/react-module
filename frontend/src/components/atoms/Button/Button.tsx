@@ -9,7 +9,7 @@ type ButtonProps = {
   height: number
   margin?: number
   disabled?: boolean
-  handleClick: () => void; 
+  handleClick: any; 
 }
 
 export const Button = memo((props: ButtonProps) => {

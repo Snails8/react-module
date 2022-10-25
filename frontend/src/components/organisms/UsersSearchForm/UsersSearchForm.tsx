@@ -1,4 +1,5 @@
 import { memo } from "react";
+import { User } from "../../../hooks";
 import { Button } from "../../atoms/Button/Button";
 import { CheckBox } from "../../atoms/Checkbox/Checkbox";
 import { Input } from "../../atoms/Input/Input";
@@ -7,7 +8,7 @@ import styles from "./UsersSearchForm.module.css";
 type UsersSearchFormProps = {
   inputUserNameHandler: (value: string) => void
   checkHandler: (checked: boolean) => void
-  handleClick: () => void
+  handleClick: (user: User) => void
 }
 
 export const UsersSearchForm = memo((props: UsersSearchFormProps) => {
