@@ -13,7 +13,20 @@ const reducer = (state = initialState) => {
 };
 
 // reducerを分割する
-const countReducer = (state = {count: 50}) => {
+const countReducer = (state = {count: 50}, action: any) => {
+  switch (action.type) {
+    case 'INCREASE_COUNT':
+      return {
+        count: state.count + 1,
+      };
+    case 'DECREASE_COUNT':
+      return {
+        count: state.count - 1,
+      };
+    default:
+      return state;
+  }
+
   return state;
 };
 
@@ -30,6 +43,7 @@ const postReducer = (
 ) => {
   return state;
 };
+
 
 const rootReducer = combineReducers({
   countReducer,
