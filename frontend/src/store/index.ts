@@ -3,10 +3,7 @@ import { createStore, combineReducers } from "redux";
 // 同じObjectで定義
 const initialState = {
   count: 1,
-  posts: [
-    {id: 1, title: "redux"},
-    {id: 2, title: "redux sample"}
-  ]
+  posts: []
 };
 const reducer = (state = initialState) => {
   return state;
@@ -30,18 +27,13 @@ const countReducer = (state = {count: 50}, action: any) => {
   return state;
 };
 
-const postReducer = (
-  state = {
-    posts: [
-      { id: 1, title: 'Reduxについて' },
-      {
-        id: 2,
-        title: 'ReduxのHooksについて',
-      },
-    ],
+const postReducer = (state = {posts: []}, action: any) => {
+  switch (action.type) {
+    case 'GET_POST_DATA':
+      return { ...state, posts: action.payload };
+    default:
+      return state;
   }
-) => {
-  return state;
 };
 
 
