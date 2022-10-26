@@ -23,6 +23,7 @@ import { Dashboard } from "./pages/Dashboard/Dashboard";
 import { Inspect } from "./pages/_Inspect/Inspect";
 import { Sample } from "./pages/_Sample/Sample";
 import { ReduxPage } from "./pages/_Inspect/ReduxPage/ReduxPage";
+import { ReduxTestPage } from "./pages/_Inspect/ReduxPage/ReduxTestPage";
 
 
 export const RouterConfig:React.VFC =() => {
@@ -56,6 +57,7 @@ export const RouterConfig:React.VFC =() => {
           <Route path="inspects" element={<Inspect />} />
           <Route path="samples" element={<Sample />} />
           <Route path="redux" element={<ReduxPage />} />
+          <Route path="redux/test" element={<ReduxTestPage />} />
         </Routes>
       </BrowserRouter>
     </>
