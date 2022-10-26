@@ -22,6 +22,7 @@ import { MemoPage } from "./pages/_Inspect/MemoPage/MemoPage";
 import { Dashboard } from "./pages/Dashboard/Dashboard";
 import { Inspect } from "./pages/_Inspect/Inspect";
 import { Sample } from "./pages/_Sample/Sample";
+import { ReduxPage } from "./pages/_Inspect/ReduxPage/ReduxPage";
 
 
 export const RouterConfig:React.VFC =() => {
@@ -54,6 +55,7 @@ export const RouterConfig:React.VFC =() => {
           <Route path="download-file" element={<DownloadCSVExcel />} />
           <Route path="inspects" element={<Inspect />} />
           <Route path="samples" element={<Sample />} />
+          <Route path="redux" element={<ReduxPage />} />
         </Routes>
       </BrowserRouter>
     </>
