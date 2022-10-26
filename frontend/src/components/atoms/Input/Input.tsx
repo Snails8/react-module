@@ -4,7 +4,7 @@ import styles from "./Input.module.css";
 type InputProps = {
   type:         string
   id:           string
-  defaultValue?: string
+  defaultValue?: string | number
   required?:     boolean
   width:        number
   height:       number
