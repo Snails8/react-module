@@ -8,17 +8,25 @@ type ReduxPageProps = {
 }
 export const ReduxPage = () => {
   
-  const count = useSelector((state: any) => state.count);
+  const count = useSelector((state: any) => state.countReducer.count);
+  const posts = useSelector((state: any) => state.postReducer.posts);
   return (
     <Layout isContainerDesign={true}>
       <div>
         <h2>Learn Redux</h2>
-        <h3>直接アクセスだけする</h3>
-        <p>Count: {store.getState().count}</p>
+        <h3>storeへのアクセス</h3>
+        <p>直接アクセスだけする Count: {store.getState().countReducer.count}</p>
 
         {/* <p>connectでgetしたcount：{count}</p> */}
 
         <p>hooksを使ってstoreにアクセス count: {count}</p>
+        
+        <h3>storeへのアクセス(配列)</h3>
+        <ul>
+          {posts.map((post: any) => (
+            <li key={post.id}>{post.title}</li>
+          ))}
+        </ul>
       </div>
     </Layout>
   );
