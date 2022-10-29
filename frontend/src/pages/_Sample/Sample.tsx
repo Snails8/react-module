@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Layout } from "../../components/templates/_Layout/Layout";
 
 /**
@@ -8,6 +9,9 @@ export const Sample = () => {
   return (
     <Layout isContainerDesign={true}>
       route管理が二重になるのはめんどい。sidebar うまいこと利用したい
+      <ul>
+        <li><Link to="/samples/upload-file">ファイルアップロード</Link></li>
+      </ul>
     </Layout>
   );
 };
