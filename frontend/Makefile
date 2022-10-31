@@ -1,9 +1,17 @@
 DC := docker-compose exec front-app
 CONTAINER_NAME := front-app
 ARG := $1
+# ======================================================
+# docker cmd
+# ======================================================
+system-prune: # remove unused docker obj
+	docker system prune
+
+image-prune: # remove unused docker imgae
+	docker image prune
 
 # =======================================================
-# docker cmd
+# docker-compose cmd
 # =======================================================
 up:
 	docker-compose up -d --build
@@ -28,6 +36,7 @@ ps:
 
 front-app:
 	docker-compose exec ${CONTAINER_NAME} /bin/ash
+
 
 # =======================================================
 # yarn cmd
