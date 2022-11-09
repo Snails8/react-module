@@ -11,10 +11,11 @@ type InputProps = {
   padding:      number
   onChangeHandler: (value: string) => void
   onBlurHandler?: () => void
+  disabled?: boolean
 }
 
 export const Input = memo((props: InputProps) => {
-  const {type, id, defaultValue='', required=false, width, height, padding, onChangeHandler, onBlurHandler=() => {}} = props;
+  const {type, id, defaultValue='', required=false, width, height, padding, onChangeHandler, onBlurHandler=() => {}, disabled=false} = props;
   return (
     <input 
       className={styles.input} 
@@ -29,6 +30,7 @@ export const Input = memo((props: InputProps) => {
       onBlur={() => {
         onBlurHandler();
       }}
+      disabled={disabled}
     />
   );
 });
