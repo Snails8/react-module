@@ -2,7 +2,7 @@ import { memo } from "react";
 import styles from "./Button.module.css";
 
 type ButtonColor = "primary" | "tertiary";
-type ButtonProps = {
+export type ButtonProps = {
   label: string
   colorType: ButtonColor
   width: number
