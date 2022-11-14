@@ -34,7 +34,7 @@ destroy:
 ps:
 	docker-compose ps
 
-front-app:
+exec-app:
 	docker-compose exec ${CONTAINER_NAME} /bin/ash
 
 
@@ -52,6 +52,9 @@ yarn-build:
 
 add:
 	docker-compose exec ${CONTAINER_NAME} yarn add ${ARG}
+
+build-storybook:
+	docker-compose exec ${CONTAINER_NAME} yarn build-storybook
 
 storybook:
 	docker-compose exec ${CONTAINER_NAME} yarn storybook
