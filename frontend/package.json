@@ -36,7 +36,8 @@
     "eject": "react-scripts eject",
     "generate:api-client": "docker run --rm -v \"${PWD}/..:/local\" openapitools/openapi-generator-cli:v5.1.1 generate -i /local/openapi/test.yaml -g typescript-fetch -o /local/frontend/src/api-client --additional-properties=typescriptThreePlus=true",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "format": "prettier --write src/**/*.{js,ts,tsx}"
   },
   "eslintConfig": {
     "extends": [
@@ -88,6 +89,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.31.10",
     "http-proxy-middleware": "^2.0.6",
+    "prettier": "2.7.1",
     "prop-types": "^15.8.1",
     "webpack": "^5.74.0",
     "yarn": "^1.22.19"
