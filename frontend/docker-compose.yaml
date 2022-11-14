@@ -20,3 +20,11 @@ services:
 # networks:
 #   api:
 #     external: true
+  storybook:
+    build: .
+    ports:
+      - 6006:6006
+    volumes:
+      - /app/node_modules
+      - .:/app
+    command: yarn storybook
