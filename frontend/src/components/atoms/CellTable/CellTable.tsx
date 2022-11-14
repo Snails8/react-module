@@ -25,6 +25,6 @@ export const CellTable = () => {
         <td className="value1" id="B4"></td>
         <td className="value1" id="B5"></td>
       </tr>
-      </table>
-  )
-}
+    </table>
+  );
+};

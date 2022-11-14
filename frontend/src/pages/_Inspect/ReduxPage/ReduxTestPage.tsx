@@ -1,12 +1,12 @@
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import { Layout } from "../../../components/templates/_Layout/Layout";
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { Layout } from '../../../components/templates/_Layout/Layout';
 
 type Post = {
-  id: number
-  title: string
-}
+  id: number;
+  title: string;
+};
 export const ReduxTestPage = () => {
   // const [posts, setPosts] = useState([]);
 
@@ -19,13 +19,13 @@ export const ReduxTestPage = () => {
       const data = await res.json();
       // setPosts(data);
       dispatch({
-        type: "GET_POST_DATA",
+        type: 'GET_POST_DATA',
         payload: data,
       });
-    };;
+    };
 
     getPosts();
-  },[dispatch]);
+  }, [dispatch]);
 
   return (
     <Layout isContainerDesign={true}>

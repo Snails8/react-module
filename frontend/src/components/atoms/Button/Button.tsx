@@ -1,20 +1,27 @@
-import { memo } from "react";
-import styles from "./Button.module.css";
+import { memo } from 'react';
+import styles from './Button.module.css';
 
-type ButtonColor = "primary" | "tertiary";
+type ButtonColor = 'primary' | 'tertiary';
 export type ButtonProps = {
-  label: string
-  colorType: ButtonColor
-  width: number
-  height: number
-  margin?: number
-  disabled?: boolean
-  handleClick: any; 
-}
+  label: string;
+  colorType: ButtonColor;
+  width: number;
+  height: number;
+  margin?: number;
+  disabled?: boolean;
+  handleClick: any;
+};
 
 export const Button = memo((props: ButtonProps) => {
-  const {label, colorType, width, height, margin=0, disabled=false, handleClick} = props;
-
+  const {
+    label,
+    colorType,
+    width,
+    height,
+    margin = 0,
+    disabled = false,
+    handleClick,
+  } = props;
 
   let color, backgroundColor, borderColor;
   switch (colorType) {
@@ -22,21 +29,29 @@ export const Button = memo((props: ButtonProps) => {
       color = '';
       backgroundColor = '#f8f4f4';
       borderColor = '#cecece';
-    break;
+      break;
     case 'primary':
       color = '#fff';
       backgroundColor = '#3e81ce';
       borderColor = '#fff';
-    break;
+      break;
   }
 
-
   return (
-    <button 
+    <button
       className={styles.button}
-      style={{ backgroundColor: backgroundColor, color: color, width: width, height: height, marginTop: margin, borderColor: borderColor }}
+      style={{
+        backgroundColor: backgroundColor,
+        color: color,
+        width: width,
+        height: height,
+        marginTop: margin,
+        borderColor: borderColor,
+      }}
       onClick={handleClick}
       disabled={disabled}
-    >{label}</button>
+    >
+      {label}
+    </button>
   );
 });

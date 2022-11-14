@@ -1,14 +1,14 @@
-import { memo } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import styles from "./PageHeader.module.css";
+import { memo } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import styles from './PageHeader.module.css';
 
 type PageHeaderProps = {
-  title: string
-  backLink: boolean
-}
+  title: string;
+  backLink: boolean;
+};
 
 export const PageHeader = memo((props: PageHeaderProps) => {
-  const {title, backLink} = props;
+  const { title, backLink } = props;
   const navigate = useNavigate();
 
   return (
@@ -16,12 +16,10 @@ export const PageHeader = memo((props: PageHeaderProps) => {
       {backLink ? (
         <div className={styles.back_link_container}>
           <Link to="#" onClick={() => navigate(-1)}>
-            <div className={styles.back_link}>
-              戻る
-            </div>
+            <div className={styles.back_link}>戻る</div>
           </Link>
         </div>
-      ): null}
+      ) : null}
       <h1 className={styles.title}>{title}</h1>
     </div>
   );

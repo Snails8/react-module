@@ -1,13 +1,13 @@
-import React from "react";
-import { eatType, Fish, habitatType } from "../../../hooks";
+import React from 'react';
+import { eatType, Fish, habitatType } from '../../../hooks';
 
-import styles from "./FishesTable.module.css";
+import styles from './FishesTable.module.css';
 
 export interface UsersTableProps {
   /**
-  * ユーザーのリスト
-  */
-  fishes: Fish[]
+   * ユーザーのリスト
+   */
+  fishes: Fish[];
 }
 
 const habitatLabel = (role: string) => {
@@ -32,36 +32,45 @@ const typeLabel = (role: string) => {
   }
 };
 
-export const FishesTable: React.FC<UsersTableProps> = ({
-  fishes
-}) => {
+export const FishesTable: React.FC<UsersTableProps> = ({ fishes }) => {
   return (
-      <table className={`${styles.table}`}>
-        <thead>
-          <tr>
-            <th className={`${styles.th}`} style={{ width: 100 }}>id</th>
-            <th className={`${styles.th}`} style={{ width: 100 }}>name</th>
-            <th className={`${styles.th}`} style={{ width: 100 }}>type</th>
-            <th className={`${styles.th}`} style={{ width: 100 }}>habitat</th>
-            <th className={`${styles.th}`} style={{ width: 100 }}>レッドリスト</th>
-          </tr>
-        </thead>
-        <tbody>
-          { fishes != null? (
-              fishes.map((fish) => {
-                return (
-                  <tr>
-                    <td className={`${styles.td}`}>{fish.id}</td>
-                    <td className={`${styles.td}`}>{fish.name}</td>
-                    <td className={`${styles.td}`}>{typeLabel(fish.type)}</td>
-                    <td className={`${styles.td}`}>{habitatLabel(fish.habitat)}</td>
-                    <td className={`${styles.td}`}>{fish.endangeredStatus}</td>
-                  </tr>
-                );
-              })
-            ): (<div>データが存在しません</div>)
-          }
-        </tbody>
-      </table>    
+    <table className={`${styles.table}`}>
+      <thead>
+        <tr>
+          <th className={`${styles.th}`} style={{ width: 100 }}>
+            id
+          </th>
+          <th className={`${styles.th}`} style={{ width: 100 }}>
+            name
+          </th>
+          <th className={`${styles.th}`} style={{ width: 100 }}>
+            type
+          </th>
+          <th className={`${styles.th}`} style={{ width: 100 }}>
+            habitat
+          </th>
+          <th className={`${styles.th}`} style={{ width: 100 }}>
+            レッドリスト
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {fishes != null ? (
+          fishes.map((fish) => {
+            return (
+              <tr>
+                <td className={`${styles.td}`}>{fish.id}</td>
+                <td className={`${styles.td}`}>{fish.name}</td>
+                <td className={`${styles.td}`}>{typeLabel(fish.type)}</td>
+                <td className={`${styles.td}`}>{habitatLabel(fish.habitat)}</td>
+                <td className={`${styles.td}`}>{fish.endangeredStatus}</td>
+              </tr>
+            );
+          })
+        ) : (
+          <div>データが存在しません</div>
+        )}
+      </tbody>
+    </table>
   );
 };

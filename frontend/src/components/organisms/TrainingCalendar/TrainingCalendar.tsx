@@ -1,12 +1,12 @@
-import { memo } from "react";
-import { TrainingCalendarData } from "../../../hooks/useTraining";
-import { ChangeDateFormat } from "../../../util/date";
-import styles from "./TrainingCalendar.module.css";
+import { memo } from 'react';
+import { TrainingCalendarData } from '../../../hooks/useTraining';
+import { ChangeDateFormat } from '../../../util/date';
+import styles from './TrainingCalendar.module.css';
 
 type TrainingCalendarProps = {
-  calendarData: TrainingCalendarData
-  doShowDetail: boolean
-}
+  calendarData: TrainingCalendarData;
+  doShowDetail: boolean;
+};
 
 export const TrainingCalendar = memo((props: TrainingCalendarProps) => {
   const calendarData = props.calendarData;
@@ -17,28 +17,45 @@ export const TrainingCalendar = memo((props: TrainingCalendarProps) => {
       <thead>
         <tr>
           <th className={styles.header}></th>
-          {Object.keys(calendarData.calendar).map(day => (
-            <th className={styles.header} key={day+"header"}>{day}</th>
+          {Object.keys(calendarData.calendar).map((day) => (
+            <th className={styles.header} key={day + 'header'}>
+              {day}
+            </th>
           ))}
         </tr>
       </thead>
       <tbody>
         <tr>
           <th className={styles.body}>hoge</th>
-          {Object.keys(calendarData.calendar).map(day => (
-            <td className={styles.body} key={day+calendarData.calendar[day].hoge}>120</td>
+          {Object.keys(calendarData.calendar).map((day) => (
+            <td
+              className={styles.body}
+              key={day + calendarData.calendar[day].hoge}
+            >
+              120
+            </td>
           ))}
         </tr>
         <tr>
           <th className={styles.body}>hoge</th>
-          {Object.keys(calendarData.calendar).map(day => (
-            <td className={styles.body} key={day+calendarData.calendar[day].fuga}>120</td>
+          {Object.keys(calendarData.calendar).map((day) => (
+            <td
+              className={styles.body}
+              key={day + calendarData.calendar[day].fuga}
+            >
+              120
+            </td>
           ))}
         </tr>
         <tr>
           <th className={styles.body}>hoge</th>
-          {Object.keys(calendarData.calendar).map(day => (
-            <td className={styles.body} key={day+calendarData.calendar[day].piyo}>120</td>
+          {Object.keys(calendarData.calendar).map((day) => (
+            <td
+              className={styles.body}
+              key={day + calendarData.calendar[day].piyo}
+            >
+              120
+            </td>
           ))}
         </tr>
       </tbody>

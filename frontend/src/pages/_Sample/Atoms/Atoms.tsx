@@ -6,10 +6,9 @@ import { LoadingSpinner } from '../../../components/atoms/LoadingSpinner/Loading
 import { RadioButton } from '../../../components/atoms/RadioButton/RadioButton';
 import { Layout } from '../../../components/templates/_Layout/Layout';
 import { useTypeConverter } from '../../../hooks/useTypeConverter';
-import styles from "./Atoms.module.css";
+import styles from './Atoms.module.css';
 
 export const Atoms = () => {
-
   const hoge = useTypeConverter();
 
   return (
@@ -19,13 +18,20 @@ export const Atoms = () => {
 
         <div className={styles.content}>
           <h5>button</h5>
-          <Button label="label" colorType='primary' width={100} height={25} handleClick={() => console.log('clicked')}/>
+          <Button
+            label="label"
+            colorType="primary"
+            width={100}
+            height={25}
+            handleClick={() => console.log('clicked')}
+          />
         </div>
 
         <div className={styles.content}>
           <h5>checkbox</h5>
-          <CheckBox 
-            id='checkbox' label="checkbox"
+          <CheckBox
+            id="checkbox"
+            label="checkbox"
             onChangeHandler={() => console.log('checkbox!')}
           />
         </div>
@@ -33,7 +39,8 @@ export const Atoms = () => {
         <div className={styles.content}>
           <h5>radio</h5>
           <RadioButton
-            id='radio' label='radio'
+            id="radio"
+            label="radio"
             onChangeHandler={() => console.log('radio!')}
           />
         </div>
@@ -41,31 +48,26 @@ export const Atoms = () => {
         <div className={styles.content}>
           <h5>input text</h5>
           <Input
-            type='text'
-            id='text'
-            defaultValue='sample'
+            type="text"
+            id="text"
+            defaultValue="sample"
             required={false}
             width={100}
             height={20}
             padding={15}
             onChangeHandler={() => console.log('text')}
-          /> 
+          />
         </div>
 
         <h3>Web design</h3>
         <div className={styles.content}>
           <h5>LoadingSpinner</h5>
-          <LoadingSpinner
-          />
+          <LoadingSpinner />
         </div>
 
         <div className={styles.content}>
           <h5>Label</h5>
-          <Label
-            text='label'
-            color='green'
-            width={100}
-          />
+          <Label text="label" color="green" width={100} />
         </div>
 
         <div className={styles.content}>
@@ -97,7 +99,6 @@ export const Atoms = () => {
           <h5>card</h5>
           nothing
         </div>
-
       </Layout>
     </>
   );

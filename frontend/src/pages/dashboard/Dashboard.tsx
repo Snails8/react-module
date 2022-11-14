@@ -5,40 +5,56 @@ import { useNavigate } from 'react-router-dom';
 import { Layout } from '../../components/templates/_Layout/Layout';
 
 export const Dashboard: React.FC = () => {
-    const [message, setMessage] = useState("");
-  
-    useEffect(() => {
-      fetch('/api/v1/', {
-        method: 'GET', 
-      })
-      .then(res => res.json() )
-      .then(data => {setMessage(data);});
-    }, []);
+  const [message, setMessage] = useState('');
 
-    const navigate = useNavigate();
+  useEffect(() => {
+    fetch('/api/v1/', {
+      method: 'GET',
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setMessage(data);
+      });
+  }, []);
 
-    const params: string = createSearchParams({
-      name: "sample",
-      type: "test"
-    }).toString();
+  const navigate = useNavigate();
 
-    return (
-        <>
-          <Layout>
-            <h1>Sample Home</h1>
-            <nav>
-              <ul>
-                <li><Link to="training">Training</Link></li>
-                <li><Link to="page2">Sample Page2</Link></li>
-                <li><Link to="page2?name=鈴木&type=test">Sample Page2 With Query1</Link></li>
-                <li><Link to={`page2?${params}`}>Sample Page2 With Query2</Link></li>
-                <li><Link to="page3">Sample Page3 props</Link></li>
-                <li><Link to="page4">Sample Page4</Link></li>
-              </ul>
+  const params: string = createSearchParams({
+    name: 'sample',
+    type: 'test',
+  }).toString();
 
-              <button onClick={() => navigate("page1")}>SamplePage1</button>
-            </nav>  
-          </Layout>
-        </>  
-    );
+  return (
+    <>
+      <Layout>
+        <h1>Sample Home</h1>
+        <nav>
+          <ul>
+            <li>
+              <Link to="training">Training</Link>
+            </li>
+            <li>
+              <Link to="page2">Sample Page2</Link>
+            </li>
+            <li>
+              <Link to="page2?name=鈴木&type=test">
+                Sample Page2 With Query1
+              </Link>
+            </li>
+            <li>
+              <Link to={`page2?${params}`}>Sample Page2 With Query2</Link>
+            </li>
+            <li>
+              <Link to="page3">Sample Page3 props</Link>
+            </li>
+            <li>
+              <Link to="page4">Sample Page4</Link>
+            </li>
+          </ul>
+
+          <button onClick={() => navigate('page1')}>SamplePage1</button>
+        </nav>
+      </Layout>
+    </>
+  );
 };

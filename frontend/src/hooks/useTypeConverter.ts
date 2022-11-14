@@ -1,17 +1,16 @@
 interface TypeConverter {
-  stringToNumber: (value: string) => number
-  stringToBoolean: (value: string) => boolean
-  stringToDate: (value: string) => Date
+  stringToNumber: (value: string) => number;
+  stringToBoolean: (value: string) => boolean;
+  stringToDate: (value: string) => Date;
 }
 
-export const useTypeConverter = (
-
-) : TypeConverter => {
-
+export const useTypeConverter = (): TypeConverter => {
   const stringToNumber = (value: string): number => {
     const num = Number(value);
-    if(isNaN(num)) {
-      throw new Error('Error: Invalid value expected number but got other type');
+    if (isNaN(num)) {
+      throw new Error(
+        'Error: Invalid value expected number but got other type'
+      );
     }
 
     return Number(value);
@@ -39,7 +38,6 @@ export const useTypeConverter = (
 
     return date;
   };
-
 
   return {
     stringToBoolean,

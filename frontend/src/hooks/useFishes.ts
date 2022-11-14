@@ -1,70 +1,73 @@
 import { useEffect, useState } from 'react';
-import FishData from "./Json/Fishes.json";
+import FishData from './Json/Fishes.json';
 
-export enum habitatType  {
+export enum habitatType {
   River = 'river',
-  Sea = 'sea'
-};
+  Sea = 'sea',
+}
 
-export enum eatType  {
+export enum eatType {
   Omnivorous = 'omnivorous',
-  Carnivorous = 'carnivorous'
-};
+  Carnivorous = 'carnivorous',
+}
 
 export interface Fish {
-    /**
-     * @type {number}
-     * @memberof Fish
-     */
-    id: number;
+  /**
+   * @type {number}
+   * @memberof Fish
+   */
+  id: number;
 
-    /**
-     * 
-     * @type {string}
-     * @memberof Fish
-     */
-    name: string;
+  /**
+   *
+   * @type {string}
+   * @memberof Fish
+   */
+  name: string;
 
-        /**
-     * 
-     * @type {string}
-     * @memberof Fish
-     */
-    type: string;
+  /**
+   *
+   * @type {string}
+   * @memberof Fish
+   */
+  type: string;
 
-    habitat: string
+  habitat: string;
 
-    endangeredStatus: string
+  endangeredStatus: string;
 }
 
 export const useFishes = () => {
-  const fishes = process.env.IS_BACKEND ? getFishesFromAPI() : getFishesFromJson();
+  const fishes = process.env.IS_BACKEND
+    ? getFishesFromAPI()
+    : getFishesFromJson();
 
   return {
-    fishes: fishes
+    fishes: fishes,
   };
 };
 
 const getFishesFromJson = (): Fish[] => {
-  return FishData.fishes; 
+  return FishData.fishes;
 };
 
 const getFishesFromAPI = (): Fish[] => {
   const [fishes, setFishes] = useState<Fish[]>([]);
 
   useEffect(() => {
-    fetch('http://localhost:7001/api/v1/fishes',{
-        method: 'GET'
+    fetch('http://localhost:7001/api/v1/fishes', {
+      method: 'GET',
     })
-    .then(res => res.json())
-    .then((data) => {
-        setFishes(data);
-    },
-    (error) => {
-        console.log(error);
-        const errData = {
-        };
-    });
+      .then((res) => res.json())
+      .then(
+        (data) => {
+          setFishes(data);
+        },
+        (error) => {
+          console.log(error);
+          const errData = {};
+        }
+      );
   }, []);
 
   return fishes;

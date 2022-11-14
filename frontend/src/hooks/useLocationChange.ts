@@ -1,25 +1,25 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react';
 
 // ※ React Router v6
-import { Location, useLocation } from 'react-router-dom'
+import { Location, useLocation } from 'react-router-dom';
 
 const useLocationChange = (callback: (location: Location) => void) => {
-  const refCallback = useRef<undefined | ((location: Location) => void)>()
-  const location = useLocation()
+  const refCallback = useRef<undefined | ((location: Location) => void)>();
+  const location = useLocation();
 
   useEffect(() => {
-    refCallback.current = callback
-  }, [callback])
+    refCallback.current = callback;
+  }, [callback]);
 
   // ロケーションに変更があったときに処理実行
   useEffect(() => {
     if (refCallback.current) {
-      refCallback.current(location)
+      refCallback.current(location);
     }
-  }, [location])
-}
+  }, [location]);
+};
 
-export default useLocationChange
+export default useLocationChange;
 
 /**
     // 思った挙動ではない

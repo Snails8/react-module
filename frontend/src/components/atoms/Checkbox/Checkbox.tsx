@@ -1,37 +1,41 @@
-import { memo, useState } from "react";
+import { memo, useState } from 'react';
 import styles from './Checkbox.module.css';
 
 type CheckboxProps = {
-  id?: string
-  label?: string
-  defaultValue?: boolean  // default 値をレンダリング後表示したい場合は key を使う側で定義する ex) key={`input_${val}`}
-  disabled?: boolean
-  onChangeHandler: (check: boolean) => void
-}
+  id?: string;
+  label?: string;
+  defaultValue?: boolean; // default 値をレンダリング後表示したい場合は key を使う側で定義する ex) key={`input_${val}`}
+  disabled?: boolean;
+  onChangeHandler: (check: boolean) => void;
+};
 
 export const CheckBox = memo((props: CheckboxProps) => {
-  const {id='checkbox', label='', defaultValue=false, disabled=false, onChangeHandler} = props;
+  const {
+    id = 'checkbox',
+    label = '',
+    defaultValue = false,
+    disabled = false,
+    onChangeHandler,
+  } = props;
   const [value, setValue] = useState(defaultValue);
 
   return (
-    <div className={`${styles.container}` }>
+    <div className={`${styles.container}`}>
       <input
         className={`${styles.checkbox}`}
-        type='checkbox'
+        type="checkbox"
         id={id}
         checked={value}
         value={value.toString()}
         disabled={disabled}
         onChange={(e: any) => {
           if (disabled === true) return;
-          
+
           setValue(e.target.checked);
           onChangeHandler(e.target.checked);
         }}
       />
-      {label !== '' && id !== '' ? 
-        <label>{label}</label> : null
-      }
+      {label !== '' && id !== '' ? <label>{label}</label> : null}
     </div>
   );
 });

@@ -12,10 +12,7 @@ export default {
     },
     colorType: {
       control: { type: 'select' },
-      options: [
-        'primary',
-        'tertiary',
-      ],
+      options: ['primary', 'tertiary'],
     },
     width: {
       control: 'number',
@@ -32,7 +29,6 @@ export default {
     handleClick: { action: 'clicked' },
   },
 } as Meta;
-
 
 const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 

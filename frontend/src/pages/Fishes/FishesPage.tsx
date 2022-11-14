@@ -1,23 +1,25 @@
-import React from "react";
+import React from 'react';
 import { useEffect, useState } from 'react';
 
-import {useFishes,} from '../../hooks';
-import { Link, useLocation } from "react-router-dom";
-import { Layout } from "../../components/templates/_Layout/Layout";
-import { FishesTable } from "../../components/organisms/FishesTable/FishTable";
+import { useFishes } from '../../hooks';
+import { Link, useLocation } from 'react-router-dom';
+import { Layout } from '../../components/templates/_Layout/Layout';
+import { FishesTable } from '../../components/organisms/FishesTable/FishTable';
 
-export const Fishes:React.FC = () => {
+export const Fishes: React.FC = () => {
   const location = useLocation();
-  const [isSave, setIsSave] = useState<{isSave: boolean}>(location.state as {isSave: boolean});
+  const [isSave, setIsSave] = useState<{ isSave: boolean }>(
+    location.state as { isSave: boolean }
+  );
 
   useEffect(() => {
-    if(location.state) {
+    if (location.state) {
       console.log(location.state);
-      setIsSave({isSave: true});
+      setIsSave({ isSave: true });
     } else {
-      setIsSave({isSave: false});
+      setIsSave({ isSave: false });
     }
-  },[]);
+  }, []);
 
   const fishes = useFishes().fishes;
 

@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 export const NotFound = () => {
   const navigate = useNavigate();
@@ -7,7 +7,7 @@ export const NotFound = () => {
       <h1>404</h1>
       <h3>お探しのページは見つかりませんでした。</h3>
 
-      <button onClick={() => navigate("/")}>トップに戻る</button>
+      <button onClick={() => navigate('/')}>トップに戻る</button>
     </>
   );
 };

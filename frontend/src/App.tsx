@@ -4,9 +4,7 @@ import './App.css';
 import { RouterConfig } from './RouterConfig';
 
 function App() {
-  return (
-      <RouterConfig />
-  );
+  return <RouterConfig />;
 }
 
 export default App;

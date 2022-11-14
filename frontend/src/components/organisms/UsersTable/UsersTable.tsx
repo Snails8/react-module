@@ -1,7 +1,7 @@
-import { memo } from "react";
-import { User, UserRole } from "../../../hooks/useUsers";
+import { memo } from 'react';
+import { User, UserRole } from '../../../hooks/useUsers';
 
-import styles from "./UsersTable.module.css";
+import styles from './UsersTable.module.css';
 
 // TODO:: jsonに移行した際に修正
 const roleLabel = (role: string) => {
@@ -16,37 +16,46 @@ const roleLabel = (role: string) => {
 };
 
 type UsersTableProps = {
-  users: User[]
-}
+  users: User[];
+};
 
 export const UsersTable = memo((props: UsersTableProps) => {
-  const {users} = props;
+  const { users } = props;
 
   return (
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            <th className={styles.th} style={{ width: 100 }}>id</th>
-            <th className={styles.th} style={{ width: 100 }}>名前</th>
-            <th className={styles.th} style={{ width: 100 }}>email</th>
-            <th className={styles.th} style={{ width: 100 }}>ユーザー識別</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users != null? (
-            users.map((user) => {
-              return (
-                <tr className={styles.table_row} key={user.id}>
-                  <td className={styles.td}>{user.id}</td>
-                  <td className={styles.td}>{user.name}</td>
-                  <td className={styles.td}>{user.email}</td>
-                  <td className={styles.td}>{roleLabel(user.role)}</td>
-                </tr>
-              );
-            })
-            ): (<div>ユーザーが存在しません</div>)
-          }
-        </tbody>
-      </table>    
+    <table className={styles.table}>
+      <thead>
+        <tr>
+          <th className={styles.th} style={{ width: 100 }}>
+            id
+          </th>
+          <th className={styles.th} style={{ width: 100 }}>
+            名前
+          </th>
+          <th className={styles.th} style={{ width: 100 }}>
+            email
+          </th>
+          <th className={styles.th} style={{ width: 100 }}>
+            ユーザー識別
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {users != null ? (
+          users.map((user) => {
+            return (
+              <tr className={styles.table_row} key={user.id}>
+                <td className={styles.td}>{user.id}</td>
+                <td className={styles.td}>{user.name}</td>
+                <td className={styles.td}>{user.email}</td>
+                <td className={styles.td}>{roleLabel(user.role)}</td>
+              </tr>
+            );
+          })
+        ) : (
+          <div>ユーザーが存在しません</div>
+        )}
+      </tbody>
+    </table>
   );
 });

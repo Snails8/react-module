@@ -1,17 +1,17 @@
-import { memo } from "react";
-import { UserIconSvg } from "./UserIconSvg";
+import { memo } from 'react';
+import { UserIconSvg } from './UserIconSvg';
 
 type UserIconProps = {
   height: number;
   width: number;
-}
+};
 
 export const UserIcon = memo((props: UserIconProps) => {
-  const {height, width} = props
+  const { height, width } = props;
 
   return (
-    <div style={{ height:height, width: width }}>
+    <div style={{ height: height, width: width }}>
       <UserIconSvg />
     </div>
-  )
-})
+  );
+});

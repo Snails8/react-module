@@ -1,16 +1,16 @@
-import { createStore, combineReducers } from "redux";
+import { createStore, combineReducers } from 'redux';
 
 // 同じObjectで定義
 const initialState = {
   count: 1,
-  posts: []
+  posts: [],
 };
 const reducer = (state = initialState) => {
   return state;
 };
 
 // reducerを分割する
-const countReducer = (state = {count: 50}, action: any) => {
+const countReducer = (state = { count: 50 }, action: any) => {
   switch (action.type) {
     case 'INCREASE_COUNT':
       return {
@@ -27,7 +27,7 @@ const countReducer = (state = {count: 50}, action: any) => {
   return state;
 };
 
-const postReducer = (state = {posts: []}, action: any) => {
+const postReducer = (state = { posts: [] }, action: any) => {
   switch (action.type) {
     case 'GET_POST_DATA':
       return { ...state, posts: action.payload };
@@ -35,7 +35,6 @@ const postReducer = (state = {posts: []}, action: any) => {
       return state;
   }
 };
-
 
 const rootReducer = combineReducers({
   countReducer,

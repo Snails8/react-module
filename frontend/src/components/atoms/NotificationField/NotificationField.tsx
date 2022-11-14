@@ -1,25 +1,25 @@
-import { memo } from "react";
-import styles from "./NotificationField.module.css";
+import { memo } from 'react';
+import styles from './NotificationField.module.css';
 
 type NotificationType = 'success' | 'error';
 
 type NotificationFieldProps = {
-  type: NotificationType
-  message: string
-  title?: string     // error時などに使用する
-  messages?: string[]
-}
+  type: NotificationType;
+  message: string;
+  title?: string; // error時などに使用する
+  messages?: string[];
+};
 
 export const NotificationField = memo((props: NotificationFieldProps) => {
-  const {type, message, title='', messages=[]} = props;
+  const { type, message, title = '', messages = [] } = props;
 
   let color, backgroundColor;
   switch (type) {
-    case "success":
+    case 'success':
       backgroundColor = '#e4fae1';
       color = '#1d721f';
       break;
-    case "error":
+    case 'error':
       backgroundColor = '#f2dfdf';
       color = '#b72727';
       break;
@@ -30,9 +30,14 @@ export const NotificationField = memo((props: NotificationFieldProps) => {
   }
 
   return (
-    <div className={styles.container} style={{ backgroundColor: backgroundColor }}>
-      {title && <div style={{ color : color }}>{title}</div>}
-      <div className={styles.message} style={{ color: color}}>{message}</div>
+    <div
+      className={styles.container}
+      style={{ backgroundColor: backgroundColor }}
+    >
+      {title && <div style={{ color: color }}>{title}</div>}
+      <div className={styles.message} style={{ color: color }}>
+        {message}
+      </div>
     </div>
   );
 });

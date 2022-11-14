@@ -2,16 +2,16 @@ import { memo } from 'react';
 import styles from './Label.module.css';
 
 type LabelProps = {
-  text: string
-  color: string
-  width: number
-}
+  text: string;
+  color: string;
+  width: number;
+};
 
 export const Label = memo((props: LabelProps) => {
-  const {text, color, width} = props;
-  
+  const { text, color, width } = props;
+
   return (
-    <div 
+    <div
       className={`${styles.label}`}
       style={{ color: color, width: width, borderColor: color }}
     >

@@ -1,23 +1,22 @@
-
-import { useState } from "react";
-import { createSearchParams, Link, useNavigate } from "react-router-dom";
-import { UsersSearchForm } from "../../components/organisms/UsersSearchForm/UsersSearchForm";
-import { UsersTable } from "../../components/organisms/UsersTable/UsersTable";
-import { Layout } from "../../components/templates/_Layout/Layout";
-import { User, useUsers } from "../../hooks";
+import { useState } from 'react';
+import { createSearchParams, Link, useNavigate } from 'react-router-dom';
+import { UsersSearchForm } from '../../components/organisms/UsersSearchForm/UsersSearchForm';
+import { UsersTable } from '../../components/organisms/UsersTable/UsersTable';
+import { Layout } from '../../components/templates/_Layout/Layout';
+import { User, useUsers } from '../../hooks';
 
 type SearchParams = {
-  id: number
-  name: string
-  email: string
-  role: string
-}
+  id: number;
+  name: string;
+  email: string;
+  role: string;
+};
 
 export const Users = () => {
   const users = useUsers();
 
   const navigate = useNavigate();
-  const query = (params:SearchParams) => {
+  const query = (params: SearchParams) => {
     return `?users?id?=${params.id}&name=${params.name}&email=${params.email}&role=${params.role}`;
   };
   const onClickButton = (user: User) => {
@@ -40,10 +39,12 @@ export const Users = () => {
     <>
       <Layout isContainerDesign={true}>
         <Link to="/users/create">作成</Link>
-        <UsersSearchForm inputUserNameHandler={inputUserNameHandler} checkHandler={checkHandler} handleClick={onClickButton} />
-        <UsersTable 
-          users={users.users}
+        <UsersSearchForm
+          inputUserNameHandler={inputUserNameHandler}
+          checkHandler={checkHandler}
+          handleClick={onClickButton}
         />
+        <UsersTable users={users.users} />
       </Layout>
     </>
   );
