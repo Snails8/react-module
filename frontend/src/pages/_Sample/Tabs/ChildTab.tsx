@@ -23,6 +23,14 @@ export const ChildTabPage: React.FC = () => {
     }
   }, [childString]);
 
+  function handleClickButton() {
+    if (window.opener == null) {
+      return window.close();
+    } else {
+      window.opener.callBack('hoge');
+    }
+  }
+  
   return (
     <>
       <Layout isContainerDesign={true}>
@@ -43,6 +51,10 @@ export const ChildTabPage: React.FC = () => {
         <h5>window.openerで親windowを初期化する</h5>
         <button onClick={(e) => window.opener.location.reload()}>
           親側で再度API通信
+        </button>
+
+        <button  onClick={handleClickButton}>
+          親側を再レンダリングさせる
         </button>
       </Layout>
     </>

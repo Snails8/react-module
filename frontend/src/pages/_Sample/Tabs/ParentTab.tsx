@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Layout } from '../../../components/templates/_Layout/Layout';
+import { useForceUpdate } from '../../../hooks/useForceUpdate';
 
 export const ParentTabPage: React.FC = () => {
   const [message, setMessage] = useState('message');
@@ -20,6 +21,11 @@ export const ParentTabPage: React.FC = () => {
       console.log('子から受け取った値が変化しているのを感知');
     });
   }, [childString]);
+
+  // 子window側でstateを変えてみる(don't work)
+  function callBack(value: string) {
+    console.log(value);
+  }
 
   return (
     <>
