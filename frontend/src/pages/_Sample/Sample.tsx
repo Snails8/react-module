@@ -13,6 +13,9 @@ export const Sample = () => {
         <li>
           <Link to="/samples/upload-file">ファイルアップロード</Link>
         </li>
+        <li>
+          <Link to="/samples/tabs">タブのサンプル</Link>
+        </li>
       </ul>
     </Layout>
   );
