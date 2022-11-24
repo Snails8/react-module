@@ -1,0 +1,38 @@
+.container {
+  background-color: #fff;
+  display:flex;
+  flex-flow: column;
+}
+
+.tab {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  background-color: #fff;
+  margin: 0;
+}
+
+.tab__item {
+  /* flex: 1; */  /** ページいっぱいに広げるかどうか */
+  flex-basis: 120px; 
+  list-style: none; /** li要素の黒丸を消す */
+}
+
+.tab__link {
+  height: 40px;
+  display: block;
+  text-decoration: none;
+  background-color: #cecece;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid black;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.tab__body {
+  padding: 100px;
+  margin-left: 40px; /** ulとの幅を揃える */
+  border: 1px solid black;
+  text-align: center;
+}
