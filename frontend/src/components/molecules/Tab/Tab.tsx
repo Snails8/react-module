@@ -26,3 +26,21 @@ export const Tab = (props: TabProps) => {
     </div>
   );
 };
+
+type PageContentProps = {
+  selected: number
+}
+const PageContent = (props: PageContentProps) => {
+  const {selected} = props;
+
+  switch (selected) {
+    case 0:
+      return <span>タブコンテンツ1を動的に切り替える</span>;
+    case 1:
+      return <span>タブコンテンツ2を動的に切り替える</span>;
+    case 2:
+      return <span>タブコンテンツ3を動的に切り替える</span>;
+    default:
+      return <span>test</span>;
+  };
+};
