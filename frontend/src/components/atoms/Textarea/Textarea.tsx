@@ -3,17 +3,17 @@ import styles from './Textarea.module.css';
 
 type TextareaProps = {
   id: string
+  onChangeHandler: (value: string) => void;
   rows?: number
   cols?: number
   defaultValue?: string
   placeholder?: string
   required?: boolean
   maxLength?: number
-  width: number
-  height: number
-  padding: number
+  width?: number | string
+  height?: number | string
+  padding?: number
   fontWeight?: string | number
-  onChangeHandler: (value: string) => void;
   onBlurHandler?: () => void;
   disabled?: boolean;
 };
@@ -21,7 +21,7 @@ type TextareaProps = {
 export const Textarea = memo((props: TextareaProps) => {
   const {
     id, rows=2, cols=20, defaultValue = '', placeholder='', required = false, maxLength=300, 
-    width, height, padding, fontWeight = 'normal',
+    width='auto', height='auto', padding='auto', fontWeight = 'normal',
     onChangeHandler, onBlurHandler = () => {}, disabled = false,
   } = props;
 
