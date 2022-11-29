@@ -5,23 +5,16 @@ type ButtonColor = 'primary' | 'tertiary';
 export type ButtonProps = {
   label: string;
   colorType: ButtonColor;
-  width: number;
-  height: number;
+  width?: number;
+  height?: number;
   margin?: number;
+  fontSize?: number;
   disabled?: boolean;
   handleClick: any;
 };
 
 export const Button = memo((props: ButtonProps) => {
-  const {
-    label,
-    colorType,
-    width,
-    height,
-    margin = 0,
-    disabled = false,
-    handleClick,
-  } = props;
+  const { label, colorType, width, height, margin = 0, fontSize = 13, disabled = false, handleClick } = props;
 
   let color, backgroundColor, borderColor;
   switch (colorType) {
@@ -46,6 +39,7 @@ export const Button = memo((props: ButtonProps) => {
         width: width,
         height: height,
         marginTop: margin,
+        fontSize: fontSize,
         borderColor: borderColor,
       }}
       onClick={handleClick}
