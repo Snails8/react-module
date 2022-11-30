@@ -14,29 +14,10 @@ export const DownloadCSVExcel: React.FC = () => {
     workbook.addWorksheet('sheet1');
     const worksheet = workbook.getWorksheet('sheet1');
 
-    worksheet.columns = [
-      { header: 'ID', key: 'id' },
-      { header: '作成日時', key: 'createdAt' },
-      { header: '名前', key: 'name' },
-    ];
-
-    worksheet.addRows([
-      {
-        id: 'f001',
-        createdAt: 1629902208,
-        name: 'りんご',
-      },
-      {
-        id: 'f002',
-        createdAt: 1629902245,
-        name: 'ぶとう',
-      },
-      {
-        id: 'f003',
-        createdAt: 1629902265,
-        name: 'ばなな',
-      },
-    ]);
+    const header = getHeader();
+    const rows = getRows();
+    worksheet.columns = header;
+    worksheet.addRows(rows);
 
     const uint8Array =
       format === 'xlsx'
@@ -83,4 +64,35 @@ export const DownloadCSVExcel: React.FC = () => {
       </Layout>
     </>
   );
+};
+
+const getHeader = () => {
+  const header = [
+    { header: 'ID', key: 'id' },
+    { header: '作成日時', key: 'createdAt' },
+    { header: '名前', key: 'name' },
+  ];
+  return header;
+};
+
+const getRows = () => {
+  const rows = [
+    {
+      id: 'f001',
+      createdAt: 1629902208,
+      name: 'りんご',
+    },
+    {
+      id: 'f002',
+      createdAt: 1629902245,
+      name: 'ぶとう',
+    },
+    {
+      id: 'f003',
+      createdAt: 1629902265,
+      name: 'ばなな',
+    },
+  ];
+
+  return rows;
 };
