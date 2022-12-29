@@ -1,0 +1,15 @@
+.container {
+  width: 90%;
+  padding-top: 45px;
+  justify-content: center;
+}
+
+.panel_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.panel_item {
+  width: 30%;
+}
