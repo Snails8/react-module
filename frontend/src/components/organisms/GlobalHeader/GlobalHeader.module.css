@@ -53,3 +53,9 @@
   padding-right: 200px;
   width: 100px;
 }
+
+.user_menu {
+  position: absolute;
+  right: 0;
+  top: 53px;
+}
