@@ -17,4 +17,14 @@ code {
 :root {
   --global-header-height: 70px;
   --sidebar-padding-left: 230px;
+  --text-link: #03c;
+  --color-primary: #245fb3;
+  --color-primary-hover: #3e81ce;
+  --color-grey: #8e8e8e;
+  --text-disabled: #999;
+  --text-error: #b72727;
+  --text-info: #22428d;
+  --text-primary: #333;
+  --text-success: #1d721f;
+  --border-color: #ccc;
 }
