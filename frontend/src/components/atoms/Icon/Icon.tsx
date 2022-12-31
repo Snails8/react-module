@@ -8,5 +8,5 @@ type IconProps = {
 
 export const Icon = (props: IconProps) => {
   const { height, width, children } = props;
-  return <div style={{ height: height, width: width }}>{children}</div>;
+  return <div style={{ height: height, width: width }} data-testid='icon'>{children}</div>;
 };
