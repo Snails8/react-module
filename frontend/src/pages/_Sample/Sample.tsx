@@ -16,6 +16,9 @@ export const Sample = () => {
         <li>
           <Link to="/samples/tabs">タブのサンプル</Link>
         </li>
+        <li>
+          <Link to="/samples/calenders">カレンダーのサンプル</Link>
+        </li>
       </ul>
     </Layout>
   );

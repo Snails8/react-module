@@ -31,6 +31,7 @@ import { ReduxPage } from './pages/_Inspect/ReduxPage/ReduxPage';
 import { ReduxTestPage } from './pages/_Inspect/ReduxPage/ReduxTestPage';
 import { UploadFilePage } from './pages/_Sample/UploadFilePage/UploadFilePage';
 import { TabPage } from './pages/_Sample/TabPage/TabPage';
+import { CalenderPage } from './pages/_Sample/CalenderPage/CalenderPage';
 
 export const RouterConfig: React.VFC = () => {
   return (
@@ -69,6 +70,7 @@ export const RouterConfig: React.VFC = () => {
           <Route path="samples" element={<Sample />} />
           <Route path="samples/upload-file" element={<UploadFilePage />} />
           <Route path="samples/tabs" element={<TabPage />} />
+          <Route path="samples/calenders" element={<CalenderPage />} />
         </Routes>
       </BrowserRouter>
     </>
