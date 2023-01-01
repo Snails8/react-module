@@ -1,7 +1,7 @@
 import {render, screen} from '@testing-library/react';
 import { Label } from './Label';
 
-describe('Logo', () => {
+describe('Label', () => {
   test('render', () => {
     render(<Label width={100} color={'red'} text={'test'}/>);
 

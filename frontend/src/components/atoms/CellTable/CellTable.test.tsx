@@ -1,7 +1,7 @@
 import {render, screen} from '@testing-library/react';
 import { CellTable } from './CellTable';
 
-describe('Logo', () => {
+describe('CellTable', () => {
   test('render', () => {
     render(<CellTable />);
 

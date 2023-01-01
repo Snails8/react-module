@@ -1,7 +1,7 @@
 import {render, screen} from '@testing-library/react';
 import { Button } from './Button';
 
-describe('Logo', () => {
+describe('Button', () => {
   test('render', () => {
     render(<Button label='test' colorType='primary' handleClick={() => console.log('test')}/>);
 

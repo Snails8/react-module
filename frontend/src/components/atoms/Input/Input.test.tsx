@@ -1,7 +1,7 @@
 import {render, screen} from '@testing-library/react';
 import { Input } from './Input';
 
-describe('Logo', () => {
+describe('Input', () => {
   test('render', () => {
     render(<Input type='text' id='test-input' onChangeHandler={() => console.log('test')} />);
 

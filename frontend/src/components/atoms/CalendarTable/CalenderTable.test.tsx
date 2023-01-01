@@ -1,7 +1,7 @@
 import {render, screen} from '@testing-library/react';
 import { CalendarTable } from './CalendarTable';
 
-describe('Logo', () => {
+describe('CalenderTable', () => {
   test('render', () => {
     render(<CalendarTable />);
 

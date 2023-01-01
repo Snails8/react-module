@@ -1,7 +1,7 @@
 import {render, screen} from '@testing-library/react';
 import { CheckBox } from './Checkbox';
 
-describe('Logo', () => {
+describe('Checkbox', () => {
   test('render', () => {
     render(<CheckBox onChangeHandler={() => console.log('test')} />);
 

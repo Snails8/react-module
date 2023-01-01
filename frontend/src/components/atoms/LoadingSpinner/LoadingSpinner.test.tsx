@@ -1,7 +1,7 @@
 import {render, screen} from '@testing-library/react';
 import { LoadingSpinner } from './LoadingSpinner';
 
-describe('Logo', () => {  
+describe('LoadingSpinner', () => {  
   test('render', () => {
     render(<LoadingSpinner />);
 

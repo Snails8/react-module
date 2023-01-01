@@ -49,6 +49,7 @@ export const Textarea = memo((props: TextareaProps) => {
         onBlurHandler();
       }}
       disabled={disabled}
+      data-testid='textarea'
     />
   );
 });

@@ -32,6 +32,7 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
           onChangeHandler(e.target.check);
           // onChangeHandler(true);
         }}
+        data-testid='radio-button'
       />
       {label !== '' && id !== '' ? <label>{label}</label> : null}
     </div>
