@@ -6,9 +6,9 @@ type InputProps = {
   id: string;
   defaultValue?: string | number;
   required?: boolean;
-  width: number;
-  height: number;
-  padding: number;
+  width?: number;
+  height?: number;
+  padding?: number;
   onChangeHandler: (value: string) => void;
   onBlurHandler?: () => void;
   disabled?: boolean;
@@ -20,9 +20,9 @@ export const Input = memo((props: InputProps) => {
     id,
     defaultValue = '',
     required = false,
-    width,
-    height,
-    padding,
+    width=80,
+    height=10,
+    padding=5,
     onChangeHandler,
     onBlurHandler = () => {},
     disabled = false,
@@ -42,6 +42,7 @@ export const Input = memo((props: InputProps) => {
         onBlurHandler();
       }}
       disabled={disabled}
+      data-testid='input'
     />
   );
 });
