@@ -1,6 +1,6 @@
 export const CellTable = () => {
   return (
-    <table>
+    <table data-testid='cell-table'>
       <tr className="header">
         <th className="item1"> </th>
         <th className="item2">A</th>

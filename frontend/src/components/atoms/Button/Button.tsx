@@ -44,6 +44,7 @@ export const Button = memo((props: ButtonProps) => {
       }}
       onClick={handleClick}
       disabled={disabled}
+      data-testid='button'
     >
       {label}
     </button>
