@@ -3,7 +3,7 @@ import styles from './CalendarTable.module.css';
 
 export const CalendarTable = ({}) => {
   return (
-    <table className={`${styles.table}`}>
+    <table className={`${styles.table}`} data-testid='calender-table'>
       <thead>
         <tr>
           <th className={`${styles.th}`} style={{ width: 100 }}>
