@@ -34,6 +34,7 @@ export const CheckBox = memo((props: CheckboxProps) => {
           setValue(e.target.checked);
           onChangeHandler(e.target.checked);
         }}
+        data-testid='checkbox'
       />
       {label !== '' && id !== '' ? <label>{label}</label> : null}
     </div>
