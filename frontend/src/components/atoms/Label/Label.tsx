@@ -12,6 +12,7 @@ export const Label = memo((props: LabelProps) => {
 
   return (
     <div
+      data-testid='label'
       className={`${styles.label}`}
       style={{ color: color, width: width, borderColor: color }}
     >
