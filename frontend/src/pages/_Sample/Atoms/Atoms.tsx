@@ -2,7 +2,7 @@ import { Button } from '../../../components/atoms/Button/Button';
 import { CheckBox } from '../../../components/atoms/Checkbox/Checkbox';
 import { Input } from '../../../components/atoms/Input/Input';
 import { Label } from '../../../components/atoms/Label/Label';
-import { LoadingSpinner } from '../../../components/atoms/LoadingSpinner/LoadingSpiner';
+import { LoadingSpinner } from '../../../components/atoms/LoadingSpinner/LoadingSpinner';
 import { RadioButton } from '../../../components/atoms/RadioButton/RadioButton';
 import { Layout } from '../../../components/templates/_Layout/Layout';
 import { useTypeConverter } from '../../../hooks/useTypeConverter';

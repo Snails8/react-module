@@ -33,6 +33,7 @@ export const NotificationField = memo((props: NotificationFieldProps) => {
     <div
       className={styles.container}
       style={{ backgroundColor: backgroundColor }}
+      data-testid='notification-field'
     >
       {title && <div style={{ color: color }}>{title}</div>}
       <div className={styles.message} style={{ color: color }}>

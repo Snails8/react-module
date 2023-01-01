@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { Button } from '../../atoms/Button/Button';
-import { LoadingSpinner } from '../../atoms/LoadingSpinner/LoadingSpiner';
+import { LoadingSpinner } from '../../atoms/LoadingSpinner/LoadingSpinner';
 import { NotificationField } from '../../atoms/NotificationField/NotificationField';
 import styles from './UploadFile.module.css';
 
