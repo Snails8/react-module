@@ -12,7 +12,7 @@ export const PageHeader = memo((props: PageHeaderProps) => {
   const navigate = useNavigate();
 
   return (
-    <div className={styles.header}>
+    <div className={styles.header} data-testid='page-header'>
       {backLink ? (
         <div className={styles.back_link_container}>
           <Link to="#" onClick={() => navigate(-1)}>
