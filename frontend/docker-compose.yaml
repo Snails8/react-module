@@ -8,23 +8,21 @@ services:
     environment:
       PORT: '3000'
       HOST: '0.0.0.0'
+    command: "yarn start"
     ports:
       - 3000:3000
     volumes:
       - .:/app
-    stdin_open: true
-    tty: true
-    restart: always
     # networks:
       # - api
 # networks:
 #   api:
 #     external: true
-  storybook:
-    build: .
-    ports:
-      - 6006:6006
-    volumes:
-      - /app/node_modules
-      - .:/app
-    command: yarn storybook
+  # storybook:
+  #   build: .
+  #   ports:
+  #     - 6006:6006
+  #   volumes:
+  #     - /app/node_modules
+  #     - .:/app
+  #   command: yarn storybook
