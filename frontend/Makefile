@@ -1,63 +1,60 @@
-DC := docker-compose exec front-app
-CONTAINER_NAME := front-app
+include .env
+
+# CONTAINER_NAME := front-app
 ARG := $1
-# ======================================================
-# docker cmd
-# ======================================================
+# =======================================================
+# docker-compose cmd
+# =======================================================
+up:
+	docker-compose -p ${COMPOSE_PROJECT_NAME} up
+
+build:
+	docker-compose -p ${COMPOSE_PROJECT_NAME} up --build
+
+down:
+	docker-compose -p ${COMPOSE_PROJECT_NAME} down
+
+destroy:
+	docker-compose -p ${COMPOSE_PROJECT_NAME} down --rmi all --volumes
+
+ps:
+	docker-compose ps
+
+exec-container:
+	docker-compose -p ${COMPOSE_PROJECT_NAME} exec ${SERVICE_NAME_APP} /bin/ash
+
 system-prune: # remove unused docker obj
 	docker system prune
 
 image-prune: # remove unused docker imgae
 	docker image prune
-
-# =======================================================
-# docker-compose cmd
-# =======================================================
-up:
-	docker-compose up -d --build
-	make yarn-start
-
-down:
-	docker compose down
-
-stop:
-	docker-compose stop
-
-restart:
-	docker-compose down
-	docker-compose up -d
-
-
-destroy:
-	docker-compose down --rmi all --volumes
-
-ps:
-	docker-compose ps
-
-exec-app:
-	docker-compose exec ${CONTAINER_NAME} /bin/ash
-
-
 # =======================================================
 # yarn cmd
 # =======================================================
 yarn-install:
-	docker-compose exec ${CONTAINER_NAME} yarn install
+	docker-compose -p ${COMPOSE_PROJECT_NAME} exec ${SERVICE_NAME_APP} yarn install
 
 yarn-start:
-	docker-compose exec ${CONTAINER_NAME} yarn start
+	docker-compose -p ${COMPOSE_PROJECT_NAME} exec ${SERVICE_NAME_APP} yarn start
 
 yarn-build:
-	docker-compose exec ${CONTAINER_NAME} yarn build
+	docker-compose -p ${COMPOSE_PROJECT_NAME} exec ${SERVICE_NAME_APP} yarn build
 
 add:
-	docker-compose exec ${CONTAINER_NAME} yarn add ${ARG}
+	docker-compose -p ${COMPOSE_PROJECT_NAME} exec ${SERVICE_NAME_APP} yarn add ${ARG}
 
 build-storybook:
 	docker-compose exec ${CONTAINER_NAME} yarn build-storybook
 
 storybook:
 	docker-compose exec ${CONTAINER_NAME} yarn storybook
+
+genapi:
+	docker run --rm -v "${CURDIR}/../:/local" openapitools/openapi-generator-cli:v5.1.1 generate \
+	-i /local/openapi/v1.yaml \
+	-g typescript-fetch \
+	-o /local/frontend/src/api-client \
+	--additional-properties=typescriptThreePlus=true
 # =======================================================
 # setup
 # =======================================================
@@ -68,9 +65,6 @@ install-react-app:
 	rm -rf frontend
 	docker-compose exec ${CONTAINER_NAME} yarn build
 	docker-compose exec ${CONTAINER_NAME} yarn start	
-
-api:
-	yarn generate:api-client
 
 install:
 	cp .env.local.sample .env.local
