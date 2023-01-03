@@ -49,6 +49,9 @@ build-storybook:
 storybook:
 	docker-compose exec ${CONTAINER_NAME} yarn storybook
 
+test:
+	docker-compose -p ${COMPOSE_PROJECT_NAME} exec ${SERVICE_NAME_APP} yarn test
+
 genapi:
 	docker run --rm -v "${CURDIR}/../:/local" openapitools/openapi-generator-cli:v5.1.1 generate \
 	-i /local/openapi/v1.yaml \
