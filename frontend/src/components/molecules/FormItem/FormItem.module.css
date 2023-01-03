@@ -1,0 +1,22 @@
+
+.container {
+  background-color: white;
+  border: 1px solid #cccc; 
+  border-collapse: collapse; 
+  display: flex;
+  justify-content: center;
+}
+
+.inner {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 30%;  /** input 左のラインを揃える */
+}
+
+.label {
+  font-weight: bold;
+  letter-spacing: 0;
+  margin-top: 25px;
+  width: 150px; 
+}
