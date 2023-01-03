@@ -3,19 +3,22 @@ import { Link } from 'react-router-dom';
 import { createSearchParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { Layout } from '../../components/templates/_Layout/Layout';
+import { APITest } from '../../endpoint';
+
 
 export const Dashboard: React.FC = () => {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    fetch('/api/v1/', {
-      method: 'GET',
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setMessage(data);
+    const api = async () => {
+      const data = await fetch(APITest, {
+        method: 'GET',
       });
-  }, []);
+      const jsonData = await data.json();
+      setMessage(jsonData.sample);
+    };
+    api();
+  },[]);
 
   const navigate = useNavigate();
 
@@ -28,6 +31,7 @@ export const Dashboard: React.FC = () => {
     <>
       <Layout>
         <h1>Sample Home</h1>
+        <h1>{message ? "BEとと接続中": "BEと未接続"}</h1>
         <nav>
           <ul>
             <li>
