@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { SamplePage2 } from './pages/_Inspect/Router/pageB';
 
-import { Training } from './pages/Training/Training';
-import { NotFound } from './pages/NotFound/notFound';
+import { Training } from './pages/Training';
+import { NotFound } from './pages/NotFound';
 import { SamplePage3 } from './pages/_Inspect/Router/pageC';
 import {
   SamplePage4,
@@ -12,26 +12,26 @@ import {
   SamplePage4Child2,
   SamplePage4Child3,
 } from './pages/_Inspect/Router/pageD';
-import { Users } from './pages/Users/Users';
+import { Users } from './pages/Users';
 import { ChildTabPage } from './pages/_Sample/Tabs/ChildTab';
 import { ParentTabPage } from './pages/_Sample/Tabs/ParentTab';
-import { UserCreate } from './pages/UserCreatePage/UserCreatePage';
-import { StatePage } from './pages/_Inspect/StatePage/StatePage';
-import { FormPage } from './pages/_Sample/FormPage/FormPage';
-import { Fishes } from './pages/Fishes/FishesPage';
-import { UseMemoPage } from './pages/_Inspect/UseMemoPage/UseMemoPage';
-import { Atoms } from './pages/_Sample/Atoms/Atoms';
-import { DownloadCSVExcel } from './pages/_Sample/DownloadCSVExcel/DownloadCSVExcel';
-import { UseCallBackPage } from './pages/_Inspect/UseCallBackPage/UseCallBackPage';
-import { MemoPage } from './pages/_Inspect/MemoPage/MemoPage';
-import { Dashboard } from './pages/Dashboard/Dashboard';
-import { Inspect } from './pages/_Inspect/Inspect';
-import { Sample } from './pages/_Sample/Sample';
-import { ReduxPage } from './pages/_Inspect/ReduxPage/ReduxPage';
+import { UserCreate } from './pages/UserCreatePage';
+import { StatePage } from './pages/_Inspect/StatePage';
+import { FormPage } from './pages/_Sample/FormPage';
+import { Fishes } from './pages/Fishes';
+import { UseMemoPage } from './pages/_Inspect/UseMemoPage';
+import { Atoms } from './pages/_Sample/Atoms';
+import { DownloadCSVExcel } from './pages/_Sample/DownloadCSVExcel';
+import { UseCallBackPage } from './pages/_Inspect/UseCallBackPage';
+import { MemoPage } from './pages/_Inspect/MemoPage';
+import { Dashboard } from './pages/Dashboard';
+import { Inspect } from './pages/_Inspect';
+import { Sample } from './pages/_Sample';
+import { ReduxPage } from './pages/_Inspect/ReduxPage';
 import { ReduxTestPage } from './pages/_Inspect/ReduxPage/ReduxTestPage';
-import { UploadFilePage } from './pages/_Sample/UploadFilePage/UploadFilePage';
-import { TabPage } from './pages/_Sample/TabPage/TabPage';
-import { CalenderPage } from './pages/_Sample/CalenderPage/CalenderPage';
+import { UploadFilePage } from './pages/_Sample/UploadFilePage';
+import { TabPage } from './pages/_Sample/TabPage';
+import { CalenderPage } from './pages/_Sample/CalenderPage';
 
 export const RouterConfig: React.VFC = () => {
   return (
