@@ -1,5 +1,5 @@
 import React from 'react';
-import { eatType, Fish, habitatType } from '../../../pages/Fishes/useFishes.hook';
+import { eatType, Fish, habitatType } from '../../../types/fish';
 
 import styles from './FishesTable.module.css';
 

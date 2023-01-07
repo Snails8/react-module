@@ -1,41 +1,7 @@
-import { useEffect, useState } from 'react';
+import { APIGetFishes } from '../../endpoint';
+import { useFetch } from '../../hooks/useFecth';
 import FishData from '../../mockData/json/Fishes.json';
-
-export enum habitatType {
-  River = 'river',
-  Sea = 'sea',
-}
-
-export enum eatType {
-  Omnivorous = 'omnivorous',
-  Carnivorous = 'carnivorous',
-}
-
-export interface Fish {
-  /**
-   * @type {number}
-   * @memberof Fish
-   */
-  id: number;
-
-  /**
-   *
-   * @type {string}
-   * @memberof Fish
-   */
-  name: string;
-
-  /**
-   *
-   * @type {string}
-   * @memberof Fish
-   */
-  type: string;
-
-  habitat: string;
-
-  endangeredStatus: string;
-}
+import { Fish } from '../../types/fish';
 
 export const useFishes = () => {
   const fishes = process.env.IS_BACKEND
@@ -52,23 +18,8 @@ const getFishesFromJson = (): Fish[] => {
 };
 
 const getFishesFromAPI = (): Fish[] => {
-  const [fishes, setFishes] = useState<Fish[]>([]);
+  const {data, loading, error} = useFetch<Fish[]>(APIGetFishes);
+  if (data === undefined) return [];
 
-  useEffect(() => {
-    fetch('http://localhost:7001/api/v1/fishes', {
-      method: 'GET',
-    })
-      .then((res) => res.json())
-      .then(
-        (data) => {
-          setFishes(data);
-        },
-        (error) => {
-          console.log(error);
-          const errData = {};
-        }
-      );
-  }, []);
-
-  return fishes;
+  return data;
 };
