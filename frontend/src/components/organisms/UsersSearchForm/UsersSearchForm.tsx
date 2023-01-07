@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { User } from '../../../hooks';
+import { User } from '../../../pages/Users/useUsers.hook';
 import { Button } from '../../atoms/Button/Button';
 import { CheckBox } from '../../atoms/Checkbox/Checkbox';
 import { Input } from '../../atoms/Input/Input';

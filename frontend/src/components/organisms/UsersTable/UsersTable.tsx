@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { User, UserRole } from '../../../hooks/useUsers';
+import { User, UserRole } from '../../../pages/Users/useUsers.hook';
 
 import styles from './UsersTable.module.css';
 

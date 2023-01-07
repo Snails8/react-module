@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { Link } from "react-router-dom";
-import { User } from "../../../hooks";
+import { User } from "../../../pages/Users/useUsers.hook";
 
 import styles from "./UserMenu.module.css";
 

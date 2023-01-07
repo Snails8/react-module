@@ -1,8 +1,8 @@
 import React from 'react';
 import { Layout } from '../../../components/templates/_Layout/Layout';
-import { useTestUseEffect } from '../../../hooks/useTestUseEffect';
+import { useTestUseEffect } from './useTestUseEffect.hook';
 import { useCounter } from './useCounter.hooks';
-import { useReload } from './useReload.hooks';
+import { useReload } from './useReload.hook';
 
 export const StatePage: React.FC = () => {
   // reload時のみ処理する

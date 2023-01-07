@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import UsersJson from './Json/Users.json';
+import UsersJson from '../../hooks/Json/Users.json';
 import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
 export interface User {
   /**

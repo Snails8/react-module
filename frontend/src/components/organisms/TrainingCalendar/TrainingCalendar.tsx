@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { TrainingCalendarData } from '../../../hooks/useTraining';
+import { TrainingCalendarData } from '../../../pages/Training/useTraining.hook';
 import { ChangeDateFormat } from '../../../util/date';
 import styles from './TrainingCalendar.module.css';
 
