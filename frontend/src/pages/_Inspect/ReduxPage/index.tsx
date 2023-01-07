@@ -1,5 +1,5 @@
 import { Layout } from '../../../components/templates/_Layout/Layout';
-import store from '../../../store';
+import store from '../../../redux/reducers/index';
 import { connect } from 'react-redux';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
