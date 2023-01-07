@@ -2,7 +2,7 @@ import { TrainingCalendar } from '../../components/organisms/TrainingCalendar/Tr
 import { Layout } from '../../components/templates/_Layout/Layout';
 
 export const Training = () => {
-  const trainingData = require('../../hooks/Json/Training.json');
+  const trainingData = require('../../mockData/json/Training.json');
   const doShowDetail = false;
 
   return (

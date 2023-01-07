@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import FishData from '../../hooks/Json/Fishes.json';
+import FishData from '../../mockData/json/Fishes.json';
 
 export enum habitatType {
   River = 'river',
