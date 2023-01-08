@@ -4,10 +4,10 @@ import UsersJson from '../../mockData/json/Users.json';
 import { User } from '../../types/user';
 
 export const useUsers = () => {
-  const users = process.env.IS_BACKEND ? getUsersFromAPI() : getUsersFromJson();
+  const users = getUsersFromAPI();
 
   return {
-    users: users,
+    users,
   };
 };
 

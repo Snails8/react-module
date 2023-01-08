@@ -27,7 +27,7 @@ export const useFetch = <T>(url: string, header?: Header): FetchRequest<T> => {
         });
 
         const data = await res.json();
-        setData(data);
+        setData(data.data); // 受け取る方式に合わせて調整
       } catch (error: unknown) {
         setError(error as any);
       } finally {

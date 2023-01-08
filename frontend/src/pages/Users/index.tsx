@@ -14,7 +14,9 @@ type SearchParams = {
 };
 
 export const Users = () => {
-  const users = useUsers();
+  const { users } = useUsers();
+
+  console.log(users);
 
   const navigate = useNavigate();
   const query = (params: SearchParams) => {
@@ -45,7 +47,7 @@ export const Users = () => {
           checkHandler={checkHandler}
           handleClick={onClickButton}
         />
-        <UsersTable users={users.users} />
+        <UsersTable users={users} />
       </Layout>
     </>
   );
