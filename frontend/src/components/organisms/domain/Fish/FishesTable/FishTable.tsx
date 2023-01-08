@@ -1,5 +1,5 @@
 import React from 'react';
-import { eatType, Fish, habitatType } from '../../../types/fish';
+import { eatType, Fish, habitatType } from '../../../../../types/fish';
 
 import styles from './FishesTable.module.css';
 
@@ -56,9 +56,9 @@ export const FishesTable: React.FC<UsersTableProps> = ({ fishes }) => {
       </thead>
       <tbody>
         {fishes != null ? (
-          fishes.map((fish) => {
+          fishes.map((fish, idx: number) => {
             return (
-              <tr>
+              <tr key={idx}>
                 <td className={`${styles.td}`}>{fish.id}</td>
                 <td className={`${styles.td}`}>{fish.name}</td>
                 <td className={`${styles.td}`}>{typeLabel(fish.type)}</td>

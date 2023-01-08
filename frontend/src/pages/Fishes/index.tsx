@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useFishes } from './useFishes.hook';
 import { Link, useLocation } from 'react-router-dom';
 import { Layout } from '../../components/templates/_Layout/Layout';
-import { FishesTable } from '../../components/organisms/FishesTable/FishTable';
+import { FishesTable } from '../../components/organisms/domain/Fish/FishesTable/FishTable';
 
 export const Fishes: React.FC = () => {
   const location = useLocation();

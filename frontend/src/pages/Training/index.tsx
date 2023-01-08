@@ -1,4 +1,4 @@
-import { TrainingCalendar } from '../../components/organisms/TrainingCalendar/TrainingCalendar';
+import { TrainingCalendar } from '../../components/organisms/domain/Training/TrainingCalendar/TrainingCalendar';
 import { Layout } from '../../components/templates/_Layout/Layout';
 
 export const Training = () => {
