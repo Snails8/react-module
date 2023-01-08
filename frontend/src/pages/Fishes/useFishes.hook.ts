@@ -18,7 +18,7 @@ const getFishesFromJson = (): Fish[] => {
 };
 
 const getFishesFromAPI = (): Fish[] => {
-  const {data, loading, error} = useFetch<Fish[]>(APIGetFishes);
+  const [data, loading, error] = useFetch<Fish[]>(APIGetFishes);
   if (data === undefined) return [];
 
   return data;

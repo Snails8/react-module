@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 
-type FetchRequest<T> = {
-  data: T | undefined
+type FetchRequest<T> = [
+  data: T | undefined,
   loading: boolean,
   error: any
-}
+]
 
 type Header = {
-  [key: string]: any
+  [key: string]: any,
 };
 
 export const useFetch = <T>(url: string, header?: Header): FetchRequest<T> => {
@@ -39,7 +39,11 @@ export const useFetch = <T>(url: string, header?: Header): FetchRequest<T> => {
     // eslint-disable-next-line
   }, []);
 
-  return {loading, data, error};
+  return [
+    data,
+    loading, 
+    error
+  ];
 };
 
 /**

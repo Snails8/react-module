@@ -16,7 +16,7 @@ const getUsersFromJson = (): User[] => {
 };
 
 const getUsersFromAPI = (): User[] => {
-  const {data, error, loading} = useFetch<User[]>(APIGetUsers);
+  const [data, error, loading] = useFetch<User[]>(APIGetUsers);
   if (data === undefined) return [];
 
   return data;
