@@ -4,7 +4,7 @@ import styles from './Button.module.css';
 type ButtonColor = 'primary' | 'tertiary';
 export type ButtonProps = {
   label: string;
-  colorType: ButtonColor;
+  colorType?: ButtonColor;
   width?: number;
   height?: number;
   margin?: number;
@@ -14,7 +14,7 @@ export type ButtonProps = {
 };
 
 export const Button = memo((props: ButtonProps) => {
-  const { label, colorType, width, height, margin = 0, fontSize = 13, disabled = false, handleClick } = props;
+  const { label, colorType='primary', width=150, height=50, margin = 0, fontSize = 26, disabled = false, handleClick } = props;
 
   let color, backgroundColor, borderColor;
   switch (colorType) {
