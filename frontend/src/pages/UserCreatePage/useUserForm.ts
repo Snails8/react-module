@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { APIPostUserCreate } from "../../endpoint";
+import { usePost } from "../../hooks/usePost";
 import { UserRole } from '../../types/user';
 
 export const useUserForm = () => {
@@ -42,39 +43,24 @@ export const useUserForm = () => {
     },
   ];
 
+  const {doPostRequest, loading, error, data} = usePost();
+
+
   const navigate = useNavigate();
   async function handleSubmit(e: any) {
     e.preventDefault();
-    const fromData = {
+    const formData = {
       name: userName,
       email: email,
       password: password,
       role: userRole,
     };
 
-    fetch(APIPostUserCreate, {
-      method: 'POST',
-      body: JSON.stringify(fromData),
-    })
-      .then((res) => {
-        if (!res.ok) {
-          console.log('error!');
-        }
-        console.log('ok!');
-
-        return navigate('/users', {
-          state: {
-            isSave: true,
-          },
-          replace: false,
-        });
-      })
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    await doPostRequest({
+      method: 'post',
+      path: APIPostUserCreate,
+      postData: formData,
+    });
   }
 
   return {
