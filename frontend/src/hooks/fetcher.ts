@@ -5,7 +5,7 @@ async function fetcher<T>(key: string, init?: RequestInit) {
 }
 
 export const swrFetcher = <T>(path: string) => {
-  const { data, error } = useSWR(path, fetcher<T>);
+  const { data, error, isLoading, isValidating, mutate } = useSWR(path, fetcher<T>);
 
-  return {data, error};
+  return {data, error, isLoading};
 };
