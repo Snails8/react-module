@@ -2,23 +2,32 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { createSearchParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { Button } from '../../components/atoms/Button/Button';
 import { LoadingTemplate } from '../../components/templates/LoadingTemplate/LoadingTemplate';
 import { Layout } from '../../components/templates/_Layout/Layout';
-import { APITest } from '../../endpoint';
-import { swrFetcher } from '../../hooks/fetcher';
+import { APIPostTest, APIGetTest } from '../../endpoint';
 import { useFetch } from '../../hooks/useFetch';
+import { usePost } from '../../hooks/usePost';
 
 
 export const Dashboard: React.FC = () => {
   const navigate = useNavigate();
-  const {data, loading, error} = useFetch(APITest);
+  const [data, getLoading, error] = useFetch(APIGetTest);
+
+  const {doPostRequest, loading}= usePost();
+  const handleSubmit = () => {
+    doPostRequest({
+      method: 'post',
+      path: APIPostTest,
+      postData: {sample: 'test', foo: "fuga"}
+    });
+  };
 
   // const {data, error}= swrFetcher(APITest);
-  if (error) {
+  if (loading || getLoading) {
     return (<LoadingTemplate />);
   };
 
-  
 
   const params: string = createSearchParams({
     name: 'sample',
@@ -55,6 +64,7 @@ export const Dashboard: React.FC = () => {
           </ul>
 
           <button onClick={() => navigate('page1')}>SamplePage1</button>
+          <Button label='post' colorType='primary' handleClick={handleSubmit}/>
         </nav>
       </Layout>
     </>

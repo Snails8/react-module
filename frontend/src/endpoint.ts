@@ -4,7 +4,11 @@ const apiHost = process.env.REACT_APP_API_HOST + '/api/v1' ?? '/api/v1';
 
 export const APIGetFishes = apiHost + '/fishes';
 
-export const APITest = apiHost + '/';
+// test
+export const APIGetTest = apiHost + '/';
+export const APIPostTest = apiHost + '/create';
+
+
 export const APIGetUsers = apiHost + '/users';
 export const APIPostUserCreate = apiHost + '/users/create';
 
