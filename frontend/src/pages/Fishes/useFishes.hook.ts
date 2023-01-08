@@ -1,5 +1,5 @@
 import { APIGetFishes } from '../../endpoint';
-import { useFetch } from '../../hooks/useFecth';
+import { useFetch } from '../../hooks/useFetch';
 import FishData from '../../mockData/json/Fishes.json';
 import { Fish } from '../../types/fish';
 

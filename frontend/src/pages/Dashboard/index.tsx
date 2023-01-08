@@ -6,7 +6,7 @@ import { LoadingTemplate } from '../../components/templates/LoadingTemplate/Load
 import { Layout } from '../../components/templates/_Layout/Layout';
 import { APITest } from '../../endpoint';
 import { swrFetcher } from '../../hooks/fetcher';
-import { useFetch } from '../../hooks/useFecth';
+import { useFetch } from '../../hooks/useFetch';
 
 
 export const Dashboard: React.FC = () => {
