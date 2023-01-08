@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { createSearchParams, Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { UsersSearchForm } from '../../components/organisms/UsersSearchForm/UsersSearchForm';
 import { UsersTable } from '../../components/organisms/UsersTable/UsersTable';
 import { Layout } from '../../components/templates/_Layout/Layout';
-import { User, useUsers } from './useUsers.hook';
+import { User } from '../../types/user';
+import { useUsers } from './useUsers.hook';
 
 type SearchParams = {
   id: number;

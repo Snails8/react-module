@@ -5,8 +5,8 @@ const apiHost = process.env.REACT_APP_API_HOST + '/api/v1' ?? '/api/v1';
 export const APIGetFishes = apiHost + '/fishes';
 
 export const APITest = apiHost + '/';
-export const APIPathUsers = apiHost + '/users';
-export const APIPathUserCreate = apiHost + '/users/create';
+export const APIGetUsers = apiHost + '/users';
+export const APIPostUserCreate = apiHost + '/users/create';
 
 export const APIPathMasterTest = apiHost + '/master/test';
 export const APIPathMasterSample = apiHost + '/master/sample';

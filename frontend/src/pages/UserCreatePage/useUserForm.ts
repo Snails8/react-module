@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { APIPathUserCreate } from "../../endpoint";
-import { UserRole } from "../Users/useUsers.hook";
+import { APIPostUserCreate } from "../../endpoint";
+import { UserRole } from '../../types/user';
 
 export const useUserForm = () => {
   const [company, setCompany] = useState('JDSC');
@@ -52,7 +52,7 @@ export const useUserForm = () => {
       role: userRole,
     };
 
-    fetch(APIPathUserCreate, {
+    fetch(APIPostUserCreate, {
       method: 'POST',
       body: JSON.stringify(fromData),
     })

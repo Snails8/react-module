@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
-import { Logo } from '../../atoms/Logo/Logo';
 import styles from './GlobalHeader.module.css';
 import { memo, useState } from 'react';
-import { User, UserRole } from '../../../pages/Users/useUsers.hook';
+import { User, UserRole } from '../../../types/user';
 import { UserMenu } from '../UserMenu/UserMenu';
 
 type HeaderProps = {

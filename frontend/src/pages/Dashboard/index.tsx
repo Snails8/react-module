@@ -15,6 +15,8 @@ export const Dashboard: React.FC = () => {
     return (<LoadingTemplate />);
   };
 
+  
+
   const params: string = createSearchParams({
     name: 'sample',
     type: 'test',
