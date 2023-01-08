@@ -37,6 +37,7 @@
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
     "styled-components": "^5.3.5",
+    "swr": "^2.0.0",
     "typescript": "*",
     "web-vitals": "^2.1.4",
     "zod": "^3.19.1"
