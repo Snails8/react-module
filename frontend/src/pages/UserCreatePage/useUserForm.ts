@@ -4,7 +4,7 @@ import { APIPostUserCreate } from "../../endpoint";
 import { UserRole } from '../../types/user';
 
 export const useUserForm = () => {
-  const [company, setCompany] = useState('JDSC');
+  const [company, setCompany] = useState('');
   const [userName, setUserName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState('');
