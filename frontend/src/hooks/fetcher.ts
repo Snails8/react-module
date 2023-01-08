@@ -1,49 +1,11 @@
-const defaultTimeoutMs = 10 * 1000;
+import useSWR from "swr";
 
-// catchした際にタイムアウトによるエラーかそれ以外のエラーか判別するため
-export class TimeoutError extends Error {}
+async function fetcher<T>(key: string, init?: RequestInit) {
+  return fetch(key, init).then((res) => res.json() as Promise<T>);
+}
 
-const timeout = <T>(task: Promise<T>, ms?: number) => {
-  const timeoutMs = ms || defaultTimeoutMs;
-  const timeoutTask = new Promise((resolve, _) => {
-    setTimeout(resolve, timeoutMs);
-  }).then(() =>
-    Promise.reject(
-      new TimeoutError(`Operation timed out after ${timeoutMs} ms`)
-    )
-  );
+export const swrFetcher = <T>(path: string) => {
+  const { data, error } = useSWR(path, fetcher<T>);
 
-  return Promise.race([task, timeoutTask]);
+  return {data, error};
 };
-
-const wrap = <T>(task: Promise<Response>): Promise<T> => {
-  return new Promise((resolve, reject) => {
-    task
-      .then((response) => {
-        if (response.ok) {
-          response
-            .json()
-            .then((json) => {
-              resolve(json);
-            })
-            .catch((error) => {
-              reject(error);
-            });
-        } else {
-          reject(response);
-        }
-      })
-      .catch((error) => {
-        reject(error);
-      });
-  });
-};
-
-const fetcher = <T = any>(
-  input: RequestInfo,
-  init?: RequestInit
-): Promise<T> => {
-  return wrap<T>(timeout(fetch(input, init)));
-};
-
-export default fetcher;

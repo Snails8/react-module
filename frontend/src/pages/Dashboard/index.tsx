@@ -5,12 +5,15 @@ import { useNavigate } from 'react-router-dom';
 import { LoadingTemplate } from '../../components/templates/LoadingTemplate/LoadingTemplate';
 import { Layout } from '../../components/templates/_Layout/Layout';
 import { APITest } from '../../endpoint';
+import { swrFetcher } from '../../hooks/fetcher';
 import { useFetch } from '../../hooks/useFecth';
 
 
 export const Dashboard: React.FC = () => {
   const navigate = useNavigate();
   const {data, loading, error} = useFetch(APITest);
+
+  // const {data, error}= swrFetcher(APITest);
   if (error) {
     return (<LoadingTemplate />);
   };
