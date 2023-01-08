@@ -7,6 +7,7 @@ export const APIGetFishes = apiHost + '/fishes';
 // test
 export const APIGetTest = apiHost + '/';
 export const APIPostTest = apiHost + '/create';
+export const APIPutTest = (id: number) => apiHost + `/${id}`;
 
 
 export const APIGetUsers = apiHost + '/users';
