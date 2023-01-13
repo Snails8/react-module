@@ -45,7 +45,6 @@ export const useUserForm = () => {
 
   const {doPostRequest, loading, error, data} = usePost();
 
-
   const navigate = useNavigate();
   async function handleSubmit(e: any) {
     e.preventDefault();
