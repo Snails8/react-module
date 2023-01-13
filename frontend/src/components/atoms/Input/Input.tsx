@@ -20,9 +20,9 @@ export const Input = memo((props: InputProps) => {
     id,
     defaultValue = '',
     required = false,
-    width=80,
-    height=10,
-    padding=5,
+    width=10,
+    height=5,
+    padding=10,
     onChangeHandler,
     onBlurHandler = () => {},
     disabled = false,
@@ -34,7 +34,7 @@ export const Input = memo((props: InputProps) => {
       id={id}
       defaultValue={defaultValue}
       required={required}
-      style={{ width: width, height: height, padding: padding }}
+      style={{ minWidth: width, minHeight: height, padding: padding }}
       onChange={(e: any) => {
         onChangeHandler(e.target.value);
       }}

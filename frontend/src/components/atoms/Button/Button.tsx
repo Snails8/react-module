@@ -14,7 +14,7 @@ export type ButtonProps = {
 };
 
 export const Button = memo((props: ButtonProps) => {
-  const { label, colorType='primary', width=150, height=50, margin = 0, fontSize = 26, disabled = false, handleClick } = props;
+  const { label, colorType='primary', width=100, height=45, margin = 0, fontSize = 26, disabled = false, handleClick } = props;
 
   let color, backgroundColor, borderColor;
   switch (colorType) {
@@ -36,8 +36,8 @@ export const Button = memo((props: ButtonProps) => {
       style={{
         backgroundColor: backgroundColor,
         color: color,
-        width: width,
-        height: height,
+        minWidth: width,
+        minHeight: height,
         marginTop: margin,
         fontSize: fontSize,
         borderColor: borderColor,

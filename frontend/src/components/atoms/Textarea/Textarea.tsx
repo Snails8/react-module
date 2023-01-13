@@ -37,8 +37,8 @@ export const Textarea = memo((props: TextareaProps) => {
       maxLength={maxLength}
       spellCheck
       style={{
-        width: width,
-        height: height,
+        minWidth: width,
+        minHeight: height,
         padding: padding,
         fontWeight: fontWeight,
       }}
