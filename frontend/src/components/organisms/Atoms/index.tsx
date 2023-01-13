@@ -9,6 +9,7 @@ import { Textarea } from '../../atoms/Textarea/Textarea';
 import { useTypeConverter } from '../../../hooks/useTypeConverter';
 import styles from './Atoms.module.css';
 import { ReactNode } from 'react';
+import { UserIcon } from '../../atoms/UserIcon/UserIcon';
 
 type ContentProps = {
   label: string,
@@ -66,6 +67,7 @@ export const Atoms = () => {
         </Content>
       </div>
 
+      <h2>UI Item</h2>
       <div className={styles.item}>
         <Content label="LoadingSpinner">
           <LoadingSpinner />
@@ -79,8 +81,8 @@ export const Atoms = () => {
           <Logo />
         </Content>
 
-        <Content label="Label">
-          <Label text="label" color="green" width={100} />
+        <Content label="user icon">
+          <UserIcon />
         </Content>
       </div>
     </>
