@@ -1,12 +1,12 @@
-import { Button } from '../../../components/atoms/Button/Button';
-import { CheckBox } from '../../../components/atoms/Checkbox/Checkbox';
-import { Input } from '../../../components/atoms/Input/Input';
-import { Label } from '../../../components/atoms/Label/Label';
-import { LoadingSpinner } from '../../../components/atoms/LoadingSpinner/LoadingSpinner';
-import { Logo } from '../../../components/atoms/Logo/Logo';
-import { RadioButton } from '../../../components/atoms/RadioButton/RadioButton';
-import { Textarea } from '../../../components/atoms/Textarea/Textarea';
-import { Layout } from '../../../components/templates/_Layout/Layout';
+import { Button } from '../../atoms/Button/Button';
+import { CheckBox } from '../../atoms/Checkbox/Checkbox';
+import { Input } from '../../atoms/Input/Input';
+import { Label } from '../../atoms/Label/Label';
+import { LoadingSpinner } from '../../atoms/LoadingSpinner/LoadingSpinner';
+import { Logo } from '../../atoms/Logo/Logo';
+import { RadioButton } from '../../atoms/RadioButton/RadioButton';
+import { Textarea } from '../../atoms/Textarea/Textarea';
+import { Layout } from '../../templates/_Layout/Layout';
 import { useTypeConverter } from '../../../hooks/useTypeConverter';
 import styles from './Atoms.module.css';
 

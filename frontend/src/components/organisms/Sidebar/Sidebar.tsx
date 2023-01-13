@@ -39,16 +39,6 @@ export const Sidebar = memo((props: SidebarProps) => {
           <div className={styles.label}>fishes</div>
         </div>
       </Link>
-      <Link to="/atoms" className={styles.link}>
-        <div
-          className={styles.link_container}
-          style={
-            currentPath === '/atoms' ? { backgroundColor: activeColor } : {}
-          }
-        >
-          <div className={styles.label}>atoms 検証</div>
-        </div>
-      </Link>
       <Link to="/users" className={styles.link}>
         <div
           className={styles.link_container}
