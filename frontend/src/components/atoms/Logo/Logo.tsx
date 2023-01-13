@@ -1,15 +1,23 @@
-import styles from './Logo.module.css';
+import logo from  '../../../assets/logo/logo_yotuba01.png';
 
 type LogoProps = {
-  logoPath: string;
+  logoPath?: string;
+  width?: number
+  height?: number
 };
 
 export const Logo = (props: LogoProps) => {
-  const { logoPath } = props;
+  const { logoPath = logo, height=60, width=60 } = props;
 
   return (
-    <div className={`${styles.base}`}>
-      <img src={logoPath} alt="icon" />
-    </div>
+    <img 
+      src={logoPath} 
+      alt="icon" 
+      style={{ 
+        width: width,
+        height: height,
+      }}
+      data-testid='test'
+    />
   );
 };

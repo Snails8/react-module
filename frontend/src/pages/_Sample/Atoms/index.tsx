@@ -3,6 +3,7 @@ import { CheckBox } from '../../../components/atoms/Checkbox/Checkbox';
 import { Input } from '../../../components/atoms/Input/Input';
 import { Label } from '../../../components/atoms/Label/Label';
 import { LoadingSpinner } from '../../../components/atoms/LoadingSpinner/LoadingSpinner';
+import { Logo } from '../../../components/atoms/Logo/Logo';
 import { RadioButton } from '../../../components/atoms/RadioButton/RadioButton';
 import { Textarea } from '../../../components/atoms/Textarea/Textarea';
 import { Layout } from '../../../components/templates/_Layout/Layout';
@@ -67,6 +68,10 @@ export const Atoms = () => {
           <div className={styles.content}>
             <h5>Label</h5>
             <Label text="label" color="green" width={100} />
+          </div>
+          <div className={styles.content}>
+            <h5>Logo</h5>
+            <Logo />
           </div>
           <div className={styles.content}>
             <h5>Label2</h5>
