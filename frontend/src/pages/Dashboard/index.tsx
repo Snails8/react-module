@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { createSearchParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../../components/atoms/Button/Button';
-import { ContainerItemCenter } from '../../components/atoms/Container/Center/ContainerItemCenter';
+import { Container } from '../../components/atoms/Container/Container';
 import { LoadingTemplate } from '../../components/templates/LoadingTemplate/LoadingTemplate';
 import { Layout } from '../../components/templates/_Layout/Layout';
 import { APIPostTest, APIGetTest, APIPutTest } from '../../endpoint';
@@ -46,7 +46,7 @@ export const Dashboard: React.FC = () => {
   return (
     <>
       <Layout isContainerDesign>
-        <ContainerItemCenter>
+        <Container type='center'>
           <div>
           <h1>Sample Home</h1>
           <h1>{data ? "BEと接続中": "BEと未接続"}</h1>
@@ -82,7 +82,7 @@ export const Dashboard: React.FC = () => {
             <Button label='put' handleClick={handleSubmitPut}/>
           </div>
           </div>
-        </ContainerItemCenter>
+        </Container>
       </Layout>
     </>
   );

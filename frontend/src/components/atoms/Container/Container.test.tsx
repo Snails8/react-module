@@ -1,12 +1,12 @@
 import { render, screen } from "@testing-library/react"
-import { ContainerItemCenter } from "./ContainerItemCenter";
+import { Container } from "./Container";
 
 describe('logo', () => {
   test('render', () => {
     render(
-      <ContainerItemCenter>
+      <Container type="center">
         <p data-testid='test'>test</p>
-      </ContainerItemCenter>
+      </Container>
     )
     
     expect(screen.queryByTestId('test')).not.toBeNull();
