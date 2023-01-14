@@ -63,6 +63,16 @@ export const Sidebar = memo((props: SidebarProps) => {
           <div className={styles.label}> hooks検証</div>
         </div>
       </Link>
+      <Link to="/samples/control-form" className={styles.link}>
+        <div
+          className={styles.link_container}
+          style={
+            currentPath === '/samples/control-form' ? { backgroundColor: activeColor } : {}
+          }
+        >
+          <div className={styles.label}>フォーム</div>
+        </div>
+      </Link>
       {clickStatePage && (
         <div>
           <Link to="/memo" className={styles.link}>
