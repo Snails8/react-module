@@ -3,6 +3,7 @@ import { useFormContext } from "react-hook-form";
 import { Container } from "../../atoms/Design/Container/Container";
 import { ControlSelect } from "../../atoms/_MUI/ContorlSelect/ControlSelect";
 import { ControlDatePicker } from "../../atoms/_MUI/ControlDatePicker/ControlDatePicker";
+import { ControlRadio } from "../../atoms/_MUI/ControlRadio/ControlRadio";
 import { ControlTextField } from "../../atoms/_MUI/ControlTextField/ControlTextField";
 
 export const SampleForm = () => {
@@ -14,6 +15,12 @@ export const SampleForm = () => {
     {label: 'test2', value: 'test2'},
     {label: 'test3', value: 'test3'},
     {label: 'test4', value: 'test4'},
+  ];
+
+  const radioOptions: any[] = [
+    {label: '男性', value: 'male'},
+    {label: '女性', value: 'female'},
+    {label: '未回答', value: ''},
   ];
 
   return  (
@@ -84,6 +91,38 @@ export const SampleForm = () => {
             name="date"
             control={control}
             trigger={trigger}
+          />
+        </Box>
+      </Container>
+
+      <h3>Radio</h3>
+      <Container type="flex">
+        <Box sx={{ margin: 2, bgcolor: "white" }}>
+          <ControlRadio 
+            name="gender"
+            options={radioOptions}
+            label="性別"
+            control={control}
+          />
+        </Box>
+        <Box sx={{ margin: 2, bgcolor: "white" }}>
+          <ControlRadio 
+            name="gender"
+            options={radioOptions}
+            label="性別"
+            defaultValue={"female"}
+            control={control}
+            row
+          />
+        </Box>
+        <Box sx={{ margin: 2, bgcolor: "white" }}>
+          <ControlRadio 
+            name="gender"
+            options={radioOptions}
+            defaultValue={""}
+            control={control}
+            row
+            disabled
           />
         </Box>
       </Container>
