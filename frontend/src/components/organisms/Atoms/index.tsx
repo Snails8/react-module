@@ -12,6 +12,7 @@ import { ReactNode } from 'react';
 import { UserIcon } from '../../atoms/UI/UserIcon/UserIcon';
 import { Dropdown } from '../../atoms/Form/Dropdown/Dropdown';
 import { Table } from '../../molecules/Table/Table';
+import { CellTable } from '../../molecules/CellTable/CellTable';
 
 type ContentProps = {
   label: string,
@@ -108,6 +109,10 @@ export const Atoms = () => {
       
       <div className={styles.item}>
         <Table header={header} body={body}/>
+      </div>
+
+      <div className={styles.item}>
+        <CellTable />
       </div>
     </>
   );
