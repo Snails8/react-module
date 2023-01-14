@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Dropdown.module.css";
-import { ReactComponent as BaseCaretIcon } from '../../../assets/images/caret-down.svg';
+import { ReactComponent as BaseCaretIcon } from './dropdown.svg';
 
 export type DropdownOption<T> = {
   label: string
@@ -31,8 +31,6 @@ export const Dropdown = (props: DropdownProps<any>) => {
 
   const handleClick = (e: React.MouseEvent<HTMLInputElement>) => {
     if (disabled === true) {
-      // jsdom may not have pointer event feature.
-      // Ref: https://github.com/jsdom/jsdom/issues/2527
       return;
     }
     e.stopPropagation();
@@ -46,7 +44,7 @@ export const Dropdown = (props: DropdownProps<any>) => {
           {options.find((option) => option.value === selectedValue)?.label || ''}
         </span>
         <div className={styles.icon}>
-          {/* <BaseCaretIcon /> */}a
+          <BaseCaretIcon />
         </div>
       </div>
       { isExpanded && (

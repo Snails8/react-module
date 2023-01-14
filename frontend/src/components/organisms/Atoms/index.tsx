@@ -10,6 +10,7 @@ import { useTypeConverter } from '../../../hooks/useTypeConverter';
 import styles from './Atoms.module.css';
 import { ReactNode } from 'react';
 import { UserIcon } from '../../atoms/UI/UserIcon/UserIcon';
+import { Dropdown } from '../../atoms/Form/Dropdown/Dropdown';
 
 type ContentProps = {
   label: string,
@@ -29,30 +30,17 @@ const Content = (props: ContentProps) => {
 export const Atoms = () => {
   const hoge = useTypeConverter();
 
+  const dropdownLists = [
+    {label: 'test1', value: 'test1'},
+    {label: 'test2', value: 'test2'},
+    {label: 'test3', value: 'test3'},
+    {label: 'test4', value: 'test4'},
+  ];
+
   return (
     <>
-      <h2>form Item</h2>
+      <h2>form item</h2>
       <div className={styles.item}>
-        <Content label="button">
-          <Button label="label" handleClick={() => console.log('clicked')}/>
-        </Content>
-
-        <Content label="checkbox">
-          <CheckBox
-            id="checkbox"
-            label="checkbox"
-            onChangeHandler={() => console.log('checkbox!')}
-          />
-        </Content>
-
-        <Content label="radio">
-          <RadioButton
-            id="radio"
-            label="radio"
-            onChangeHandler={() => console.log('radio!')}
-          />
-        </Content>
-
         <Content label="input">
           <Input
             type="text"
@@ -61,14 +49,38 @@ export const Atoms = () => {
             onChangeHandler={() => console.log('text')}
           />
         </Content>
-
         <Content label="textarea">
           <Textarea id="text" defaultValue={"sample\ntest"} onChangeHandler={() => console.log('text')}/>
         </Content>
+        <Content label="checkbox">
+          <CheckBox
+            id="checkbox"
+            label="checkbox"
+            onChangeHandler={() => console.log('checkbox!')}
+          />
+        </Content>
+        <Content label="radio">
+          <RadioButton
+            id="radio"
+            label="radio"
+            onChangeHandler={() => console.log('radio!')}
+          />
+        </Content>
+        <Content label="radio">
+          <Dropdown
+            options={dropdownLists}
+            defaultValue={'test1'}
+            onChangeHandler={() => console.log('select!')}
+          />
+        </Content>
       </div>
 
-      <h2>UI Item</h2>
+      <h2>UI item</h2>
       <div className={styles.item}>
+        <Content label="button">
+          <Button label="label" handleClick={() => console.log('clicked')}/>
+        </Content>
+        
         <Content label="LoadingSpinner">
           <LoadingSpinner />
         </Content>
