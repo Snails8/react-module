@@ -1,7 +1,7 @@
 import { FC, memo } from "react";
 import { ReactNode } from 'react';
 
-type ContainerType = "center" | "left" | "right" | "flow"
+type ContainerType = "center" | "left" | "right" | "flow" | "flex"
 type Props = {
   type: ContainerType,
   children: ReactNode,
@@ -37,6 +37,14 @@ export const Container: FC<Props> = memo((props: Props) => {
   if (type === "flow") {
     return (
       <div style={{ display: 'flex', flexFlow: 'column' }}>
+        {children}
+      </div>
+    );
+  };
+
+  if (type === "flex") {
+    return (
+      <div style={{ display: 'flex' }}>
         {children}
       </div>
     );
