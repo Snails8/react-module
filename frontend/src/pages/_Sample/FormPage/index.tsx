@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CheckBox } from '../../../components/atoms/Checkbox/Checkbox';
-import { Input } from '../../../components/atoms/Input/Input';
+import { CheckBox } from '../../../components/atoms/Form/Checkbox/Checkbox';
+import { Input } from '../../../components/atoms/Form/Input/Input';
 import { Layout } from '../../../components/templates/_Layout/Layout';
 import styles from './FormPage.module.css';
 

@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import { Dropdown } from '../../../../atoms/Dropdown/Dropdown';
-import { Input } from '../../../../atoms/Input/Input';
+import { Dropdown } from '../../../../atoms/Form/Dropdown/Dropdown';
+import { Input } from '../../../../atoms/Form/Input/Input';
 import { FormItem } from '../../../../molecules/FormItem/FormItem'; 
 
 import styles from './UserCreateForm.module.css';

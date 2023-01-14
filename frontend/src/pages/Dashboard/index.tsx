@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { createSearchParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '../../components/atoms/Button/Button';
-import { Container } from '../../components/atoms/Container/Container';
+import { Button } from '../../components/atoms/UI/Button/Button';
+import { Container } from '../../components/atoms/Design/Container/Container';
 import { Atoms } from '../../components/organisms/Atoms';
 import { LoadingTemplate } from '../../components/templates/LoadingTemplate/LoadingTemplate';
 import { Layout } from '../../components/templates/_Layout/Layout';
@@ -74,10 +74,10 @@ export const Dashboard: React.FC = () => {
                   <Link to="page4">Sample Page4</Link>
                 </li>
               </ul>
-    
+
               <button onClick={() => navigate('page1')}>SamplePage1</button>
             </nav>
-    
+
             <div style={{ display: 'flex', }}>
               <Button label='post' handleClick={handleSubmitPost}/>
               <Button label='put' handleClick={handleSubmitPut}/>

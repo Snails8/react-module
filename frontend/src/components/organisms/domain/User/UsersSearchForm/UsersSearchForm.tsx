@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import { User } from '../../../../../types/user';
-import { Button } from '../../../../atoms/Button/Button';
-import { CheckBox } from '../../../../atoms/Checkbox/Checkbox';
-import { Input } from '../../../../atoms/Input/Input';
+import { Button } from '../../../../atoms/UI/Button/Button';
+import { CheckBox } from '../../../../atoms/Form/Checkbox/Checkbox';
+import { Input } from '../../../../atoms/Form/Input/Input';
 import styles from './UsersSearchForm.module.css';
 
 type UsersSearchFormProps = {

@@ -1,15 +1,15 @@
-import { Button } from '../../atoms/Button/Button';
-import { CheckBox } from '../../atoms/Checkbox/Checkbox';
-import { Input } from '../../atoms/Input/Input';
-import { Label } from '../../atoms/Label/Label';
-import { LoadingSpinner } from '../../atoms/LoadingSpinner/LoadingSpinner';
-import { Logo } from '../../atoms/Logo/Logo';
-import { RadioButton } from '../../atoms/RadioButton/RadioButton';
-import { Textarea } from '../../atoms/Textarea/Textarea';
+import { Button } from '../../atoms/UI/Button/Button';
+import { CheckBox } from '../../atoms/Form/Checkbox/Checkbox';
+import { Input } from '../../atoms/Form/Input/Input';
+import { Label } from '../../atoms/UI/Label/Label';
+import { LoadingSpinner } from '../../atoms/UI/LoadingSpinner/LoadingSpinner';
+import { Logo } from '../../atoms/UI/Logo/Logo';
+import { RadioButton } from '../../atoms/Form/RadioButton/RadioButton';
+import { Textarea } from '../../atoms/Form/Textarea/Textarea';
 import { useTypeConverter } from '../../../hooks/useTypeConverter';
 import styles from './Atoms.module.css';
 import { ReactNode } from 'react';
-import { UserIcon } from '../../atoms/UserIcon/UserIcon';
+import { UserIcon } from '../../atoms/UI/UserIcon/UserIcon';
 
 type ContentProps = {
   label: string,

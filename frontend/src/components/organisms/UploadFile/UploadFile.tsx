@@ -1,7 +1,7 @@
 import { memo } from 'react';
-import { Button } from '../../atoms/Button/Button';
-import { LoadingSpinner } from '../../atoms/LoadingSpinner/LoadingSpinner';
-import { NotificationField } from '../../atoms/NotificationField/NotificationField';
+import { Button } from '../../atoms/UI/Button/Button';
+import { LoadingSpinner } from '../../atoms/UI/LoadingSpinner/LoadingSpinner';
+import { NotificationField } from '../../molecules/NotificationField/NotificationField';
 import styles from './UploadFile.module.css';
 
 type UploadFileProps = {

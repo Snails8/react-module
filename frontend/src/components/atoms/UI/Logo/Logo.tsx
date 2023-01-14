@@ -1,4 +1,4 @@
-import logo from  '../../../assets/logo/logo_yotuba01.png';
+import logo from  '../../../../assets/logo/logo_yotuba01.png';
 
 type LogoProps = {
   logoPath?: string;

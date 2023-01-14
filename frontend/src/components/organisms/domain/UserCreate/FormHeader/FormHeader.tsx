@@ -1,4 +1,4 @@
-import { Button } from '../../../../atoms/Button/Button';
+import { Button } from '../../../../atoms/UI/Button/Button';
 import styles from './FormHeader.module.css';
 
 type FormHeaderProps = {
