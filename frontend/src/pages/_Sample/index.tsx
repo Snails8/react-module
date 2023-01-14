@@ -19,6 +19,9 @@ export const Sample = () => {
         <li>
           <Link to="/samples/calenders">カレンダーのサンプル</Link>
         </li>
+        <li>
+          <Link to="/samples/control-form">ReactHooksのFormサンプル</Link>
+        </li>
       </ul>
     </Layout>
   );

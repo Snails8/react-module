@@ -8,7 +8,7 @@ import styles from './AtomMUI.module.css';
 import { ReactNode } from 'react';
 import { UserIcon } from '../../atoms/UI/UserIcon/UserIcon';
 import { Dropdown } from '../../atoms/Form/Dropdown/Dropdown';
-import { ControlTextField } from '../../atoms/_MUI/ContorlTextField/ContorlTextField';
+import { ControlTextField } from '../../atoms/_MUI/ControlTextField/ControlTextField';
 import { useFormContext } from 'react-hook-form';
 
 type ContentProps = {
