@@ -62,12 +62,12 @@ export const RouterConfig: React.VFC = () => {
           <Route path="useCallback" element={<UseCallBackPage />} />
           <Route path="parent-tab" element={<ParentTabPage />} />
           <Route path="child-tab" element={<ChildTabPage />} />
-          <Route path="download-file" element={<DownloadCSVExcel />} />
           <Route path="inspects" element={<Inspect />} />
           <Route path="redux" element={<ReduxPage />} />
           <Route path="redux/test" element={<ReduxTestPage />} />
           <Route path="samples" element={<Sample />} />
           <Route path="samples/upload-file" element={<UploadFilePage />} />
+          <Route path="samples/download-file" element={<DownloadCSVExcel />} />
           <Route path="samples/tabs" element={<TabPage />} />
           <Route path="samples/calenders" element={<CalenderPage />} />
           <Route path="samples/control-form" element={<ControlFormPage />} />

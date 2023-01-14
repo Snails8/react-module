@@ -133,7 +133,6 @@ export const Sidebar = memo((props: SidebarProps) => {
       </Link>
       {clickSamplePage && (
         <div>
-          <Link to="/form" className={styles.link}>
             <div
               className={styles.link_container}
               style={
@@ -141,38 +140,9 @@ export const Sidebar = memo((props: SidebarProps) => {
               }
             >
               <div className={styles.link_container}>
-                <div className={styles.label}>フォーム検証</div>
+                <div className={styles.label}>Clicked</div>
               </div>
             </div>
-          </Link>
-          <Link to="/parent-tab" className={styles.link}>
-            <div
-              className={styles.link_container}
-              style={
-                currentPath === '/parent-tab'
-                  ? { backgroundColor: activeColor }
-                  : {}
-              }
-            >
-              <div className={styles.link_container}>
-                <div className={styles.label}>タブ間通信検証</div>
-              </div>
-            </div>
-          </Link>
-          <Link to="/download-file" className={styles.link}>
-            <div
-              className={styles.link_container}
-              style={
-                currentPath === '//download-file'
-                  ? { backgroundColor: activeColor }
-                  : {}
-              }
-            >
-              <div className={styles.link_container}>
-                <div className={styles.label}>CSV・Excel 関連</div>
-              </div>
-            </div>
-          </Link>
         </div>
       )}
     </div>
