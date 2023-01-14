@@ -13,6 +13,8 @@ type InputVal = {
 }
 
 export const usePostForm = () => {
+  const {loading, error, doPostRequest} = usePost();
+  
   const initialVal = {
     name: "",
     email: "",
@@ -35,7 +37,6 @@ export const usePostForm = () => {
       check: values.check,
     };
 
-    const {loading, error, doPostRequest} = usePost();
     doPostRequest({
       method: 'post',
       path: '/',

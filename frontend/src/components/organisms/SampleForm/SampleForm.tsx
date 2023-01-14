@@ -11,7 +11,7 @@ export const SampleForm = () => {
   const {control, trigger, formState: {errors}} = useFormContext();
 
   const options: any[] = [
-    {label: '未選択', value: ''},
+    {label: '未選択', value: 'undefined'},
     {label: 'test1', value: 'test1'},
     {label: 'test2', value: 'test2'},
     {label: 'test3', value: 'test3'},
