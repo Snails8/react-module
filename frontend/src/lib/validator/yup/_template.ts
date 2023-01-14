@@ -3,6 +3,8 @@ export const InValidInputNotAllowSymbols = '記号は入力できません';
 export const InvalidTypeDate = '正しい日付を入力してください';
 export const InvalidTypeEmail = '正しい形式のメールアドレスを指定してください';
 export const InValidInputNumber = '数字を入力してください';
+export const InValidInputMoreLen = (len: number) => `${len}文字以上で入力して下さい`;
+export const InValidInputLessLen = (len: number) => `${len}文字以内で入力して下さい`;
 export const InValidInputMinNum = '最大値より小さく設定してください';
 export const InValidInputMaxNum = '最小値より大きく設定してください';
 

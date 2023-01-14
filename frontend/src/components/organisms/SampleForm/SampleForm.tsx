@@ -66,7 +66,7 @@ export const SampleForm = () => {
       <Container type="flex">
         <Box sx={{ margin: 2, bgcolor: "white"  }}>
           <ControlSelect
-            name="select_id"
+            name="selectId"
             label="希望日"
             options={options}
             control={control}
@@ -74,7 +74,7 @@ export const SampleForm = () => {
         </Box>
         <Box sx={{ margin: 2, bgcolor: "white"  }}>
           <ControlSelect
-            name="select_id"
+            name="selectId2"
             options={options}
             control={control}
             defaultValue={'test1'}
@@ -82,7 +82,7 @@ export const SampleForm = () => {
         </Box>
         <Box sx={{ margin: 2, bgcolor: "white"  }}>
           <ControlSelect
-            name="select_id"
+            name="select_disabled"
             options={options}
             control={control}
             defaultValue={'test1'}
@@ -94,7 +94,7 @@ export const SampleForm = () => {
       <h3>Date系</h3>
       <Container type="center">
         <Box sx={{ margin: 2, bgcolor: "white" }}>
-          <ControlDatePicker 
+          <ControlDatePicker
             name="date"
             control={control}
             trigger={trigger}
@@ -114,7 +114,7 @@ export const SampleForm = () => {
         </Box>
         <Box sx={{ margin: 2, bgcolor: "white" }}>
           <ControlRadio 
-            name="gender"
+            name="genderDefault"
             options={radioOptions}
             label="性別"
             defaultValue={"female"}
@@ -124,7 +124,7 @@ export const SampleForm = () => {
         </Box>
         <Box sx={{ margin: 2, bgcolor: "white" }}>
           <ControlRadio 
-            name="gender"
+            name="genderDisabled"
             options={radioOptions}
             defaultValue={""}
             control={control}
@@ -138,7 +138,7 @@ export const SampleForm = () => {
       <Container type="flex">
         <Box sx={{ margin: 2, bgcolor: "white" }}>
           <ControlCheckbox 
-            name="check-test"
+            name="check"
             options={checkboxOptions}
             errors={errors}
             label="性別"
