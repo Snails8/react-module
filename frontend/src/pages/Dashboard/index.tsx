@@ -10,6 +10,7 @@ import { Layout } from '../../components/templates/_Layout/Layout';
 import { APIPostTest, APIGetTest, APIPutTest } from '../../endpoint';
 import { useFetch } from '../../hooks/useFetch';
 import { usePost } from '../../hooks/usePost';
+import { AtomMUI } from '../../components/organisms/AtomMUI/AtomMUI';
 
 
 export const Dashboard: React.FC = () => {
@@ -85,6 +86,7 @@ export const Dashboard: React.FC = () => {
           </div>
 
           <Atoms />
+          <AtomMUI />
         </Container>
       </Layout>
     </>
