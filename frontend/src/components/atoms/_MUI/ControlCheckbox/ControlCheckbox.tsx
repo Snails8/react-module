@@ -33,6 +33,7 @@ export const ControlCheckbox = <T extends Obj>(props: ControlSelectProps<T>) => 
       <FormGroup>
         { options.map((item: any, idx: number) => (
           <Controller
+            key={idx}
             name={`${name}.${idx}` as Path<T>}
             control={control}
             render={({ field }) => (
