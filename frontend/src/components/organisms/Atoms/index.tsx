@@ -11,6 +11,7 @@ import styles from './Atoms.module.css';
 import { ReactNode } from 'react';
 import { UserIcon } from '../../atoms/UI/UserIcon/UserIcon';
 import { Dropdown } from '../../atoms/Form/Dropdown/Dropdown';
+import { Table } from '../../molecules/Table/Table';
 
 type ContentProps = {
   label: string,
@@ -35,6 +36,13 @@ export const Atoms = () => {
     {label: 'test2', value: 'test2'},
     {label: 'test3', value: 'test3'},
     {label: 'test4', value: 'test4'},
+  ];
+
+  const header = ['th1', 'th2', 'th3'] as const;
+  const body = [
+    ['1a', '1b', '1c'],
+    ['2a', '2b', '2c'],
+    ['3a', '3b', '3c'],
   ];
 
   return (
@@ -80,22 +88,26 @@ export const Atoms = () => {
         <Content label="button">
           <Button label="label" handleClick={() => console.log('clicked')}/>
         </Content>
-        
-        <Content label="LoadingSpinner">
-          <LoadingSpinner />
-        </Content>
 
         <Content label="Label">
           <Label text="label" color="green" width={100} />
         </Content>
 
         <Content label="LoadingSpinner">
+          <LoadingSpinner />
+        </Content>
+
+        <Content label="logo">
           <Logo />
         </Content>
 
         <Content label="user icon">
           <UserIcon />
         </Content>
+      </div>
+      
+      <div className={styles.item}>
+        <Table header={header} body={body}/>
       </div>
     </>
   );
