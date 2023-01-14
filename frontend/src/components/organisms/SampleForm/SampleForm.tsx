@@ -2,12 +2,13 @@ import { Box } from "@mui/system";
 import { useFormContext } from "react-hook-form";
 import { Container } from "../../atoms/Design/Container/Container";
 import { ControlSelect } from "../../atoms/_MUI/ContorlSelect/ControlSelect";
+import { ControlCheckbox } from "../../atoms/_MUI/ControlCheckbox/ControlCheckbox";
 import { ControlDatePicker } from "../../atoms/_MUI/ControlDatePicker/ControlDatePicker";
 import { ControlRadio } from "../../atoms/_MUI/ControlRadio/ControlRadio";
 import { ControlTextField } from "../../atoms/_MUI/ControlTextField/ControlTextField";
 
 export const SampleForm = () => {
-  const {control, trigger} = useFormContext();
+  const {control, trigger, formState: {errors}} = useFormContext();
 
   const options: any[] = [
     {label: '未選択', value: ''},
@@ -21,6 +22,12 @@ export const SampleForm = () => {
     {label: '男性', value: 'male'},
     {label: '女性', value: 'female'},
     {label: '未回答', value: ''},
+  ];
+
+  const checkboxOptions: any[] = [
+    {label: 'check1', value: 1},
+    {label: 'check2', value: 2},
+    {label: 'check3', value: 3},
   ];
 
   return  (
@@ -123,6 +130,19 @@ export const SampleForm = () => {
             control={control}
             row
             disabled
+          />
+        </Box>
+      </Container>
+
+      <h3>Checkbox</h3>
+      <Container type="flex">
+        <Box sx={{ margin: 2, bgcolor: "white" }}>
+          <ControlCheckbox 
+            name="check-test"
+            options={checkboxOptions}
+            errors={errors}
+            label="性別"
+            control={control}
           />
         </Box>
       </Container>
