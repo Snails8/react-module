@@ -6,8 +6,8 @@ type Obj = {
 };
 
 type ControlTextFieldProps<T extends Obj>  = {
-  type: 'text' | 'number'
   name: string,
+  type?: 'text' | 'number' | 'email',
   control: Control<T, any>,
   trigger:  UseFormTrigger<T>,
   label?: string 
@@ -16,7 +16,7 @@ type ControlTextFieldProps<T extends Obj>  = {
 }
 
 export const ControlTextField = <T extends Obj>(props: ControlTextFieldProps<T>) => {
-  const {type, name, control, trigger, label=null, inputProps={}, width={}} = props;
+  const {name, type = 'text', control, trigger, label=null, inputProps={}, width={}} = props;
 
   return (
     <FormControl fullWidth>
