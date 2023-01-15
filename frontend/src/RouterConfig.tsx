@@ -33,14 +33,22 @@ import { TabPage } from './pages/_Sample/TabPage';
 import { CalenderPage } from './pages/_Sample/CalenderPage';
 import { ControlFormPage } from './pages/_Sample/ControlFormPage/ControlFormPage';
 
+export const RouteTraining = "/training";
+export const RouteFishes = "/fishes";
+export const RouteUserIndex = "/users";
+export const RouteUserCreate = "users/create";
+export const RouteSampleIndex = "/samples";
+export const RouteControlForm = "/samples/control-form";
+export const RouteCalender = "/samples/calenders";
+
 export const RouterConfig: React.VFC = () => {
   return (
     <>
       <BrowserRouter>
         <Routes>
           <Route index element={<Dashboard />} />
-          <Route path="training" element={<Training />} />
-          <Route path="fishes" element={<Fishes />} />
+          <Route path={RouteTraining} element={<Training />} />
+          <Route path={RouteFishes} element={<Fishes />} />
           <Route path="page2" element={<SamplePage2 />} />
           <Route
             path="page3"
@@ -53,8 +61,8 @@ export const RouterConfig: React.VFC = () => {
             <Route path=":cildid" element={<SamplePage4Child3 />} />
           </Route>
           <Route path="*" element={<NotFound />} />
-          <Route path="users" element={<Users />} />
-          <Route path="users/create" element={<UserCreate />} />
+          <Route path={RouteUserIndex} element={<Users />} />
+          <Route path={RouteUserCreate} element={<UserCreate />} />
           <Route path="form" element={<FormPage />} />
           <Route path="states" element={<StatePage />} />
           <Route path="memo" element={<MemoPage />} />
@@ -65,12 +73,12 @@ export const RouterConfig: React.VFC = () => {
           <Route path="inspects" element={<Inspect />} />
           <Route path="redux" element={<ReduxPage />} />
           <Route path="redux/test" element={<ReduxTestPage />} />
-          <Route path="samples" element={<Sample />} />
+          <Route path={RouteSampleIndex} element={<Sample />} />
           <Route path="samples/upload-file" element={<UploadFilePage />} />
           <Route path="samples/download-file" element={<DownloadCSVExcel />} />
           <Route path="samples/tabs" element={<TabPage />} />
-          <Route path="samples/calenders" element={<CalenderPage />} />
-          <Route path="samples/control-form" element={<ControlFormPage />} />
+          <Route path={RouteCalender} element={<CalenderPage />} />
+          <Route path={RouteControlForm} element={<ControlFormPage />} />
         </Routes>
       </BrowserRouter>
     </>

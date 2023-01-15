@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Layout } from '../../components/templates/_Layout/Layout';
+import { RouteControlForm } from '../../RouterConfig';
 
 /**
  * 検証ページのindex
@@ -11,7 +12,7 @@ export const Sample = () => {
       route管理が二重になるのはめんどい。sidebar うまいこと利用したい
       <ul>
         <li>
-          <Link to="/samples/control-form">ReactHooksのFormサンプル</Link>
+          <Link to={RouteControlForm}>ReactHooksのFormサンプル</Link>
         </li>
         <li>
           <Link to="/form">formサンプル</Link>

@@ -1,5 +1,6 @@
 import { memo, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { RouteControlForm, RouteFishes, RouteSampleIndex, RouteTraining, RouteUserIndex } from '../../../RouterConfig';
 import styles from './Sidebar.module.css';
 
 type SidebarProps = {
@@ -12,38 +13,38 @@ export const Sidebar = memo((props: SidebarProps) => {
     currentPath.startsWith('/inspects')
   );
   const [clickSamplePage, setClickSamplePage] = useState(
-    currentPath.startsWith('/samples')
+    currentPath.startsWith(RouteSampleIndex)
   );
 
   const activeColor = '#f7f7f7';
 
   return (
     <div className={styles.container}>
-      <Link to="/training" className={styles.link}>
+      <Link to={RouteTraining} className={styles.link}>
         <div
           className={styles.link_container}
           style={
-            currentPath === '/training' ? { backgroundColor: activeColor } : {}
+            currentPath === RouteTraining ? { backgroundColor: activeColor } : {}
           }
         >
           <div className={styles.label}>training</div>
         </div>
       </Link>
-      <Link to="/fishes" className={styles.link}>
+      <Link to={RouteFishes} className={styles.link}>
         <div
           className={styles.link_container}
           style={
-            currentPath === '/fishes' ? { backgroundColor: activeColor } : {}
+            currentPath === RouteFishes ? { backgroundColor: activeColor } : {}
           }
         >
           <div className={styles.label}>fishes</div>
         </div>
       </Link>
-      <Link to="/users" className={styles.link}>
+      <Link to={RouteUserIndex} className={styles.link}>
         <div
           className={styles.link_container}
           style={
-            currentPath === '/users' ? { backgroundColor: activeColor } : {}
+            currentPath === RouteUserIndex ? { backgroundColor: activeColor } : {}
           }
         >
           <div className={styles.label}>ユーザー管理</div>
@@ -63,11 +64,11 @@ export const Sidebar = memo((props: SidebarProps) => {
           <div className={styles.label}> hooks検証</div>
         </div>
       </Link>
-      <Link to="/samples/control-form" className={styles.link}>
+      <Link to={RouteControlForm} className={styles.link}>
         <div
           className={styles.link_container}
           style={
-            currentPath === '/samples/control-form' ? { backgroundColor: activeColor } : {}
+            currentPath === RouteControlForm ? { backgroundColor: activeColor } : {}
           }
         >
           <div className={styles.label}>フォーム</div>
@@ -131,7 +132,7 @@ export const Sidebar = memo((props: SidebarProps) => {
           </Link>
         </div>
       )}
-      <Link to="/samples" className={styles.link}>
+      <Link to={RouteSampleIndex} className={styles.link}>
         <div
           className={styles.link_container}
           onClick={() => setClickSamplePage(!clickSamplePage)}

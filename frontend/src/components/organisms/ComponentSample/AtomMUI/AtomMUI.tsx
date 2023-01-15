@@ -11,6 +11,7 @@ import { Dropdown } from '../../../atoms/Form/Dropdown/Dropdown';
 import { ControlTextField } from '../../../atoms/_MUI/ControlTextField/ControlTextField';
 import { useFormContext } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import { RouteControlForm } from '../../../../RouterConfig';
 
 type ContentProps = {
   label: string,
@@ -40,7 +41,7 @@ export const AtomMUI = () => {
       <h1 className={styles.h1}>MUI</h1>
       <h2>form item</h2>
       <div className={styles.item}>
-        <Link to={'/samples/control-form'}>こちら</Link>
+        <Link to={RouteControlForm}>こちら</Link>
       </div>
 
       <h2>UI item</h2>
