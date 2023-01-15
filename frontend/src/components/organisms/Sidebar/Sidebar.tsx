@@ -50,6 +50,26 @@ export const Sidebar = memo((props: SidebarProps) => {
           <div className={styles.label}>ユーザー管理</div>
         </div>
       </Link>
+      <Link to={RouteControlForm} className={styles.link}>
+        <div
+          className={styles.link_container}
+          style={
+            currentPath === RouteControlForm ? { backgroundColor: activeColor } : {}
+          }
+        >
+          <div className={styles.label}>フォーム</div>
+        </div>
+      </Link>
+      <Link to={RouteSampleIndex} className={styles.link}>
+        <div
+          className={styles.link_container}
+          onClick={() => setClickSamplePage(!clickSamplePage)}
+        >
+          <div className={styles.label}>
+            {clickSamplePage ? '実装 sample　∨' : '実装 sample　∧'}
+          </div>
+        </div>
+      </Link>
       <Link
         to="/inspects"
         className={styles.link}
@@ -62,16 +82,6 @@ export const Sidebar = memo((props: SidebarProps) => {
           onClick={() => setClickStatePage(!clickStatePage)}
         >
           <div className={styles.label}> hooks検証</div>
-        </div>
-      </Link>
-      <Link to={RouteControlForm} className={styles.link}>
-        <div
-          className={styles.link_container}
-          style={
-            currentPath === RouteControlForm ? { backgroundColor: activeColor } : {}
-          }
-        >
-          <div className={styles.label}>フォーム</div>
         </div>
       </Link>
       {clickStatePage && (
@@ -130,30 +140,6 @@ export const Sidebar = memo((props: SidebarProps) => {
               </div>
             </div>
           </Link>
-        </div>
-      )}
-      <Link to={RouteSampleIndex} className={styles.link}>
-        <div
-          className={styles.link_container}
-          onClick={() => setClickSamplePage(!clickSamplePage)}
-        >
-          <div className={styles.label}>
-            {clickSamplePage ? '実装 sample　∨' : '実装 sample　∧'}
-          </div>
-        </div>
-      </Link>
-      {clickSamplePage && (
-        <div>
-            <div
-              className={styles.link_container}
-              style={
-                currentPath === '/form' ? { backgroundColor: activeColor } : {}
-              }
-            >
-              <div className={styles.link_container}>
-                <div className={styles.label}>Clicked</div>
-              </div>
-            </div>
         </div>
       )}
     </div>
