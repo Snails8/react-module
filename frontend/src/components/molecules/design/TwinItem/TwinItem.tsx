@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
-import styles from "./FormItem.module.css";
+import styles from "./TwinItem.module.css";
 
-type FormItemProps = {
+type TwinItemProps = {
   children: ReactNode
   label: string
   // 文字数が多くても均一のデザインにするよう調整で使用
@@ -13,10 +13,10 @@ type FormItemProps = {
  * @param props 
  * @returns 
  */
-export const FormItem = (props: FormItemProps) => {
+export const TwinItem = (props: TwinItemProps) => {
   const width = props.width ?? 150;
   return (
-    <div className={styles.container} data-testid='form-item'>
+    <div className={styles.container} data-testid='test'>
       <span className={styles.label} style={{ width: width }}>{props.label}</span>
       <div className={styles.inner}>
         {props.children}

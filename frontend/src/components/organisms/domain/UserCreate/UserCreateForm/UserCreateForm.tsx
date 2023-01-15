@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { Dropdown } from '../../../../atoms/form/Dropdown/Dropdown';
 import { Input } from '../../../../atoms/form/Input/Input';
-import { FormItem } from '../../../../molecules/design/TwinItem/FormItem'; 
+import { TwinItem } from '../../../../molecules/design/TwinItem/TwinItem'; 
 
 import styles from './UserCreateForm.module.css';
 
@@ -26,10 +26,10 @@ export const UserCreateForm = (props: UserCreateFormProps) => {
     <div>
       <div className={styles.container}>
         <form onSubmit={handleSubmit}>
-          <FormItem label={"会社名"}>
+          <TwinItem label={"会社名"}>
             <p>{company}</p>
-          </FormItem>
-          <FormItem label={"ユーザー名"}>
+          </TwinItem>
+          <TwinItem label={"ユーザー名"}>
             <Input type="text" id="name"
               defaultValue={userName}
               required={true}
@@ -40,8 +40,8 @@ export const UserCreateForm = (props: UserCreateFormProps) => {
                 handleInputUserName(value);
               }}
             />
-          </FormItem>
-          <FormItem label="メールアドレス">
+          </TwinItem>
+          <TwinItem label="メールアドレス">
             <Input
               type="email"
               id="email"
@@ -54,8 +54,8 @@ export const UserCreateForm = (props: UserCreateFormProps) => {
                 handleInputEmail(value);
               }}
             />
-          </FormItem>
-          <FormItem label={"パスワード"}>
+          </TwinItem>
+          <TwinItem label={"パスワード"}>
             <Input type="text" id="password"
               defaultValue={password}
               required={true}
@@ -66,8 +66,8 @@ export const UserCreateForm = (props: UserCreateFormProps) => {
                 handleInputPassword(value);
               }}
             />
-          </FormItem>
-          <FormItem label={"パスワードの確認"}>
+          </TwinItem>
+          <TwinItem label={"パスワードの確認"}>
             <Input type="text" id="name"
               defaultValue={password}
               required={true}
@@ -78,8 +78,8 @@ export const UserCreateForm = (props: UserCreateFormProps) => {
                 handleInputPassword(value);
               }}
             />
-          </FormItem>
-          <FormItem label={"ユーザー識別"}>
+          </TwinItem>
+          <TwinItem label={"ユーザー識別"}>
             <Dropdown
               options={options}
               defaultValue={userRole}
@@ -88,7 +88,7 @@ export const UserCreateForm = (props: UserCreateFormProps) => {
                 handleInputUserRole(value);
               }}
             />
-          </FormItem>
+          </TwinItem>
         </form>
       </div>
     </div>
