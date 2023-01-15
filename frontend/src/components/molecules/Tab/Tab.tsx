@@ -1,20 +1,20 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import styles from "./Tab.module.css";
 
 type TabProps = {
-  tabHeaders: string[]
+  headers: string[]
   selected: number
   handleSelected: (idx: number) => void
   children: ReactNode
 }
 
 export const Tab = (props: TabProps) => {
-  const {tabHeaders, selected, handleSelected, children} = props;
+  const {headers, selected, handleSelected, children} = props;
 
   return (
     <div className={styles.container}>
       <ul className={styles.tab}>
-        {tabHeaders.map((label : string, idx: number) => (
+        {headers.map((label : string, idx: number) => (
           <li className={styles.tab__item}>
             <span className={styles.tab__link} onClick={() => handleSelected(idx)} style={selected === idx ? {backgroundColor: "green"}: {}}>{label}</span>
           </li>
