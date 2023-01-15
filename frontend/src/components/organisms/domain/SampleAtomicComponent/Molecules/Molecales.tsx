@@ -8,6 +8,7 @@ import { useTabSelect } from '../../../../molecules/ui/Tab/useTabSelect';
 import { Button } from '../../../../atoms/ui/Button/Button';
 import { useModal } from '../../../../molecules/ui/Modal/useModal';
 import { Modal } from '../../../../molecules/ui/Modal/Modal';
+import { NotificationField } from '../../../../molecules/ui/NotificationField/NotificationField';
 
 type ContentProps = {
   label: string,
@@ -72,6 +73,21 @@ export const Molecules = () => {
               <p>aaa</p>
             </Modal>
           )}
+        </Content>
+      </div>
+
+      <div className={styles.item}>
+        <Content label="notification">
+          <NotificationField type='error' message='error message' title='error'/>
+        </Content>
+        <Content label="notification">
+          <NotificationField type='error' message='error message'/>
+        </Content>
+        <Content label="notification">
+          <NotificationField type='success' message='success message' title='success'/>
+        </Content>
+        <Content label="notification">
+          <NotificationField type='success' message='success message'/>
         </Content>
       </div>
 
