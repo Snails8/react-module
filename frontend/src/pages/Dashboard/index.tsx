@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { createSearchParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
@@ -11,6 +11,9 @@ import { APIPostTest, APIGetTest, APIPutTest } from '../../endpoint';
 import { useFetch } from '../../hooks/useFetch';
 import { usePost } from '../../hooks/usePost';
 import { AtomMUI } from '../../components/organisms/AtomMUI/AtomMUI';
+import { TabMUI } from '../../components/molecules/_MUI/Tab/Tab';
+import { TabMUIContent } from '../../components/molecules/_MUI/Tab/TabContent';
+import { useSelectTab } from '../../components/molecules/_MUI/Tab/useSelectTab';
 
 
 export const Dashboard: React.FC = () => {
@@ -40,6 +43,9 @@ export const Dashboard: React.FC = () => {
     name: 'sample',
     type: 'test',
   }).toString();
+
+
+  const {tabIdx, handleSelected} = useSelectTab();
 
   if (loading || getLoading) {
     return (<LoadingTemplate />);
@@ -84,6 +90,15 @@ export const Dashboard: React.FC = () => {
               <Button label='put' handleClick={handleSubmitPut}/>
             </div>
           </div>
+
+          <TabMUI headers={['atoms', 'mui']} tabIdx={tabIdx} handleChange={handleSelected} width={300} centered>
+            <TabMUIContent  value={tabIdx} index={0}>
+              test
+            </TabMUIContent>
+            <TabMUIContent  value={tabIdx} index={1}>
+              contents
+            </TabMUIContent>
+          </TabMUI>
 
           <Atoms />
           <AtomMUI />
