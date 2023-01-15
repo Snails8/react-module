@@ -1,8 +1,8 @@
-import { Textarea } from '../../../../atoms/form/Textarea/Textarea';
 import styles from './Molecules.module.css';
 import { ReactNode } from 'react';
 import { Table } from '../../../../molecules/ui/Table/Table';
-import { CellTable } from '../../../../molecules/ui/CellTable/CellTable';
+import { TableCell } from '../../../../molecules/ui/TableCell/TableCell';
+import { TwinItem } from '../../../../molecules/design/TwinItem/TwinItem';
 
 type ContentProps = {
   label: string,
@@ -28,21 +28,32 @@ export const Molecules = () => {
     ['3a', '3b', '3c'],
   ];
 
+  const cellHeaders = ['2/2', '2/3', '2/4', '2/5', '2/6'];
+  const bodyItem = [
+    {label: 'sample1', value: [1, 2, 3, 4, 5]},
+    {label: 'sample2', value: [1, 2, 3, 4, 5]},
+    {label: 'sample3', value: [1, 2, 3, 4, 5]},
+    {label: 'sample4', value: [11, 12, 13, 14, 15]},
+  ];
+
   return (
     <>
-      <h2>form item</h2>
+      <h2>UI</h2>
       <div className={styles.item}>
         <Content label="table">
           <Table header={header} body={body}/>
         </Content>
         
         <Content label="cellTable">
-          <CellTable />
+          <TableCell headers={cellHeaders} items={bodyItem}/>
         </Content>
       </div>
 
+      <h2>design</h2>
       <div className={styles.item}>
-        
+        <Content label="table">
+          <TwinItem label='twin-label'>twin-value</TwinItem>
+        </Content> 
       </div>
     </>
   );
