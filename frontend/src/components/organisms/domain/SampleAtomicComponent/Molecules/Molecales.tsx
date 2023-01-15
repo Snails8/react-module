@@ -3,6 +3,8 @@ import { ReactNode } from 'react';
 import { Table } from '../../../../molecules/ui/Table/Table';
 import { TableCell } from '../../../../molecules/ui/TableCell/TableCell';
 import { TwinItem } from '../../../../molecules/design/TwinItem/TwinItem';
+import { SampleTabContent, Tab } from '../../../../molecules/ui/Tab/Tab';
+import { useTabSelect } from '../../../../molecules/ui/Tab/useTabSelect';
 
 type ContentProps = {
   label: string,
@@ -36,6 +38,7 @@ export const Molecules = () => {
     {label: 'sample4', value: [11, 12, 13, 14, 15]},
   ];
 
+  const {tabIdx, handleSelect} = useTabSelect();
   return (
     <>
       <h2>UI</h2>
@@ -46,6 +49,14 @@ export const Molecules = () => {
         
         <Content label="cellTable">
           <TableCell headers={cellHeaders} items={bodyItem}/>
+        </Content>
+      </div>
+
+      <div className={styles.item}>
+        <Content label="tab">
+          <Tab headers={['test1', 'test2', 'test3', 'test4']} selected={tabIdx} handleSelected={handleSelect}>
+            <SampleTabContent selected={tabIdx}/>
+          </Tab>
         </Content>
       </div>
 

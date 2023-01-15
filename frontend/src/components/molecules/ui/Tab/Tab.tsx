@@ -27,10 +27,20 @@ export const Tab = (props: TabProps) => {
   );
 };
 
+/**
+usage:
+  const {tabIdx, handleSelect} = useTabSelect();
+  return (
+    <Tab headers={['test1', 'test2', 'test3', 'test4']} selected={tabIdx} handleSelected={handleSelect}>
+      <SampleTabContent selected={tabIdx}/>
+    </Tab>
+  )
+ */
+
 type PageContentProps = {
   selected: number
 }
-const PageContent = (props: PageContentProps) => {
+export const SampleTabContent = (props: PageContentProps) => {
   const {selected} = props;
 
   switch (selected) {
