@@ -9,16 +9,18 @@ import { Button } from '../../../../atoms/ui/Button/Button';
 import { useModal } from '../../../../molecules/ui/Modal/useModal';
 import { Modal } from '../../../../molecules/ui/Modal/Modal';
 import { NotificationField } from '../../../../molecules/ui/NotificationField/NotificationField';
+import { PageHeader } from '../../../../molecules/ui/PageHeader/PageHeader';
 
 type ContentProps = {
   label: string,
+  width?: number,
   children: ReactNode,
 }
 
 const Content = (props: ContentProps) => {
-  const {label, children} = props;
+  const {label, width, children} = props;
   return (
-    <div className={styles.content}>
+    <div className={styles.content} style={{ width: width }}>
       <h5>{label}</h5>
       {children}
     </div>
@@ -90,6 +92,13 @@ export const Molecules = () => {
           <NotificationField type='success' message='success message'/>
         </Content>
       </div>
+
+      <div className={styles.item}>
+        <Content label="page header" width={500}>
+          <PageHeader title='test' backLink/>
+        </Content>
+      </div>
+
 
       <h2>design</h2>
       <div className={styles.item}>

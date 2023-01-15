@@ -4,11 +4,11 @@ import styles from './PageHeader.module.css';
 
 type PageHeaderProps = {
   title: string;
-  backLink: boolean;
+  backLink?: boolean;
 };
 
 export const PageHeader = memo((props: PageHeaderProps) => {
-  const { title, backLink } = props;
+  const { title, backLink = false } = props;
   const navigate = useNavigate();
 
   return (
