@@ -1,105 +1,39 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { CheckBox } from '../../../components/atoms/Form/Checkbox/Checkbox';
-import { Input } from '../../../components/atoms/Form/Input/Input';
-import { Layout } from '../../../components/templates/_Layout/Layout';
-import styles from './FormPage.module.css';
+import { FormProvider } from "react-hook-form";
+import { Button } from "../../../components/atoms/UI/Button/Button";
+import { TabMUI } from "../../../components/molecules/_MUI/Tab/Tab";
+import { TabMUIContent } from "../../../components/molecules/_MUI/Tab/TabContent";
+import { useSelectTab } from "../../../components/molecules/_MUI/Tab/useSelectTab";
+import { SampleForm } from "../../../components/organisms/SampleForm/SampleForm";
+import { Layout } from "../../../components/templates/_Layout/Layout";
+import { SimpleForm } from "./Form/Form";
+import { usePostForm } from "./usePostForm.hooks";
 
-export const FormPage: React.FC = () => {
-  const navigate = useNavigate();
-
-  const [name, setName] = useState<string>('');
-  const [email, setEmail] = useState<string>('');
-
-  // checkbox
-  const [checked, setChecked] = useState(false);
-
-  async function handleSubmit(e: any) {
-    e.preventDefault();
-    const fromData = {
-      name: name,
-      email: email,
-    };
-
-    fetch('http://localhost:7001/api/v1/users/create', {
-      method: 'POST',
-      body: JSON.stringify(fromData),
-    })
-      .then((res) => {
-        if (!res.ok) {
-          console.log('error!');
-        }
-        console.log('ok!');
-
-        return navigate('/from', {
-          state: {
-            isSave: true,
-          },
-          replace: false,
-        });
-      })
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
-
+export const FormPage = () => {
+  const {formMethods, handleSubmit} = usePostForm();
+  
+  const {tabIdx, handleSelected} = useSelectTab();
+  const headers = ['React Hook Form × yup ', '通常のForm'];
   return (
-    <>
-      <Layout isContainerDesign={true}>
-        <form onSubmit={handleSubmit}>
-          <div className={styles.form_container}>
-            <div className={styles.form_item}>
-              <div className={styles.container_inner}>
-                <span className={styles.form_label}>名前</span>
-                <Input
-                  type="text"
-                  id="name"
-                  defaultValue={name}
-                  required={true}
-                  width={400}
-                  height={30}
-                  padding={10}
-                  onChangeHandler={(value: string) => {
-                    setName(value);
-                  }}
-                />
-              </div>
-            </div>
-            <div className={styles.form_item}>
-              <div className={styles.container_inner}>
-                <span className={styles.form_label}>メール</span>
-                <Input
-                  type="email"
-                  id="email"
-                  defaultValue={email}
-                  required={true}
-                  width={400}
-                  height={30}
-                  padding={10}
-                  onChangeHandler={(value: string) => {
-                    setEmail(value);
-                  }}
-                />
-              </div>
-            </div>
-            <div className={styles.form_item}>
-              <CheckBox
-                id="test-from"
-                label="checkbox"
-                onChangeHandler={(value) => setChecked(value)}
-              />
-            </div>
-          </div>
-          <div>
-            <button type="submit" className="btn btn-success">
-              保存
-            </button>
-          </div>
-        </form>
-      </Layout>
-    </>
+    <Layout isContainerDesign>
+
+      <TabMUI headers={headers} tabIdx={tabIdx} handleChange={handleSelected} width={400} centered>
+        <TabMUIContent value={tabIdx} index={0}>
+          <h2>React Hook Form × yup を使用した Form Sample</h2>
+          <FormProvider {...formMethods}>
+            <form onSubmit={formMethods.handleSubmit(() => handleSubmit)}>
+              <SampleForm />
+              <Button label="送信" handleClick={handleSubmit} />
+            </form>
+          </FormProvider>
+        </TabMUIContent>
+
+        <TabMUIContent value={tabIdx} index={1}>
+          <h2>通常の Form Sample</h2>
+          <SimpleForm />
+        </TabMUIContent>
+
+        
+      </TabMUI>
+    </Layout>
   );
 };

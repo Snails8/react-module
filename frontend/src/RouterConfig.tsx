@@ -17,7 +17,6 @@ import { ChildTabPage } from './pages/_Sample/Tabs/ChildTab';
 import { ParentTabPage } from './pages/_Sample/Tabs/ParentTab';
 import { UserCreate } from './pages/UserCreatePage';
 import { StatePage } from './pages/_Inspect/StatePage';
-import { FormPage } from './pages/_Sample/FormPage';
 import { Fishes } from './pages/Fishes';
 import { UseMemoPage } from './pages/_Inspect/UseMemoPage';
 import { DownloadCSVExcel } from './pages/_Sample/DownloadCSVExcel';
@@ -31,7 +30,7 @@ import { ReduxTestPage } from './pages/_Inspect/ReduxPage/ReduxTestPage';
 import { UploadFilePage } from './pages/_Sample/UploadFilePage';
 import { TabPage } from './pages/_Sample/TabPage';
 import { CalenderPage } from './pages/_Sample/CalenderPage';
-import { ControlFormPage } from './pages/_Sample/ControlFormPage/ControlFormPage';
+import { FormPage } from './pages/_Sample/FormPage';
 
 export const RouteTraining = "/training";
 export const RouteFishes = "/fishes";
@@ -63,7 +62,6 @@ export const RouterConfig: React.VFC = () => {
           <Route path="*" element={<NotFound />} />
           <Route path={RouteUserIndex} element={<Users />} />
           <Route path={RouteUserCreate} element={<UserCreate />} />
-          <Route path="form" element={<FormPage />} />
           <Route path="states" element={<StatePage />} />
           <Route path="memo" element={<MemoPage />} />
           <Route path="useMemo" element={<UseMemoPage />} />
@@ -78,7 +76,7 @@ export const RouterConfig: React.VFC = () => {
           <Route path="samples/download-file" element={<DownloadCSVExcel />} />
           <Route path="samples/tabs" element={<TabPage />} />
           <Route path={RouteCalender} element={<CalenderPage />} />
-          <Route path={RouteControlForm} element={<ControlFormPage />} />
+          <Route path={RouteControlForm} element={<FormPage />} />
         </Routes>
       </BrowserRouter>
     </>
