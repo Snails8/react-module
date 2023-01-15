@@ -5,6 +5,9 @@ import { TableCell } from '../../../../molecules/ui/TableCell/TableCell';
 import { TwinItem } from '../../../../molecules/design/TwinItem/TwinItem';
 import { SampleTabContent, Tab } from '../../../../molecules/ui/Tab/Tab';
 import { useTabSelect } from '../../../../molecules/ui/Tab/useTabSelect';
+import { Button } from '../../../../atoms/ui/Button/Button';
+import { useModal } from '../../../../molecules/ui/Modal/useModal';
+import { Modal } from '../../../../molecules/ui/Modal/Modal';
 
 type ContentProps = {
   label: string,
@@ -39,6 +42,7 @@ export const Molecules = () => {
   ];
 
   const {tabIdx, handleSelect} = useTabSelect();
+  const {showModal, handleOpen,handleClose} = useModal();
   return (
     <>
       <h2>UI</h2>
@@ -57,6 +61,17 @@ export const Molecules = () => {
           <Tab headers={['test1', 'test2', 'test3', 'test4']} selected={tabIdx} handleSelected={handleSelect}>
             <SampleTabContent selected={tabIdx}/>
           </Tab>
+        </Content>
+      </div>
+
+      <div className={styles.item}>
+        <Content label="modal">
+          <Button label='show modal' handleClick={handleOpen}/>
+          { showModal && (
+            <Modal title='sample' handleCloseModal={handleClose}>
+              <p>aaa</p>
+            </Modal>
+          )}
         </Content>
       </div>
 

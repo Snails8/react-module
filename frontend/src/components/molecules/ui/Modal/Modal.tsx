@@ -1,5 +1,5 @@
 import styles from './Modal.module.css';
-import CancelSvg from '../../../../src/assets/images/cancel.svg';
+import CancelSvg from './close-50.svg';
 import { ReactNode } from 'react';
 
 type ModalProps = {
@@ -32,3 +32,17 @@ export const Modal = (props: ModalProps) => {
     </div>
   );
 };
+
+/**
+ * usage:
+
+  const {showModal, handleOpen,handleClose} = useModal();
+  return (
+    <Button label='show modal' handleClick={handleOpen}/>
+    { showModal && (
+      <Modal title='sample' handleCloseModal={handleClose}>
+        <p>aaa</p>
+      </Modal>
+    )}
+  )
+ */
