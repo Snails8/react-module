@@ -1,11 +1,11 @@
 import { Box } from "@mui/system";
 import { useFormContext } from "react-hook-form";
-import { Container } from "../../atoms/Design/Container/Container";
-import { ControlSelect } from "../../atoms/_MUI/ContorlSelect/ControlSelect";
-import { ControlCheckbox } from "../../atoms/_MUI/ControlCheckbox/ControlCheckbox";
-import { ControlDatePicker } from "../../atoms/_MUI/ControlDatePicker/ControlDatePicker";
-import { ControlRadio } from "../../atoms/_MUI/ControlRadio/ControlRadio";
-import { ControlTextField } from "../../atoms/_MUI/ControlTextField/ControlTextField";
+import { Container } from "../../../atoms/design/Container/Container";
+import { ControlSelect } from "../../../atoms/_MUI/ContorlSelect/ControlSelect";
+import { ControlCheckbox } from "../../../atoms/_MUI/ControlCheckbox/ControlCheckbox";
+import { ControlDatePicker } from "../../../atoms/_MUI/ControlDatePicker/ControlDatePicker";
+import { ControlRadio } from "../../../atoms/_MUI/ControlRadio/ControlRadio";
+import { ControlTextField } from "../../../atoms/_MUI/ControlTextField/ControlTextField";
 
 export const SampleForm = () => {
   const {control, trigger, formState: {errors}} = useFormContext();

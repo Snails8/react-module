@@ -1,4 +1,4 @@
-import { Button } from '../../components/atoms/UI/Button/Button';
+import { Button } from '../../components/atoms/ui/Button/Button';
 import { UserCreateForm } from '../../components/organisms/domain/UserCreate/UserCreateForm/UserCreateForm';
 import { Layout } from '../../components/templates/_Layout/Layout';
 import { useUserForm } from './useUserForm';

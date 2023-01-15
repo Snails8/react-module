@@ -1,17 +1,17 @@
-import { Button } from '../../../atoms/UI/Button/Button';
-import { CheckBox } from '../../../atoms/Form/Checkbox/Checkbox';
-import { Label } from '../../../atoms/UI/Label/Label';
-import { LoadingSpinner } from '../../../atoms/UI/LoadingSpinner/LoadingSpinner';
-import { Logo } from '../../../atoms/UI/Logo/Logo';
-import { RadioButton } from '../../../atoms/Form/RadioButton/RadioButton';
+import { Button } from '../../../../atoms/ui/Button/Button';
+import { CheckBox } from '../../../../atoms/form/Checkbox/Checkbox';
+import { Label } from '../../../../atoms/ui/Label/Label';
+import { LoadingSpinner } from '../../../../atoms/ui/LoadingSpinner/LoadingSpinner';
+import { Logo } from '../../../../atoms/ui/Logo/Logo';
+import { RadioButton } from '../../../../atoms/form/RadioButton/RadioButton';
 import styles from './AtomMUI.module.css';
 import { ReactNode } from 'react';
-import { UserIcon } from '../../../atoms/UI/UserIcon/UserIcon';
-import { Dropdown } from '../../../atoms/Form/Dropdown/Dropdown';
-import { ControlTextField } from '../../../atoms/_MUI/ControlTextField/ControlTextField';
+import { UserIcon } from '../../../../atoms/ui/UserIcon/UserIcon';
+import { Dropdown } from '../../../../atoms/form/Dropdown/Dropdown';
+import { ControlTextField } from '../../../../atoms/_MUI/ControlTextField/ControlTextField';
 import { useFormContext } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import { RouteControlForm } from '../../../../RouterConfig';
+import { RouteControlForm } from '../../../../../RouterConfig';
 
 type ContentProps = {
   label: string,

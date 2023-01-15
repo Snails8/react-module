@@ -1,5 +1,5 @@
 
-import { UploadFile } from '../../../components/organisms/UploadFile/UploadFile';
+import { UploadFile } from '../../../components/organisms/common/UploadFile/UploadFile';
 import { Layout } from '../../../components/templates/_Layout/Layout';
 import { FileNameEnum } from '../../../types/csv';
 import { useDownloadFile } from './useDownloadFile';

@@ -1,8 +1,8 @@
-import { Textarea } from '../../../atoms/Form/Textarea/Textarea';
+import { Textarea } from '../../../../atoms/form/Textarea/Textarea';
 import styles from './Molecules.module.css';
 import { ReactNode } from 'react';
-import { Table } from '../../../molecules/Table/Table';
-import { CellTable } from '../../../molecules/CellTable/CellTable';
+import { Table } from '../../../../molecules/ui/Table/Table';
+import { CellTable } from '../../../../molecules/ui/CellTable/CellTable';
 
 type ContentProps = {
   label: string,

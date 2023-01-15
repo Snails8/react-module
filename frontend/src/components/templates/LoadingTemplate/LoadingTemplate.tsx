@@ -1,4 +1,4 @@
-import { LoadingSpinner } from "../../atoms/UI/LoadingSpinner/LoadingSpinner";
+import { LoadingSpinner } from "../../atoms/ui/LoadingSpinner/LoadingSpinner";
 import { Layout } from "../_Layout/Layout";
 
 export const LoadingTemplate = () => {

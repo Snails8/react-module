@@ -1,6 +1,6 @@
 import { memo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { RouteControlForm, RouteFishes, RouteSampleIndex, RouteTraining, RouteUserIndex } from '../../../RouterConfig';
+import { RouteControlForm, RouteFishes, RouteSampleIndex, RouteTraining, RouteUserIndex } from '../../../../RouterConfig';
 import styles from './Sidebar.module.css';
 
 type SidebarProps = {

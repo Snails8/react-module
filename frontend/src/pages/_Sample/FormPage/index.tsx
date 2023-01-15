@@ -1,9 +1,9 @@
 import { FormProvider } from "react-hook-form";
-import { Button } from "../../../components/atoms/UI/Button/Button";
+import { Button } from "../../../components/atoms/ui/Button/Button";
 import { TabMUI } from "../../../components/molecules/_MUI/Tab/Tab";
 import { TabMUIContent } from "../../../components/molecules/_MUI/Tab/TabContent";
 import { useSelectTab } from "../../../components/molecules/_MUI/Tab/useSelectTab";
-import { SampleForm } from "../../../components/organisms/SampleForm/SampleForm";
+import { SampleForm } from "../../../components/organisms/domain/SampleForm/SampleForm";
 import { Layout } from "../../../components/templates/_Layout/Layout";
 import { SimpleForm } from "./Form/Form";
 import { usePostForm } from "./usePostForm.hooks";

@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
-import { GlobalHeader } from '../../organisms/GlobalHeader/GlobalHeader';
-import { Sidebar } from '../../organisms/Sidebar/Sidebar';
+import { GlobalHeader } from '../../organisms/common/GlobalHeader/GlobalHeader';
+import { Sidebar } from '../../organisms/common/Sidebar/Sidebar';
 import styles from './Layout.module.css';
 
 type LayoutProps = {

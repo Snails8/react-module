@@ -1,6 +1,6 @@
 import React from 'react';
-import { CheckBox } from '../../../../components/atoms/Form/Checkbox/Checkbox';
-import { Input } from '../../../../components/atoms/Form/Input/Input';
+import { CheckBox } from '../../../../components/atoms/form/Checkbox/Checkbox';
+import { Input } from '../../../../components/atoms/form/Input/Input';
 import { useForm } from './useForm.hooks';
 import { Layout } from '../../../../components/templates/_Layout/Layout';
 import styles from './Form.module.css';
