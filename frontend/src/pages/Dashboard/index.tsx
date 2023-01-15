@@ -4,16 +4,17 @@ import { createSearchParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../../components/atoms/UI/Button/Button';
 import { Container } from '../../components/atoms/Design/Container/Container';
-import { Atoms } from '../../components/organisms/Atoms';
+import { Atoms } from '../../components/organisms/ComponentSample/Atoms';
 import { LoadingTemplate } from '../../components/templates/LoadingTemplate/LoadingTemplate';
 import { Layout } from '../../components/templates/_Layout/Layout';
 import { APIPostTest, APIGetTest, APIPutTest } from '../../endpoint';
 import { useFetch } from '../../hooks/useFetch';
 import { usePost } from '../../hooks/usePost';
-import { AtomMUI } from '../../components/organisms/AtomMUI/AtomMUI';
+import { AtomMUI } from '../../components/organisms/ComponentSample/AtomMUI/AtomMUI';
 import { TabMUI } from '../../components/molecules/_MUI/Tab/Tab';
 import { TabMUIContent } from '../../components/molecules/_MUI/Tab/TabContent';
 import { useSelectTab } from '../../components/molecules/_MUI/Tab/useSelectTab';
+import { Molecules } from '../../components/organisms/ComponentSample/Molecules/Molecales';
 
 
 export const Dashboard: React.FC = () => {
@@ -91,17 +92,17 @@ export const Dashboard: React.FC = () => {
             </div>
           </div>
 
-          <TabMUI headers={['atoms', 'mui']} tabIdx={tabIdx} handleChange={handleSelected} width={300} centered>
+          <TabMUI headers={['atoms', 'molecules']} tabIdx={tabIdx} handleChange={handleSelected} width={300} centered>
             <TabMUIContent  value={tabIdx} index={0}>
-              test
+              <Atoms />
+              <AtomMUI />
             </TabMUIContent>
             <TabMUIContent  value={tabIdx} index={1}>
-              contents
+              <Molecules />
             </TabMUIContent>
           </TabMUI>
 
-          <Atoms />
-          <AtomMUI />
+
         </Container>
       </Layout>
     </>

@@ -1,18 +1,15 @@
-import { Button } from '../../atoms/UI/Button/Button';
-import { CheckBox } from '../../atoms/Form/Checkbox/Checkbox';
-import { Input } from '../../atoms/Form/Input/Input';
-import { Label } from '../../atoms/UI/Label/Label';
-import { LoadingSpinner } from '../../atoms/UI/LoadingSpinner/LoadingSpinner';
-import { Logo } from '../../atoms/UI/Logo/Logo';
-import { RadioButton } from '../../atoms/Form/RadioButton/RadioButton';
-import { Textarea } from '../../atoms/Form/Textarea/Textarea';
-import { useTypeConverter } from '../../../hooks/useTypeConverter';
+import { Button } from '../../../atoms/UI/Button/Button';
+import { CheckBox } from '../../../atoms/Form/Checkbox/Checkbox';
+import { Input } from '../../../atoms/Form/Input/Input';
+import { Label } from '../../../atoms/UI/Label/Label';
+import { LoadingSpinner } from '../../../atoms/UI/LoadingSpinner/LoadingSpinner';
+import { Logo } from '../../../atoms/UI/Logo/Logo';
+import { RadioButton } from '../../../atoms/Form/RadioButton/RadioButton';
+import { Textarea } from '../../../atoms/Form/Textarea/Textarea';
 import styles from './Atoms.module.css';
 import { ReactNode } from 'react';
-import { UserIcon } from '../../atoms/UI/UserIcon/UserIcon';
-import { Dropdown } from '../../atoms/Form/Dropdown/Dropdown';
-import { Table } from '../../molecules/Table/Table';
-import { CellTable } from '../../molecules/CellTable/CellTable';
+import { UserIcon } from '../../../atoms/UI/UserIcon/UserIcon';
+import { Dropdown } from '../../../atoms/Form/Dropdown/Dropdown';
 
 type ContentProps = {
   label: string,
@@ -30,8 +27,6 @@ const Content = (props: ContentProps) => {
 };
 
 export const Atoms = () => {
-  const hoge = useTypeConverter();
-
   const dropdownLists = [
     {label: 'test1', value: 'test1'},
     {label: 'test2', value: 'test2'},
@@ -105,14 +100,6 @@ export const Atoms = () => {
         <Content label="user icon">
           <UserIcon />
         </Content>
-      </div>
-      
-      <div className={styles.item}>
-        <Table header={header} body={body}/>
-      </div>
-
-      <div className={styles.item}>
-        <CellTable />
       </div>
     </>
   );
