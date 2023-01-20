@@ -33,3 +33,25 @@ export const changeStrToDateFormat = (target: string, type: changeFormat, cutZer
       return yearCount + '/' + month + '/' + day;
   }
 };
+
+
+type DateString =  "YYYY/MM/DD" | "YYYY-MM-DD";
+export function format(date: Date, type: DateString): string {
+  const YYYY = String(date.getFullYear());
+  let MM = String(date.getMonth() + 1);
+  let DD = String(date.getDay());
+
+  if (MM.length === 1) MM = "0"+ MM;
+  if (DD.length === 1) DD = "0" + DD;
+
+
+  switch (type) {
+    case "YYYY/MM/DD":
+      return  YYYY + "/" + MM + "/" + DD
+    case "YYYY-MM-DD":
+      return YYYY + "-" + MM + "-" + DD
+    default:
+      const _: never = type; // eslint-disable-line
+      return YYYY + "/" + MM + "/" + DD;
+  }
+}
