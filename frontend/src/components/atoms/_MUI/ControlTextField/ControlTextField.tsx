@@ -10,13 +10,14 @@ type ControlTextFieldProps<T extends Obj>  = {
   type?: 'text' | 'number' | 'email',
   control: Control<T, any>,
   trigger:  UseFormTrigger<T>,
+  variant?: "outlined" | "filled" | "standard"
   label?: string 
   width?: number
   inputProps?: InputBaseComponentProps
 }
 
 export const ControlTextField = <T extends Obj>(props: ControlTextFieldProps<T>) => {
-  const {name, type = 'text', control, trigger, label=null, inputProps={}, width={}} = props;
+  const {name, type = 'text', control, trigger, variant="outlined", label=null, inputProps={}, width={}} = props;
 
   return (
     <FormControl fullWidth>
@@ -29,6 +30,7 @@ export const ControlTextField = <T extends Obj>(props: ControlTextFieldProps<T>)
               {...field}
               type={type}
               label={label}
+              variant={variant}
               helperText={fieldState.error?.message}
               error={!!fieldState.error?.message}
               onChange={(e) => {
@@ -44,3 +46,27 @@ export const ControlTextField = <T extends Obj>(props: ControlTextFieldProps<T>)
     </FormControl>
   );
 };
+
+/**
+ * usage:
+
+  -- step1: parent component -- 
+  const {formMethods, handleSubmit} = usePostForm();
+
+  return (
+    <FormProvider {...formMethods}>
+      <form onSubmit={formMethods.handleSubmit(() => handleSubmit)}>
+        <Child Component />
+        <Button label="送信" handleClick={handleSubmit} />
+      </form>
+    </FormProvider>
+  )
+
+
+  --- step2: child component --
+
+  const {control, trigger, formState: {errors}} = useFormContext();
+  return (
+    <ControlTextField label="名前" name="name" control={control} trigger={trigger} />
+  )
+ */
