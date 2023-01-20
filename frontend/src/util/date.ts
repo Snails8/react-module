@@ -1,33 +1,35 @@
-import { useCallback } from 'react';
-
-type dateFormat = 'yyyy/mm/dd' | 'yy/mm/dd' | 'yy-mm-dd';
-
 /**
  * YYYY-mm-dd(string) -> dateFormat に変換
  */
-export const ChangeDateFormat = (type: dateFormat, yyyymmdd: string) => {
-  const splitString = yyyymmdd.split('-');
+type changeFormat = 'YYYY/MM/DD' | 'YY/MM/DD' | 'YY-MM-DD' | 'YYYY年MM月DD日';
+export const changeStrToDateFormat = (target: string, type: changeFormat, cutZero?: boolean): string | undefined => {
+  const splitString = target.split('-').length === 3 ? target.split('-'): target.split('/');
+  if (splitString.length !== 3) return undefined;
 
   const year = splitString[0];
-  const month = splitString[1];
-  const day = splitString[2];
+  let month = splitString[1];
+  let day = splitString[2];
+
+  if (cutZero) {
+    month = month[0] === "0" ? month[1] : month;
+    day = day[0] === "0" ? day[1] : day;
+  }
 
   const yearSplit = year.split('');
   const century = yearSplit[0] + yearSplit[1];
   const yearCount = yearSplit[2] + yearSplit[3];
 
-  let date;
   switch (type) {
-    case 'yy/mm/dd':
-      date = yearCount + '/' + month + '/' + day;
-      break;
-    case 'yyyy/mm/dd':
-      date = year + '/' + month + '/' + day;
-      break;
-    case 'yy-mm-dd':
-      date = yearCount + '-' + month + '-' + day;
-      break;
+    case 'YYYY/MM/DD':
+      return yearCount + '/' + month + '/' + day;
+    case 'YY/MM/DD':
+      return year + '/' + month + '/' + day;
+    case 'YY-MM-DD':
+      return yearCount + '-' + month + '-' + day;
+    case 'YYYY年MM月DD日':
+      return year + '年' + month + '月' + day + '日';
+    default:
+      const _: never = type; // eslint-disable-line
+      return yearCount + '/' + month + '/' + day;
   }
-
-  return date;
 };
