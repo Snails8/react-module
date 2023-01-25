@@ -13,7 +13,7 @@ export const ModalMUI = (props: ModalProps) => {
   const { open, handleClose, children, width=200} = props;
 
   const style = {
-    position: 'absolute' as 'absolute',
+    position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
@@ -30,6 +30,7 @@ export const ModalMUI = (props: ModalProps) => {
       onClose={handleClose}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
+      sx={{ overflow: "scroll" }}
     >
       <Box sx={style}>
         {children}
