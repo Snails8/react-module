@@ -14,6 +14,7 @@ type SelectProps<T extends Obj>  = {
   options: Option[]
   handleSearch: (putVal: any) => Promise<void>
   handleSelect: (event: React.SyntheticEvent<Element, Event>, selectedVal: any) => void
+  placeholder?: string
   isLoading?: boolean
   selectedVal?: Option,
   label?: string,
@@ -22,7 +23,7 @@ type SelectProps<T extends Obj>  = {
 
 // using lodash
 export const SelectIncrementalSearch = <T extends Obj> (props: SelectProps<T>) => {
-  const { options, selectedVal, handleSearch, handleSelect, isLoading=false, label='', width} = props;
+  const { options, selectedVal, handleSearch, handleSelect, placeholder, isLoading=false, label='', width} = props;
 
   const term = 750;
   const handleDebounceSearch = debounce((changeValue: any) => 
@@ -32,8 +33,8 @@ export const SelectIncrementalSearch = <T extends Obj> (props: SelectProps<T>) =
 
   return (
     <Autocomplete
-      key={selectedVal?.label ?? null} // 入力後、値をリセットするときは設定する
       fullWidth
+      key={selectedVal?.label ?? null} // 入力後、値をリセットするときは設定する
       options={options}
       loading={isLoading}
       onChange={handleSelect}
@@ -48,7 +49,7 @@ export const SelectIncrementalSearch = <T extends Obj> (props: SelectProps<T>) =
         <TextField
           {...params} 
           label={label}
-          placeholder={'商品名・コードで検索する'}
+          placeholder={placeholder}
         />
       }
       sx={{ width: width }}
