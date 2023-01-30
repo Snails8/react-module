@@ -1,6 +1,5 @@
 
 import { UploadFile } from '../../../components/organisms/common/UploadFile/UploadFile';
-import { Layout } from '../../../components/templates/_Layout/Layout';
 import { FileNameEnum } from '../../../types/csv';
 import { useDownloadFile } from './useDownloadFile';
 import { useUploadHandler } from './useUpload';
@@ -8,7 +7,7 @@ import styles from './UploadFilePage.module.css';
 
 export const UploadFilePage = () => {
   return (
-    <Layout isContainerDesign>
+    <>
       <div className={styles.container}>
         <Contents />
       </div>
@@ -16,7 +15,7 @@ export const UploadFilePage = () => {
       <div className={styles.predict_container}>
         test
       </div>
-    </Layout>
+    </>
   );
 };
 

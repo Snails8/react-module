@@ -14,8 +14,7 @@ export const FormPage = () => {
   const {tabIdx, handleSelected} = useSelectTab();
   const headers = ['React Hook Form × yup ', '通常のForm'];
   return (
-    <Layout isContainerDesign>
-
+    <>
       <TabMUI headers={headers} tabIdx={tabIdx} handleChange={handleSelected} width={400} centered>
         <TabMUIContent value={tabIdx} index={0}>
           <h2>React Hook Form × yup を使用した Form Sample</h2>
@@ -31,9 +30,7 @@ export const FormPage = () => {
           <h2>通常の Form Sample</h2>
           <SimpleForm />
         </TabMUIContent>
-
-        
       </TabMUI>
-    </Layout>
+    </>
   );
 };

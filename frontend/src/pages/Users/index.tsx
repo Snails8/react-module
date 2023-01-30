@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UsersSearchForm } from '../../components/organisms/domain/User/UsersSearchForm/UsersSearchForm';
 import { UsersTable } from '../../components/organisms/domain/User/UsersTable/UsersTable';
-import { Layout } from '../../components/templates/_Layout/Layout';
 import { User } from '../../types/user';
 import { useUsers } from './useUsers.hook';
 
@@ -40,15 +39,13 @@ export const Users = () => {
 
   return (
     <>
-      <Layout isContainerDesign={true}>
-        <Link to="/users/create">作成</Link>
-        <UsersSearchForm
-          inputUserNameHandler={inputUserNameHandler}
-          checkHandler={checkHandler}
-          handleClick={onClickButton}
-        />
-        <UsersTable users={users} />
-      </Layout>
+      <Link to="/users/create">作成</Link>
+      <UsersSearchForm
+        inputUserNameHandler={inputUserNameHandler}
+        checkHandler={checkHandler}
+        handleClick={onClickButton}
+      />
+      <UsersTable users={users} />
     </>
   );
 };

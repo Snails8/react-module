@@ -1,6 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Layout } from '../../../components/templates/_Layout/Layout';
-import { useForceUpdate } from '../../../hooks/useForceUpdate';
 
 export const ParentTabPage: React.FC = () => {
   const [message, setMessage] = useState('message');
@@ -29,26 +27,24 @@ export const ParentTabPage: React.FC = () => {
 
   return (
     <>
-      <Layout isContainerDesign={true}>
-        <h3>親タブ</h3>
-        <button onClick={() => window.open('child-tab')}>別タブで開く</button>
-        <h4>localStorageを使用した親 → 子 の受け渡し方法</h4> <br />
-        <label>text</label>
-        <input
-          type="text"
-          name="text"
-          defaultValue={message}
-          onChange={handleChange}
-        />
-        <h4>window.opener を使用して子タブから値を受け取る</h4> <br />
-        <label>text</label>
-        <input
-          type="text"
-          name="childString"
-          id="childString"
-          defaultValue={childString}
-        />
-      </Layout>
+      <h3>親タブ</h3>
+      <button onClick={() => window.open('child-tab')}>別タブで開く</button>
+      <h4>localStorageを使用した親 → 子 の受け渡し方法</h4> <br />
+      <label>text</label>
+      <input
+        type="text"
+        name="text"
+        defaultValue={message}
+        onChange={handleChange}
+      />
+      <h4>window.opener を使用して子タブから値を受け取る</h4> <br />
+      <label>text</label>
+      <input
+        type="text"
+        name="childString"
+        id="childString"
+        defaultValue={childString}
+      />
     </>
   );
 };

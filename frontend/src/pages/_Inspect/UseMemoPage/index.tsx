@@ -1,5 +1,4 @@
 import React, { useMemo, useState } from 'react';
-import { Layout } from '../../../components/templates/_Layout/Layout';
 
 export const UseMemoPage = () => {
   const [text, setText] = useState('');
@@ -32,22 +31,20 @@ export const UseMemoPage = () => {
 
   return (
     <>
-      <Layout>
-        <p>UseMemoSample</p>
-        <div>
-          <input value={text} onChange={onChangeInput} />
-          <button onClick={onClickButton}>add</button>
-        </div>
-        <div>
-          {items.map((item, index) => (
-            <p key={index}>{item}</p>
-          ))}
-        </div>
-        <div>
-          <p>Total Number of Characters 1: {numberOfCharacter1}</p>
-          <p>Total Number of Characters 2: {numberOfCharacter2}</p>
-        </div>
-      </Layout>
+      <p>UseMemoSample</p>
+      <div>
+        <input value={text} onChange={onChangeInput} />
+        <button onClick={onClickButton}>add</button>
+      </div>
+      <div>
+        {items.map((item, index) => (
+          <p key={index}>{item}</p>
+        ))}
+      </div>
+      <div>
+        <p>Total Number of Characters 1: {numberOfCharacter1}</p>
+        <p>Total Number of Characters 2: {numberOfCharacter2}</p>
+      </div>
     </>
   );
 };

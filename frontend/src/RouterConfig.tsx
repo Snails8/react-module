@@ -31,6 +31,7 @@ import { UploadFilePage } from './pages/_Sample/UploadFilePage';
 import { TabPage } from './pages/_Sample/TabPage';
 import { CalenderPage } from './pages/_Sample/CalenderPage';
 import { FormPage } from './pages/_Sample/FormPage';
+import { Layout } from './components/templates/Layout/Layout';
 
 export const RouteTraining = "/training";
 export const RouteFishes = "/fishes";
@@ -45,38 +46,40 @@ export const RouterConfig: React.VFC = () => {
     <>
       <BrowserRouter>
         <Routes>
-          <Route index element={<Dashboard />} />
-          <Route path={RouteTraining} element={<Training />} />
-          <Route path={RouteFishes} element={<Fishes />} />
-          <Route path="page2" element={<SamplePage2 />} />
-          <Route
-            path="page3"
-            element={<SamplePage3 Message="Hello Router" />}
-          />
-          <Route path="page4" element={<SamplePage4 />}>
-            <Route index />
-            <Route path="child1" element={<SamplePage4Child1 />} />
-            <Route path="child2" element={<SamplePage4Child2 />} />
-            <Route path=":cildid" element={<SamplePage4Child3 />} />
+          <Route path='/' element={<Layout />}>
+            <Route index element={<Dashboard />} />
+            <Route path={RouteTraining} element={<Training />} />
+            <Route path={RouteFishes} element={<Fishes />} />
+            <Route path="/page2" element={<SamplePage2 />} />
+            <Route
+              path="/page3"
+              element={<SamplePage3 Message="Hello Router" />}
+            />
+            <Route path="/page4" element={<SamplePage4 />}>
+              <Route index />
+              <Route path="child1" element={<SamplePage4Child1 />} />
+              <Route path="child2" element={<SamplePage4Child2 />} />
+              <Route path=":cildid" element={<SamplePage4Child3 />} />
+            </Route>
+            <Route path={RouteUserIndex} element={<Users />} />
+            <Route path={RouteUserCreate} element={<UserCreate />} />
+            <Route path="states" element={<StatePage />} />
+            <Route path="memo" element={<MemoPage />} />
+            <Route path="useMemo" element={<UseMemoPage />} />
+            <Route path="useCallback" element={<UseCallBackPage />} />
+            <Route path="parent-tab" element={<ParentTabPage />} />
+            <Route path="child-tab" element={<ChildTabPage />} />
+            <Route path="inspects" element={<Inspect />} />
+            <Route path="redux" element={<ReduxPage />} />
+            <Route path="redux/test" element={<ReduxTestPage />} />
+            <Route path={RouteSampleIndex} element={<Sample />} />
+            <Route path="samples/upload-file" element={<UploadFilePage />} />
+            <Route path="samples/download-file" element={<DownloadCSVExcel />} />
+            <Route path="samples/tabs" element={<TabPage />} />
+            <Route path={RouteCalender} element={<CalenderPage />} />
+            <Route path={RouteControlForm} element={<FormPage />} />
           </Route>
           <Route path="*" element={<NotFound />} />
-          <Route path={RouteUserIndex} element={<Users />} />
-          <Route path={RouteUserCreate} element={<UserCreate />} />
-          <Route path="states" element={<StatePage />} />
-          <Route path="memo" element={<MemoPage />} />
-          <Route path="useMemo" element={<UseMemoPage />} />
-          <Route path="useCallback" element={<UseCallBackPage />} />
-          <Route path="parent-tab" element={<ParentTabPage />} />
-          <Route path="child-tab" element={<ChildTabPage />} />
-          <Route path="inspects" element={<Inspect />} />
-          <Route path="redux" element={<ReduxPage />} />
-          <Route path="redux/test" element={<ReduxTestPage />} />
-          <Route path={RouteSampleIndex} element={<Sample />} />
-          <Route path="samples/upload-file" element={<UploadFilePage />} />
-          <Route path="samples/download-file" element={<DownloadCSVExcel />} />
-          <Route path="samples/tabs" element={<TabPage />} />
-          <Route path={RouteCalender} element={<CalenderPage />} />
-          <Route path={RouteControlForm} element={<FormPage />} />
         </Routes>
       </BrowserRouter>
     </>

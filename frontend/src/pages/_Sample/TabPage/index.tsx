@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Layout } from "../../../components/templates/_Layout/Layout";
 import styles from "./TabPage.module.css";
 
 
@@ -7,26 +6,22 @@ export const TabPage = () => {
   const [selected, setSelected] = useState(0);
 
   return (
-    <Layout isContainerDesign>
-      <div className={styles.container}>
-
-        <ul className={styles.tab}>
-          <li className={styles.tab__item}>
-            <span className={styles.tab__link} onClick={() => setSelected(0)} style={selected === 0 ? {backgroundColor: "green"}: {}}>タブ1</span>
-          </li>
-          <li className={styles.tab__item}>
-            <span className={styles.tab__link} onClick={() => setSelected(1)} style={selected === 1 ? {backgroundColor: "green"}: {}}>タブ2</span>
-          </li>
-          <li className={styles.tab__item}>
-            <span className={styles.tab__link} onClick={() => setSelected(2)} style={selected === 2 ? {backgroundColor: "green"}: {}}>タブ3</span>
-          </li>
-        </ul>
-        <div className={styles.tab__body}>
-          <PageContent selected={selected} />
-        </div>
-      
+    <div className={styles.container}>
+      <ul className={styles.tab}>
+        <li className={styles.tab__item}>
+          <span className={styles.tab__link} onClick={() => setSelected(0)} style={selected === 0 ? {backgroundColor: "green"}: {}}>タブ1</span>
+        </li>
+        <li className={styles.tab__item}>
+          <span className={styles.tab__link} onClick={() => setSelected(1)} style={selected === 1 ? {backgroundColor: "green"}: {}}>タブ2</span>
+        </li>
+        <li className={styles.tab__item}>
+          <span className={styles.tab__link} onClick={() => setSelected(2)} style={selected === 2 ? {backgroundColor: "green"}: {}}>タブ3</span>
+        </li>
+      </ul>
+      <div className={styles.tab__body}>
+        <PageContent selected={selected} />
       </div>
-    </Layout>
+    </div>
   );
 };
 

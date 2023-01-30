@@ -1,5 +1,4 @@
 import React, { useCallback, useState } from 'react';
-import { Layout } from '../../../components/templates/_Layout/Layout';
 
 type ButtonProps = {
   onClick: () => void;
@@ -46,7 +45,7 @@ export const UseCallBackPage = () => {
   }, []);
 
   return (
-    <Layout>
+    <>
       <p>useMemoでは値をメモ化できるが、関数を渡した際は再描写されてしまう</p>
       <p>
         useCallBackを使うことで関数をメモ化して渡すことができ、再描写されなくなる
@@ -67,6 +66,6 @@ export const UseCallBackPage = () => {
       {/* メモ化コンポーネントに関数を返す */}
       <DoubleButton onClick={double} />{' '}
       {/* メモ化コンポーネントにメモ化した関数を返す */}
-    </Layout>
+    </>
   );
 };

@@ -13,32 +13,30 @@ export const ReduxPage = () => {
   const decrease = () => dispatch({ type: 'DECREASE_COUNT' });
 
   return (
-    <Layout isContainerDesign={true}>
-      <div>
-        <h2>Learn Redux</h2>
-        <h3>storeへのアクセス</h3>
-        <p>直接アクセスだけする Count: {store.getState().countReducer.count}</p>
+    <div>
+      <h2>Learn Redux</h2>
+      <h3>storeへのアクセス</h3>
+      <p>直接アクセスだけする Count: {store.getState().countReducer.count}</p>
 
-        {/* <p>connectでgetしたcount：{count}</p> */}
+      {/* <p>connectでgetしたcount：{count}</p> */}
 
-        <p>hooksを使ってstoreにアクセス count: {count}</p>
+      <p>hooksを使ってstoreにアクセス count: {count}</p>
 
-        <h3>
-          dispatchを使用し、reducerにactionを伝え、storeを買い替えるかいかえる：
-          count
-        </h3>
-        <button onClick={increase}>UP</button>
-        <button onClick={decrease}>DOWN</button>
+      <h3>
+        dispatchを使用し、reducerにactionを伝え、storeを買い替えるかいかえる：
+        count
+      </h3>
+      <button onClick={increase}>UP</button>
+      <button onClick={decrease}>DOWN</button>
 
-        <h3>非同期なdispatch。Link経由で移動しても保持される</h3>
-        <Link to="/redux/test">値を取得するページに移動する</Link>
-        <ul>
-          {posts.map((post: any) => (
-            <li key={post.id}>{post.title}</li>
-          ))}
-        </ul>
-      </div>
-    </Layout>
+      <h3>非同期なdispatch。Link経由で移動しても保持される</h3>
+      <Link to="/redux/test">値を取得するページに移動する</Link>
+      <ul>
+        {posts.map((post: any) => (
+          <li key={post.id}>{post.title}</li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

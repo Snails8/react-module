@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Layout } from '../../../components/templates/_Layout/Layout';
 
 type Post = {
   id: number;
@@ -28,13 +27,13 @@ export const ReduxTestPage = () => {
   }, [dispatch]);
 
   return (
-    <Layout isContainerDesign={true}>
+    <>
       <Link to="/redux">戻る</Link>
       <ul>
         {posts.map((post: Post) => (
           <li key={post.id}>{post.title}</li>
         ))}
       </ul>
-    </Layout>
+    </>
   );
 };

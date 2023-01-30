@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './DownloadCSVExcel.module.css';
 import ExcelJS from 'exceljs';
-import { Layout } from '../../../components/templates/_Layout/Layout';
 
 export const DownloadCSVExcel: React.FC = () => {
   const handlerClickDownloadButton = async (
@@ -51,17 +50,15 @@ export const DownloadCSVExcel: React.FC = () => {
 
   return (
     <>
-      <Layout>
-        <header>
-          <h1>データ出力</h1>
-        </header>
-        <button onClick={(e) => handlerClickDownloadButton(e, 'xlsx')}>
-          Excel形式
-        </button>
-        <button onClick={(e) => handlerClickDownloadButton(e, 'csv')}>
-          CSV形式
-        </button>
-      </Layout>
+      <header>
+        <h1>データ出力</h1>
+      </header>
+      <button onClick={(e) => handlerClickDownloadButton(e, 'xlsx')}>
+        Excel形式
+      </button>
+      <button onClick={(e) => handlerClickDownloadButton(e, 'csv')}>
+        CSV形式
+      </button>
     </>
   );
 };

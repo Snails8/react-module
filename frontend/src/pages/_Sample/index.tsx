@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { Layout } from '../../components/templates/_Layout/Layout';
 import { RouteControlForm } from '../../RouterConfig';
 
 /**
@@ -8,7 +7,7 @@ import { RouteControlForm } from '../../RouterConfig';
  */
 export const Sample = () => {
   return (
-    <Layout isContainerDesign={true}>
+    <>
       route管理が二重になるのはめんどい。sidebar うまいこと利用したい
       <ul>
         <li>
@@ -33,6 +32,6 @@ export const Sample = () => {
           <Link to="/parent-tab">タブ間通信検証</Link>
         </li>
       </ul>
-    </Layout>
+    </>
   );
 };

@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 
 import { useFishes } from './useFishes.hook';
 import { Link, useLocation } from 'react-router-dom';
-import { Layout } from '../../components/templates/_Layout/Layout';
 import { FishesTable } from '../../components/organisms/domain/Fish/FishesTable/FishTable';
 
 export const Fishes: React.FC = () => {
@@ -25,10 +24,8 @@ export const Fishes: React.FC = () => {
 
   return (
     <>
-      <Layout isContainerDesign={true}>
-        <Link to="/fishes/create">作成</Link>
-        <FishesTable fishes={fishes} />
-      </Layout>
+      <Link to="/fishes/create">作成</Link>
+      <FishesTable fishes={fishes} />
     </>
   );
 };
