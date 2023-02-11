@@ -1,4 +1,4 @@
-import { List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material"
+import { Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar } from "@mui/material"
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
@@ -6,6 +6,9 @@ import MailIcon from '@mui/icons-material/Mail';
 export const SidebarContent = () => {
   return (
     <List>
+      <Toolbar />
+      <Divider />
+
       <ListItem disablePadding>
         <ListItemButton>
           <ListItemIcon>
