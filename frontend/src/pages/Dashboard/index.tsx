@@ -14,12 +14,15 @@ import { TabMUI } from '../../components/molecules/_MUI/Tab/Tab';
 import { TabMUIContent } from '../../components/molecules/_MUI/Tab/TabContent';
 import { useSelectTab } from '../../components/molecules/_MUI/Tab/useSelectTab';
 import { Molecules } from '../../components/organisms/domain/SampleAtomicComponent/Molecules/Molecales';
+import { useFetchSWR } from '../../hooks/useFetchSWR';
 
 
 export const Dashboard: React.FC = () => {
   const navigate = useNavigate();
   const [data, getLoading, error] = useFetch(APIGetTest);
-    // const {data, error}= swrFetcher(APITest);
+  
+  const {data: swrData, error: swrErr}= useFetchSWR<string>(APIGetTest);
+  const {data: undefinedData, error: e}= useFetchSWR(undefined); // 条件付きfetch
 
 
   const {doPostRequest, loading}= usePost();
@@ -57,6 +60,8 @@ export const Dashboard: React.FC = () => {
         <div>
           <h1>Sample Home</h1>
           <h1>{data ? "BEと接続中": "BEと未接続"}</h1>
+          <h4>通常のfetch：{data ? "ok": "ng"}</h4>
+          <h4>swrでfetch：{swrData ? "ok": "ng"}</h4>
           <nav>
             <ul>
               <li>
