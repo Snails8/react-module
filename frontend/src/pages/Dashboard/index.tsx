@@ -6,7 +6,7 @@ import { Button } from '../../components/atoms/ui/Button/Button';
 import { Container } from '../../components/atoms/design/Container/Container';
 import { Atoms } from '../../components/organisms/domain/SampleAtomicComponent/Atoms';
 import { LoadingTemplate } from '../../components/templates/LoadingTemplate/LoadingTemplate';
-import { APIPostTest, APIGetTest, APIPutTest } from '../../endpoint';
+import { APIPostTest, APIGetTest, APIPutTest, APIGetUsers } from '../../endpoint';
 import { useFetch } from '../../hooks/useFetch';
 import { usePost } from '../../hooks/usePost';
 import { AtomMUI } from '../../components/organisms/domain/SampleAtomicComponent/AtomMUI/AtomMUI';
@@ -21,7 +21,7 @@ export const Dashboard: React.FC = () => {
   const navigate = useNavigate();
   const [data, getLoading, error] = useFetch(APIGetTest);
   
-  const {data: swrData, error: swrErr}= useFetchSWR<string>(APIGetTest);
+  const {data: swrData, error: swrErr}= useFetchSWR<string>(APIGetUsers);
   const {data: undefinedData, error: e}= useFetchSWR(undefined); // 条件付きfetch
 
 
