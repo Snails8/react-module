@@ -1,4 +1,4 @@
-import { Layout } from '../../../components/templates/_Layout/Layout';
+import { Layout } from '../../../components/template/_Layout/Layout';
 import store from '../../../redux/reducers/index';
 import { connect } from 'react-redux';
 import { useSelector, useDispatch } from 'react-redux';

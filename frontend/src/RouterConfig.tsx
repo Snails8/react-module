@@ -31,7 +31,7 @@ import { UploadFilePage } from './pages/_Sample/UploadFilePage';
 import { TabPage } from './pages/_Sample/TabPage';
 import { CalenderPage } from './pages/_Sample/CalenderPage';
 import { FormPage } from './pages/_Sample/FormPage';
-import { Layout } from './components/templates/Layout/Layout';
+import { Layout } from './components/template/Layout/Layout';
 
 export const RouteTraining = "/training";
 export const RouteFishes = "/fishes";

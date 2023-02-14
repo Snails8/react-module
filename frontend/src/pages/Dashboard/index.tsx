@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '../../components/atoms/ui/Button/Button';
 import { Container } from '../../components/atoms/design/Container/Container';
 import { Atoms } from '../../components/organisms/domain/SampleAtomicComponent/Atoms';
-import { LoadingTemplate } from '../../components/templates/LoadingTemplate/LoadingTemplate';
+import { LoadingTemplate } from '../../components/template/LoadingTemplate/LoadingTemplate';
 import { APIPostTest, APIGetTest, APIPutTest, APIGetUsers } from '../../endpoint';
 import { useFetch } from '../../hooks/useFetch';
 import { usePost } from '../../hooks/usePost';

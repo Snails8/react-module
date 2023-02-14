@@ -4,7 +4,7 @@ import { TabMUI } from "../../../components/molecules/_MUI/Tab/Tab";
 import { TabMUIContent } from "../../../components/molecules/_MUI/Tab/TabContent";
 import { useSelectTab } from "../../../components/molecules/_MUI/Tab/useSelectTab";
 import { SampleForm } from "../../../components/organisms/domain/SampleForm/SampleForm";
-import { Layout } from "../../../components/templates/_Layout/Layout";
+import { Layout } from "../../../components/template/_Layout/Layout";
 import { SimpleForm } from "./Form/Form";
 import { usePostForm } from "./usePostForm.hooks";
 

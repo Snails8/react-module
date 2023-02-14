@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Layout } from '../../../components/templates/_Layout/Layout';
+import { Layout } from '../../../components/template/_Layout/Layout';
 
 export const ChildTabPage: React.FC = () => {
   const [message, setMessage] = useState(
