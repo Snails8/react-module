@@ -1,0 +1,23 @@
+version: '3'
+services:
+  monorepo-front:
+    container_name: monorepo-front
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      PORT: '3200'
+      HOST: '0.0.0.0'
+    command: sh -c "yarn install"
+    ports:
+      - 3200:3200
+    volumes:
+      - type: bind
+        source: .
+        target: /app
+      - tyoe: volume
+        source: node_modules
+        target: /app/node_modules
+
+volumes:
+  node_modules:
