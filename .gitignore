@@ -6,3 +6,5 @@
 .idea
 .vscode/configurationCache.log
 .vscode/targets.log
+
+/node_modules
