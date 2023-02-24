@@ -13,8 +13,8 @@ services:
       - 3200:3200
     volumes:
       - .:/app
-    # networks:
-      # - api
+      - node_modules_volume:/app/node_modules
+
 # networks:
 #   api:
 #     external: true
@@ -26,3 +26,5 @@ services:
   #     - /app/node_modules
   #     - .:/app
   #   command: yarn storybook
+volumes:
+  node_modules_volume:
