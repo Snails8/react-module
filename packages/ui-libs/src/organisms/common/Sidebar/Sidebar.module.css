@@ -1,0 +1,37 @@
+.container {
+  background-color: #fff;
+  border-right: 1px solid #CCCCCC;
+  position: fixed;
+  height: 100%;
+  width: var(--sidebar-padding-left);
+  top: var(--global-header-height); /** global-headerとの調整 */
+  z-index: 100;
+}
+
+.link_container {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  height: 56px;
+  padding-left: 24px;
+  transition: background-color 0.3s ease-out;
+}
+
+.link_container :hover {
+  background-color: #a0a0a0;
+}
+
+.link_container :active {
+  background-color: #a0a0a0;
+}
+
+/* ---- label ---- */
+.label {
+  color: black;
+  font-size: 20px;
+}
+
+/* link */
+.link {
+  text-decoration: none; /** link下線 の表示をなしに */
+}

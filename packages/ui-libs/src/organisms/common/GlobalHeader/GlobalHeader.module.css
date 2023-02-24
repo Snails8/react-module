@@ -1,0 +1,61 @@
+.container {
+  align-items: center;
+  color: white;
+  background-color: black;
+  display: flex;
+  position: fixed;
+  height: var(--global-header-height);
+  width: 100%;
+  padding-left: 20px;  /* 文字 左の余白を追加*/
+  font-size: xx-large;  /* 文字 大きさ */
+}
+
+.logo_container {
+  height: 40px;
+  margin-left: 10px;
+  width: 202.5px;
+}
+
+.user_container {
+  align-items: center;
+  border-radius: 5px;
+  display: flex;
+  height: 36px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: 16px;
+  position: relative;
+  transition: background-color 0.3s ease-out;
+  width: 170px;
+}
+.user_container:hover {
+  background-color: #23384d;
+}
+.user_container:hover {
+  background-color: #4a5b6c;
+}
+
+.user_icon {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.user_name {
+  color: #fff;
+  font-size: large;
+  margin-left: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 200px;
+  width: 100px;
+}
+
+.user_menu {
+  position: absolute;
+  right: 0;
+  top: 53px;
+}

@@ -1,0 +1,57 @@
+.container {
+  background-color: #fff;
+  box-shadow: 0 5px 10px 1px rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+  border-radius: 4px;
+  height: 158px;
+  padding-top: 34px;
+  width: 280px;
+  font-size: medium;
+  color: black;
+}
+
+.user_container {
+  display: flex;
+  margin-left: 36px;
+}
+
+.user_name {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 120px;
+}
+
+.email_container {
+  margin-left: 36px;
+  margin-top: 4px;
+}
+
+.link_container {
+  margin-left: 36px;
+  margin-top: 16px;
+}
+
+.logout_container {
+  border-color: #ededed;
+  border-style: solid;
+  border-width: 1px 0 0 0;
+  letter-spacing: 1.25px;
+  margin-top: 22px;
+}
+
+.logout_button {
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  height: 36px;
+  justify-content: center;
+  margin-top: 8px;
+  transition: background-color 0.3s 0s ease;
+  width: 100%;
+}
+
+.logout_button:hover {
+  background-color: #e3e3e3;
+}

@@ -1,0 +1,56 @@
+.container {
+  position: relative;
+}
+
+/* ----- select ------------ */
+.select_option {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid;
+  cursor: pointer;
+  height: 40px;
+  pointer-events: auto;
+  transition: all 0.3s ease-out;
+}
+.select_option:hover {
+  border-color: #245fb3;
+}
+
+.select_label {
+  margin-left: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.icon {
+  margin-left: auto;
+  margin-right: 14px;
+}
+.icon:hover path {
+  fill: none;
+  stroke: #707070;
+  stroke-width: 2px;
+}
+
+
+/* ------  option --------- */
+.option {
+  background-color: #fff;
+  cursor: pointer;
+  height: 40px;
+  line-height: 40px;
+  transition: all 0.3s ease-out;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.option:hover {
+  background-color: #fafafa;
+}
+
+.option_label {
+  margin-left: 20px;
+}
