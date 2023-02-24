@@ -1,0 +1,53 @@
+.panel {
+  background-color: white;
+  padding: 30px;
+}
+
+.panel_title_container {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.panel_title {
+  font-size: 22px;
+}
+
+.button_container {
+  margin-left: auto;
+  margin-right: 0;
+}
+/* ------------  アップロード部分 --------------------- */
+.drag_and_drop_area {
+  align-items: center;
+  border-color: #8e8e8e;
+  border-style: dashed;
+  border-width: 1px;
+  display: flex;
+  height: 185px;
+  justify-content: center;
+}
+
+.description {
+  text-align: center;
+}
+
+.label {
+  color: #03c;
+  cursor: pointer;
+}
+
+.input {
+  display: none; /** default表示されてしまうtextを表示しないようにしている */
+}
+
+/* --- after load */
+.spinner_container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 28px;
+  margin-top: 50px;
+}
+
+.message_container {
+  margin-top: 32px;
+}

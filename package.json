@@ -1,0 +1,15 @@
+{
+  "name": "react-module",
+  "version": "1.0.0",
+  "repository": "git@github.com:Snails8/react-module.git",
+  "author": "Kaito Suzuki <snails8d@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "common": "yarn workspace @project/common lint"
+  }
+}

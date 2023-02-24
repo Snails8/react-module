@@ -1,0 +1,24 @@
+.header {
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 1px 1px #111111; /** 下の線の影 */
+  display: flex;
+  white-space: nowrap;
+  height: 60px;
+  width: 100%; 
+}
+
+.title {
+  font-size: 22px;
+  margin-left: 19px;
+}
+
+.back_link_container {
+  margin-left: 25px;
+  margin-right: 12px;
+}
+
+.back_link {
+  align-items: center;
+  display: flex;
+}
