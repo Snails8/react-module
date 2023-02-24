@@ -1,3 +1,5 @@
+include .env
+
 DC := docker-compose exec next-app
 CONTAINER_NAME := next-app
 ARG := $1
@@ -6,25 +8,28 @@ ARG := $1
 # docker cmd
 # =======================================================
 up:
-	docker-compose up -d --build
-	make yarn
+	docker-compose -p ${COMPOSE_PROJECT_NAME} up
+
+build:
+	docker-compose -p ${COMPOSE_PROJECT_NAME} up --build
 
 down:
-	docker compose down
-
-stop:
-	docker-compose stop
-
-restart:
-	docker-compose down
-	docker-compose up -d
-
+	docker-compose -p ${COMPOSE_PROJECT_NAME} down
 
 destroy:
-	docker-compose down --rmi all --volumes
+	docker-compose -p ${COMPOSE_PROJECT_NAME} down --rmi all --volumes
 
 ps:
 	docker-compose ps
+
+exec-container:
+	docker-compose -p ${COMPOSE_PROJECT_NAME} exec ${SERVICE_NAME_APP} /bin/ash
+
+system-prune: # remove unused docker obj
+	docker system prune
+
+image-prune: # remove unused docker imgae
+	docker image prune
 
 front-app:
 	docker-compose exec ${CONTAINER_NAME} /bin/ash
