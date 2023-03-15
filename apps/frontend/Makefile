@@ -9,7 +9,7 @@ up:
 	docker-compose -p ${COMPOSE_PROJECT_NAME} up
 
 build:
-	docker-compose -p ${COMPOSE_PROJECT_NAME} up --build
+	docker-compose -p ${COMPOSE_PROJECT_NAME} build --no-cache
 
 down:
 	docker-compose -p ${COMPOSE_PROJECT_NAME} down
