@@ -1,13 +1,11 @@
-FROM node:16.10.0-alpine
-
-RUN apk update && \
-    apk add git make g++ && \
-    apk add --no-cache curl && \
-    curl -o- -L https://yarnpkg.com/install.sh | sh
-
-ENV TZ Asia/Tokyo
-ENV PATH $HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH
+FROM node:18.0.0-alpine
 
 WORKDIR /app
 
-CMD ["/bin/ash"]
+COPY package.json yarn.lock ./
+RUN yarn install
+
+COPY . .
+
+# アプリケーションの起動コマンドを設定
+CMD ["yarn", "start"]
