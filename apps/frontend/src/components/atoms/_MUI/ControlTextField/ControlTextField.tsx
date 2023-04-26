@@ -15,10 +15,11 @@ type ControlTextFieldProps<T extends Obj>  = {
   multiline?: boolean 
   width?: number
   inputProps?: InputBaseComponentProps
+  rows: number
 }
 
 export const ControlTextField = <T extends Obj>(props: ControlTextFieldProps<T>) => {
-  const {name, type = 'text', control, trigger, variant="outlined", label=null, multiline=false,inputProps={}, width={}} = props;
+  const {name, type = 'text', control, trigger, variant="outlined", label=null, multiline=false,inputProps={}, width={}, rows={1} } = props;
 
   return (
     <FormControl fullWidth>
@@ -41,6 +42,7 @@ export const ControlTextField = <T extends Obj>(props: ControlTextFieldProps<T>)
               multiline={multiline}
               inputProps={inputProps}
               sx={{ minWidth: width }}
+              rows={rows}
             />
           </>
         )}
