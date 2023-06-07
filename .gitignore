@@ -7,4 +7,5 @@
 .vscode/configurationCache.log
 .vscode/targets.log
 
-/node_modules
+node_modules
+dist
