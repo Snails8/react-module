@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es5",                          // コンパイル後のJavaScriptのバージョン
+    "module": "commonjs",                     // 使用するモジュールの種類
+    "jsx": "react",                           // JSXをReact要素に変換
+    "outDir": "./dist",                       // 出力ディレクトリの指定
+    "strict": true,                           // すべての型チェックを有効にする
+    "moduleResolution": "node",               // モジュール解決戦略をNode.jsの解決機構にする
+    "esModuleInterop": true,                  // ESモジュールのインターフェースとの互換性を有効にする
+    "skipLibCheck": true,                     // 型定義ファイルの型チェックをスキップ
+    "forceConsistentCasingInFileNames": true, // ファイル名の大文字小文字を厳密にチェック
+    "lib": [                                  // ビルド時に利用するライブラリのリスト
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "declaration": true,              // 型定義ファイルを生成する
+    "declarationDir": "./dist", // 型定義ファイルの出力先
+  },
+  "include": ["src/**/*"],                    // コンパイルするファイルを指定
+  "exclude": ["node_modules"]                 // コンパイルから除外するファイルを指定
+}
