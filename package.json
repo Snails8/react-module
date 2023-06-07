@@ -8,8 +8,5 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ],
-  "scripts": {
-    "common": "yarn workspace @project/common lint"
-  }
+  ]
 }
