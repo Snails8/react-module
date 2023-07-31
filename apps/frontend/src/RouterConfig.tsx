@@ -32,6 +32,7 @@ import { TabPage } from './pages/_Sample/TabPage';
 import { CalenderPage } from './pages/_Sample/CalenderPage';
 import { FormPage } from './pages/_Sample/FormPage';
 import { Layout } from './components/template/Layout/Layout';
+import { ReactHookFormPage } from './pages/_Inspect/ReactHookForm/ReactHookForm';
 
 export const RouteTraining = "/training";
 export const RouteFishes = "/fishes";
@@ -40,6 +41,7 @@ export const RouteUserCreate = "users/create";
 export const RouteSampleIndex = "/samples";
 export const RouteControlForm = "/samples/control-form";
 export const RouteCalender = "/samples/calenders";
+export const RouteReactHookForm = "/samples/react-hook-form";
 
 export const RouterConfig: React.VFC = () => {
   return (
@@ -78,6 +80,7 @@ export const RouterConfig: React.VFC = () => {
             <Route path="samples/tabs" element={<TabPage />} />
             <Route path={RouteCalender} element={<CalenderPage />} />
             <Route path={RouteControlForm} element={<FormPage />} />
+            <Route path={RouteReactHookForm} element={<ReactHookFormPage />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
