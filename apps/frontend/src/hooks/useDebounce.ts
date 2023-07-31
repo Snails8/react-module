@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 
 function useDebounce(fn: () => any, ms: number = 0, args: any[] = []) {
   useEffect(() => {
-    const handle = setTimeout(fn.bind(null, args), ms);
+    const handle = setTimeout(fn.bind(args), ms);
 
     return () => {
       clearTimeout(handle);
