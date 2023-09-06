@@ -14,6 +14,7 @@
     "format": "prettier --write src/**/*.{js,ts,tsx}"
   },
   "dependencies": {
+    "@module/ui-component": "*",
     "@emotion/react": "^11.10.5",
     "@emotion/server": "^11.10.0",
     "@emotion/styled": "^11.10.5",

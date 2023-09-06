@@ -28,3 +28,15 @@ system-prune: # remove unused docker obj
 
 image-prune: # remove unused docker imgae
 	docker image prune
+
+# =======================================================
+# yarn cmd
+# =======================================================
+module-build:
+	yarn workspace @module/ui-component build
+
+module-install:
+	yarn workspace @module/ui-component install
+
+frontend-start:
+	yarn workspace frontend start
