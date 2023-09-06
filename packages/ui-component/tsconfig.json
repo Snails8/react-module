@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es5",                          // コンパイル後のJavaScriptのバージョン
     "module": "commonjs",                     // 使用するモジュールの種類
-    "jsx": "react",                           // JSXをReact要素に変換
+    "jsx": "react-jsx",                           // JSXをReact要素に変換
     "outDir": "./dist",                       // 出力ディレクトリの指定
     "strict": true,                           // すべての型チェックを有効にする
     "moduleResolution": "node",               // モジュール解決戦略をNode.jsの解決機構にする
