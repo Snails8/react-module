@@ -47,7 +47,7 @@ export const SelectIncrementalSearch = <T extends Obj> (props: SelectProps<T>) =
       }
       renderInput={(params) => 
         <TextField
-          {...params} 
+          {...params as any} 
           label={label}
           placeholder={placeholder}
         />

@@ -31,7 +31,7 @@ export const SelectInput = <T extends Obj> (props: SelectProps<T>) => {
         <Autocomplete
           fullWidth
           options={options}
-          renderInput={(params) => <TextField {...params} label={label} onChange={(val) => onChange(val)} />}
+          renderInput={(params) => <TextField {...params as any} label={label} onChange={(val) => onChange(val)} />}
           onChange={(event, value) => {
             setValue('single', value, {
               shouldValidate: true,
