@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Dropdown.module.css";
-import { ReactComponent as BaseCaretIcon } from './dropdown.svg';
+import BaseCaretIcon from './dropdown.svg';
 
 export type DropdownOption<T> = {
   label: string
