@@ -1,9 +1,0 @@
-/*  button  */
-.button_container {
-  align-items: center;
-  display: flex;
-  justify-content: flex-end;
-  height: 40px;
-  margin-bottom: 15px;
-  margin-top: 30px;
-}
