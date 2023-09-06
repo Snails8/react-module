@@ -9,7 +9,7 @@ type ButtonProps = {
   disabled?: boolean,
 };
 
-export const MUIButton: FC<ButtonProps> = ({
+const MUIButton: FC<ButtonProps> = ({
   handleClick, 
   label, 
   variant = "contained",
@@ -28,3 +28,5 @@ export const MUIButton: FC<ButtonProps> = ({
     </Button>
   );
 };
+
+export default MUIButton;
