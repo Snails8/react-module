@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import { User } from '../../../../../types/user';
-import { Button } from '../../../../atoms/ui/Button/Button';
-import { CheckBox } from '../../../../atoms/form/Checkbox/Checkbox';
-import { Input } from '../../../../atoms/form/Input/Input';
+import { Button } from '@module/ui-component';
+import { Checkbox } from '@module/ui-component';
+import { Input } from '@module/ui-component';
 import styles from './UsersSearchForm.module.css';
 
 type UsersSearchFormProps = {
@@ -43,16 +43,16 @@ export const UsersSearchForm = memo((props: UsersSearchFormProps) => {
         </div>
       </div>
 
-      <div className={styles.checkbox_container}>
+      <div className={styles.checkbob_container}>
         <div className={styles.checkbox}>
-          <CheckBox
+          <Checkbox
             id="checkbox"
             label="checkbox"
             onChangeHandler={checkHandler}
           />
         </div>
         <div className={styles.checkbox}>
-          <CheckBox
+          <Checkbox
             id="checkbox"
             label="checkbox"
             onChangeHandler={checkHandler}

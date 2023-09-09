@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
-import { Dropdown } from '../../../../atoms/form/Dropdown/Dropdown';
-import { Input } from '../../../../atoms/form/Input/Input';
-import { TwinItem } from '../../../../molecules/design/TwinItem/TwinItem'; 
+import { Dropdown } from '@module/ui-component';
+import { Input } from '@module/ui-component';
+import { TwinItem } from '@module/ui-component'; 
 
 import styles from './UserCreateForm.module.css';
 

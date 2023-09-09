@@ -36,7 +36,7 @@ export default TabMUI;
  * https://mui.com/material-ui/react-tabs/
 
 usage:
-  const {tabIdx, handleSelected} = useSelectTab();
+  const {tabIdx, handleSelected} = useTab();
 
   return (
     <TabMUI headers={['content1', 'content2']} tabIdx={tabIdx} handleChange={handleSelected}>

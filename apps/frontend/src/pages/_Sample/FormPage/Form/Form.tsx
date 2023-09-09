@@ -1,8 +1,7 @@
 import React from 'react';
-import { CheckBox } from '../../../../components/atoms/form/Checkbox/Checkbox';
-import { Input } from '../../../../components/atoms/form/Input/Input';
+import { Checkbox } from '@module/ui-component';
+import { Input } from '@module/ui-component';
 import { useForm } from './useForm.hooks';
-import { Layout } from '../../../../components/template/_Layout/Layout';
 import styles from './Form.module.css';
 
 export const SimpleForm: React.FC = () => {
@@ -46,7 +45,7 @@ export const SimpleForm: React.FC = () => {
             </div>
           </div>
           <div className={styles.form_item}>
-            <CheckBox
+            <Checkbox
               id="test-from"
               label="checkbox"
               onChangeHandler={(value) => handleChangeChecked(value, "checked")}

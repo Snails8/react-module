@@ -1,15 +1,16 @@
 import styles from './Molecules.module.css';
 import { ReactNode } from 'react';
-import { Table } from '../../../../molecules/ui/Table/Table';
-import { TableCell } from '../../../../molecules/ui/TableCell/TableCell';
-import { TwinItem } from '../../../../molecules/design/TwinItem/TwinItem';
-import { SampleTabContent, Tab } from '../../../../molecules/ui/Tab/Tab';
-import { useTabSelect } from '../../../../molecules/ui/Tab/useTabSelect';
-import { Button } from '../../../../atoms/ui/Button/Button';
-import { useModal } from '../../../../molecules/ui/Modal/useModal';
-import { Modal } from '../../../../molecules/ui/Modal/Modal';
-import { NotificationField } from '../../../../molecules/ui/NotificationField/NotificationField';
-import { PageHeader } from '../../../../molecules/ui/PageHeader/PageHeader';
+import { Table } from '@module/ui-component';
+import { TableCell } from '@module/ui-component';
+import { TwinItem } from '@module/ui-component';
+import { Tab } from '@module/ui-component';
+import { useTab } from '@module/ui-component';
+import { Button } from '@module/ui-component';
+import { useModal } from '@module/ui-component';
+import { Modal } from '@module/ui-component';
+import { NotificationField } from '@module/ui-component';
+import { PageHeader } from '@module/ui-component';
+import { TabMUIContent } from '@module/mui-component';
 
 type ContentProps = {
   label: string,
@@ -44,7 +45,7 @@ export const Molecules = () => {
     {label: 'sample4', value: [11, 12, 13, 14, 15]},
   ];
 
-  const {tabIdx, handleSelect} = useTabSelect();
+  const {tabIdx, handleSelect} = useTab();
   const {showModal, handleOpen,handleClose} = useModal();
   return (
     <>
@@ -62,7 +63,7 @@ export const Molecules = () => {
       <div className={styles.item}>
         <Content label="tab">
           <Tab headers={['test1', 'test2', 'test3', 'test4']} selected={tabIdx} handleSelected={handleSelect}>
-            <SampleTabContent selected={tabIdx}/>
+            <TabMUIContent index={tabIdx} value={tabIdx} />
           </Tab>
         </Content>
       </div>

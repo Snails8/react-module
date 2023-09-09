@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import './App.css';
 import { RouterConfig } from './RouterConfig';
-import { LoadingSpinner } from './components/atoms/ui/LoadingSpinner/LoadingSpinner';
+import { LoadingSpinner } from '@module/ui-component';
 
 function App() {
   return (

@@ -1,15 +1,15 @@
-import { Button } from '../../../../atoms/ui/Button/Button';
-import { CheckBox } from '../../../../atoms/form/Checkbox/Checkbox';
-import { Input } from '../../../../atoms/form/Input/Input';
-import { Label } from '../../../../atoms/ui/Label/Label';
-import { LoadingSpinner } from '../../../../atoms/ui/LoadingSpinner/LoadingSpinner';
-import { Logo } from '../../../../atoms/ui/Logo/Logo';
-import { RadioButton } from '../../../../atoms/form/RadioButton/RadioButton';
-import { Textarea } from '../../../../atoms/form/Textarea/Textarea';
+import { Button } from '@module/ui-component';
+import { Checkbox } from '@module/ui-component';
+import { Input } from '@module/ui-component';
+import { Label } from '@module/ui-component';
+import { LoadingSpinner } from '@module/ui-component';
+import { Logo } from '@module/ui-component';
+import { RadioButton } from '@module/ui-component';
+import { Textarea } from '@module/ui-component';
 import styles from './Atoms.module.css';
 import { ReactNode } from 'react';
-import { UserIcon } from '../../../../atoms/ui/UserIcon/UserIcon';
-import { Dropdown } from '../../../../atoms/form/Dropdown/Dropdown';
+import { UserIcon } from '@module/ui-component';
+import { Dropdown } from '@module/ui-component';
 
 type ContentProps = {
   label: string,
@@ -57,7 +57,7 @@ export const Atoms = () => {
           <Textarea id="text" defaultValue={"sample\ntest"} onChangeHandler={() => console.log('text')}/>
         </Content>
         <Content label="checkbox">
-          <CheckBox
+          <Checkbox
             id="checkbox"
             label="checkbox"
             onChangeHandler={() => console.log('checkbox!')}

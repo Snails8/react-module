@@ -9,7 +9,7 @@ interface TabMUIContentProps {
   centered?: boolean;
 }
 
-export const TabMUIContent = (props: TabMUIContentProps) => {
+const TabMUIContent = (props: TabMUIContentProps) => {
   const { children, value, index, ...other } = props;
 
   return (
@@ -29,6 +29,7 @@ export const TabMUIContent = (props: TabMUIContentProps) => {
   );
 };
 
+export default TabMUIContent
 /**
 usage:TabMUIから見た時childrenにあたりcontentsを囲うことでbodyにできる
 

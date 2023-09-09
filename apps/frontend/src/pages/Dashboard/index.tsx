@@ -2,17 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { createSearchParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '../../components/atoms/ui/Button/Button';
-import { Container } from '../../components/atoms/design/Container/Container';
+import { Button } from '@module/ui-component';
+import { Container } from '@module/ui-component';
 import { Atoms } from '../../components/organisms/domain/SampleAtomicComponent/Atoms';
 import { LoadingTemplate } from '../../components/template/LoadingTemplate/LoadingTemplate';
 import { APIPostTest, APIGetTest, APIPutTest, APIGetUsers } from '../../endpoint';
 import { useFetch } from '../../hooks/useFetch';
 import { usePost } from '../../hooks/usePost';
 import { AtomMUI } from '../../components/organisms/domain/SampleAtomicComponent/AtomMUI/AtomMUI';
-import { TabMUI } from '../../components/molecules/_MUI/Tab/Tab';
-import { TabMUIContent } from '../../components/molecules/_MUI/Tab/TabContent';
-import { useSelectTab } from '../../components/molecules/_MUI/Tab/useSelectTab';
+import { Tab } from '@module/mui-component';
+import { TabMUIContent } from '@module/mui-component';
+import { useTab } from '@module/mui-component';
 import { Molecules } from '../../components/organisms/domain/SampleAtomicComponent/Molecules/Molecales';
 import { useFetchSWR } from '../../hooks/useFetchSWR';
 
@@ -48,7 +48,7 @@ export const Dashboard: React.FC = () => {
   }).toString();
 
 
-  const {tabIdx, handleSelected} = useSelectTab();
+  const {tabIdx, handleSelected} = useTab();
 
   if (loading || getLoading) {
     return (<LoadingTemplate />);
@@ -92,15 +92,15 @@ export const Dashboard: React.FC = () => {
             <Button label='put' handleClick={handleSubmitPut}/>
           </div>
         </div>
-        <TabMUI headers={['atoms', 'molecules']} tabIdx={tabIdx} handleChange={handleSelected} width={300} centered>
-          <TabMUIContent  value={tabIdx} index={0}>
+        <Tab headers={['atoms', 'molecules']} tabIdx={tabIdx} handleChange={handleSelected} width={300} centered>
+          <TabMUIContent value={tabIdx} index={0}>
             <Atoms />
             <AtomMUI />
           </TabMUIContent>
           <TabMUIContent  value={tabIdx} index={1}>
             <Molecules />
           </TabMUIContent>
-        </TabMUI>
+        </Tab>
       </Container>
     </>
   );
