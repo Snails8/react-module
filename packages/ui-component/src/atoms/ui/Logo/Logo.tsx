@@ -4,7 +4,7 @@ type LogoProps = {
   height?: number
 };
 
-export const Logo = (props: LogoProps) => {
+const Logo = (props: LogoProps) => {
   const { logoPath, height=60, width=60 } = props;
 
   return (
@@ -19,3 +19,5 @@ export const Logo = (props: LogoProps) => {
     />
   );
 };
+
+export default Logo;

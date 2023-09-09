@@ -7,7 +7,7 @@ type LabelProps = {
   width: number;
 };
 
-export const Label = memo((props: LabelProps) => {
+const Label = memo((props: LabelProps) => {
   const { text, color, width } = props;
 
   return (
@@ -20,3 +20,5 @@ export const Label = memo((props: LabelProps) => {
     </div>
   );
 });
+
+export default Label;

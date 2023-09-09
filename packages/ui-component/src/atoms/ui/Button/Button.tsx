@@ -13,7 +13,7 @@ export type ButtonProps = {
   handleClick: any;
 };
 
-export const Button = memo((props: ButtonProps) => {
+const Button = memo((props: ButtonProps) => {
   const { label, colorType='primary', width=100, height=45, margin = 0, fontSize = 26, disabled = false, handleClick } = props;
 
   let color, backgroundColor, borderColor;
@@ -50,3 +50,5 @@ export const Button = memo((props: ButtonProps) => {
     </button>
   );
 });
+
+export default Button;

@@ -4,7 +4,7 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { memo } from "react";
 import { blue } from "@mui/material/colors";
 
-export const BackButton = memo(() => {
+const BackButton = memo(() => {
   const navigate = useNavigate();
   const handleBack = () => {
     navigate(-1);
@@ -18,3 +18,5 @@ export const BackButton = memo(() => {
     </Button>
   );
 });
+
+export default BackButton;

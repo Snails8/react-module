@@ -7,7 +7,7 @@ type AlertProps = {
   title?: ReactNode,
 }
 
-export const AlertField = (props: AlertProps) => {
+const AlertField = (props: AlertProps) => {
   const { severity, body, title } = props;
   
   if (title) {
@@ -23,6 +23,8 @@ export const AlertField = (props: AlertProps) => {
     <Alert security={severity}>{body}</Alert>
   )
 }
+
+export default AlertField;
 
 /**
  * usage

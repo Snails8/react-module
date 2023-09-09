@@ -7,7 +7,7 @@ type Props = {
   children: ReactNode,
 }
 
-export const Container: FC<Props> = memo((props: Props) => {
+const Container: FC<Props> = memo((props: Props) => {
   const {type, children} = props;
 
   if (type === "center") {
@@ -52,3 +52,5 @@ export const Container: FC<Props> = memo((props: Props) => {
 
   return <div>{children}</div>;
 });
+
+export default Container;

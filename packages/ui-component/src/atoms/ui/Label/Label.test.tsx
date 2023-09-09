@@ -1,5 +1,5 @@
 import {render, screen} from '@testing-library/react';
-import { Label } from './Label';
+import Label from './Label';
 
 describe('Label', () => {
   test('render', () => {

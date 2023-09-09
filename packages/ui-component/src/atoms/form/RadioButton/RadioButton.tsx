@@ -9,7 +9,7 @@ export interface RadioButtonProps {
   onChangeHandler: (check: boolean) => void;
 }
 
-export const RadioButton: React.FC<RadioButtonProps> = ({
+const RadioButton: React.FC<RadioButtonProps> = ({
   id = '',
   label = '',
   defaultValue,
@@ -38,3 +38,5 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
     </div>
   );
 };
+
+export default RadioButton;

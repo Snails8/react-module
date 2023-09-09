@@ -1,5 +1,5 @@
 import {render, screen} from '@testing-library/react';
-import { CheckBox } from './Checkbox';
+import CheckBox from './Checkbox';
 
 describe('Checkbox', () => {
   test('render', () => {

@@ -14,7 +14,7 @@ type InputProps = {
   disabled?: boolean;
 };
 
-export const Input = memo((props: InputProps) => {
+const Input = memo((props: InputProps) => {
   const {
     type,
     id,
@@ -46,3 +46,5 @@ export const Input = memo((props: InputProps) => {
     />
   );
 });
+
+export default Input;

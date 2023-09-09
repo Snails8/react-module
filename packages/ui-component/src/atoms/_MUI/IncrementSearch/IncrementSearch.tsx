@@ -22,7 +22,7 @@ type SelectProps<T extends Obj>  = {
 }
 
 // using lodash
-export const SelectIncrementalSearch = <T extends Obj> (props: SelectProps<T>) => {
+const SelectIncrementalSearch = <T extends Obj> (props: SelectProps<T>) => {
   const { options, selectedVal, handleSearch, handleSelect, placeholder, isLoading=false, label='', width} = props;
 
   const term = 750;
@@ -57,7 +57,7 @@ export const SelectIncrementalSearch = <T extends Obj> (props: SelectProps<T>) =
   );
 };
 
-
+export default SelectIncrementalSearch;
 /**
 
 usage: prepare api

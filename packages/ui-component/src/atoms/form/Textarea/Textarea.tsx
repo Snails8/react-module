@@ -18,7 +18,7 @@ type TextareaProps = {
   disabled?: boolean;
 };
 
-export const Textarea = memo((props: TextareaProps) => {
+const Textarea = memo((props: TextareaProps) => {
   const {
     id, rows=2, cols=20, defaultValue = '', placeholder='', required = false, maxLength=300, 
     width='auto', height='auto', padding='auto', fontWeight = 'normal',
@@ -53,3 +53,5 @@ export const Textarea = memo((props: TextareaProps) => {
     />
   );
 });
+
+export default Textarea;

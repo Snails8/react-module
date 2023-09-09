@@ -23,7 +23,7 @@ type ControlSelectProps<T extends Obj>  = {
 }
 
 // https://mui.com/material-ui/react-checkbox/
-export const ControlCheckbox = <T extends Obj>(props: ControlSelectProps<T>) => {
+const ControlCheckbox = <T extends Obj>(props: ControlSelectProps<T>) => {
   const {name, options, control, errors, label='', defaultValue, width=200, row, disabled} = props;
 
   return (
@@ -45,3 +45,5 @@ export const ControlCheckbox = <T extends Obj>(props: ControlSelectProps<T>) => 
     </FormControl>
   );
 };
+
+export default ControlCheckbox;

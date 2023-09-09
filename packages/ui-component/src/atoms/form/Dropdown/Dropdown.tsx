@@ -15,7 +15,7 @@ export type DropdownProps<T> = {
   onChangeHandler: (value: T) => void 
 }
 
-export const Dropdown = (props: DropdownProps<any>) => {
+const Dropdown = (props: DropdownProps<any>) => {
   const {options, defaultValue, width=200, disabled=false, onChangeHandler} = props;
 
   const [isExpanded, setIsExpanded] = useState(false);
@@ -68,3 +68,5 @@ export const Dropdown = (props: DropdownProps<any>) => {
     </div>
   );
 };
+
+export default Dropdown;

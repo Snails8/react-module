@@ -22,7 +22,7 @@ type ControlSelectProps<T extends Obj>  = {
 }
 
 // https://mui.com/material-ui/react-radio-button/
-export const ControlRadio = <T extends Obj>(props: ControlSelectProps<T>) => {
+const ControlRadio = <T extends Obj>(props: ControlSelectProps<T>) => {
   const {name, options, control, label='', defaultValue, width=200, row, disabled} = props;
 
   return (
@@ -56,3 +56,5 @@ export const ControlRadio = <T extends Obj>(props: ControlSelectProps<T>) => {
     />
   );
 };
+
+export default ControlRadio;

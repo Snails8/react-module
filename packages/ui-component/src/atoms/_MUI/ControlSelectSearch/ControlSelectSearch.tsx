@@ -20,7 +20,7 @@ type SelectProps<T extends Obj>  = {
  * @param props 
  * @returns 
  */
-export const SelectInput = <T extends Obj> (props: SelectProps<T>) => {
+const SelectInput = <T extends Obj> (props: SelectProps<T>) => {
   const {name, options, control, setValue, label='', defaultValue, width=200, onChange= () => {} } = props;
 
   return (
@@ -44,6 +44,8 @@ export const SelectInput = <T extends Obj> (props: SelectProps<T>) => {
     />
   );
 };
+
+export default SelectInput;
 
 /**
  * usage

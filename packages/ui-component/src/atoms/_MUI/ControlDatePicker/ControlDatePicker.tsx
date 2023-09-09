@@ -17,7 +17,7 @@ type ControlDatePickerProps<T extends Obj>  = {
   format?: 'YYYY/MM/DD' | 'YYYY年MM月DD日' | 'YYYY年MM月'
 }
 
-export const ControlDatePicker = <T extends Obj> (props: ControlDatePickerProps<T>) => {
+const ControlDatePicker = <T extends Obj> (props: ControlDatePickerProps<T>) => {
   const {name, control, trigger, width={}, format='YYYY/MM/DD' } = props;
 
   return (
@@ -49,3 +49,5 @@ export const ControlDatePicker = <T extends Obj> (props: ControlDatePickerProps<
     </FormControl>
   );
 };
+
+export default ControlDatePicker;

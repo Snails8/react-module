@@ -14,7 +14,7 @@ type SelectAsyncProps = {
  * if you input val, you get fetched-option
  * @returns 
  */
-export const SelectAsync = (props: SelectAsyncProps) => {
+const SelectAsync = (props: SelectAsyncProps) => {
   const {fetchOption, handleSelect, height, borderColor="silver"} = props;
 
   return (
@@ -35,6 +35,7 @@ export const SelectAsync = (props: SelectAsyncProps) => {
   );
 };
 
+export default SelectAsync;
 
 /**
   usage:

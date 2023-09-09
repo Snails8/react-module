@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react"
-import { Container } from "./Container";
+import Container from "./Container";
 
 describe('logo', () => {
   test('render', () => {

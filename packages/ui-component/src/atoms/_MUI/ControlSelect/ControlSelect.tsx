@@ -20,7 +20,7 @@ type ControlSelectProps<T extends Obj>  = {
   disabled?: boolean
 }
 
-export const ControlSelect = <T extends Obj>(props: ControlSelectProps<T>) => {
+const ControlSelect = <T extends Obj>(props: ControlSelectProps<T>) => {
   const {name, options, control, label='', defaultValue, width=200, disabled} = props;
 
   return (
@@ -43,3 +43,5 @@ export const ControlSelect = <T extends Obj>(props: ControlSelectProps<T>) => {
     />
   );
 };
+
+export default ControlSelect;

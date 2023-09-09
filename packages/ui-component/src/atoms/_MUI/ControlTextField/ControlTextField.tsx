@@ -17,7 +17,7 @@ type ControlTextFieldProps<T extends Obj>  = {
   inputProps?: InputBaseComponentProps
 }
 
-export const ControlTextField = <T extends Obj>(props: ControlTextFieldProps<T>) => {
+const ControlTextField = <T extends Obj>(props: ControlTextFieldProps<T>) => {
   const {name, type = 'text', control, trigger, variant="outlined", label=null, multiline=false,inputProps={}, width={}} = props;
 
   return (
@@ -48,6 +48,8 @@ export const ControlTextField = <T extends Obj>(props: ControlTextFieldProps<T>)
     </FormControl>
   );
 };
+
+export default ControlTextField;
 
 /**
  * usage:

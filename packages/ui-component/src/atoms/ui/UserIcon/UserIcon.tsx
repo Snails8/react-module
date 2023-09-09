@@ -6,7 +6,7 @@ type UserIconProps = {
   width?: number;
 };
 
-export const UserIcon = memo((props: UserIconProps) => {
+const UserIcon = memo((props: UserIconProps) => {
   const { height=50, width=50 } = props;
 
   return (
@@ -15,3 +15,5 @@ export const UserIcon = memo((props: UserIconProps) => {
     </div>
   );
 });
+
+export default UserIcon;

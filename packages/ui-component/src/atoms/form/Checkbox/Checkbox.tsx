@@ -9,7 +9,7 @@ type CheckboxProps = {
   onChangeHandler: (check: boolean) => void;
 };
 
-export const CheckBox = memo((props: CheckboxProps) => {
+const CheckBox = memo((props: CheckboxProps) => {
   const {
     id = 'checkbox',
     label = '',
@@ -40,3 +40,5 @@ export const CheckBox = memo((props: CheckboxProps) => {
     </div>
   );
 });
+
+export default CheckBox;
