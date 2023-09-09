@@ -1,5 +1,5 @@
 import {render, screen} from '@testing-library/react';
-import { Textarea } from './Textarea';
+import Textarea from './Textarea';
 
 describe('', () => {  
   test('Textarea', () => {

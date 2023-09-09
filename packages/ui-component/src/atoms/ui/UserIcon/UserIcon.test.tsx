@@ -1,5 +1,5 @@
 import {render, screen} from '@testing-library/react';
-import { UserIcon } from './UserIcon';
+import UserIcon from './UserIcon';
 
 describe('', () => {  
   test('UserIcon', () => {
