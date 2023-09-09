@@ -1,7 +1,7 @@
-import { APIGetFishes } from '../../endpoint';
-import { useFetch } from '../../hooks/useFetch';
-import FishData from '../../mockData/json/Fishes.json';
-import { Fish } from '../../types/fish';
+import { APIGetFishes } from '../../../endpoint';
+import { useFetch } from '../../../hooks/useFetch';
+import FishData from './Fishes.json';
+import { Fish } from '../../../types/fish';
 
 export const useFishes = () => {
   const fishes = process.env.IS_BACKEND

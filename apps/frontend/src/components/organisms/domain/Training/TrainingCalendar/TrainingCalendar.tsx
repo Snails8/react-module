@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { TrainingCalendarData } from '../../../../../pages/Training/useTraining.hook';
+import { TrainingCalendarData } from '../../../../../pages/_Sample/Training/useTraining.hook';
 import styles from './TrainingCalendar.module.css';
 
 type TrainingCalendarProps = {

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { UsersSearchForm } from '../../components/organisms/domain/User/UsersSearchForm/UsersSearchForm';
-import { UsersTable } from '../../components/organisms/domain/User/UsersTable/UsersTable';
-import { User } from '../../types/user';
+import { UsersSearchForm } from '../../../components/organisms/domain/User/UsersSearchForm/UsersSearchForm';
+import { UsersTable } from '../../../components/organisms/domain/User/UsersTable/UsersTable';
+import { User } from '../../../types/user';
 import { useUsers } from './useUsers.hook';
 
 type SearchParams = {

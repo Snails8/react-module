@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { SamplePage2 } from './pages/_Inspect/Router/pageB';
 
-import { Training } from './pages/Training';
+import { Training } from './pages/_Sample/Training';
 import { NotFound } from './pages/NotFound';
 import { SamplePage3 } from './pages/_Inspect/Router/pageC';
 import {
@@ -12,12 +12,12 @@ import {
   SamplePage4Child2,
   SamplePage4Child3,
 } from './pages/_Inspect/Router/pageD';
-import { Users } from './pages/Users';
+import { Users } from './pages/_Sample/Users';
 import { ChildTabPage } from './pages/_Sample/Tabs/ChildTab';
 import { ParentTabPage } from './pages/_Sample/Tabs/ParentTab';
-import { UserCreate } from './pages/UserCreatePage';
+import { UserCreate } from './pages/_Sample/UserCreatePage';
 import { StatePage } from './pages/_Inspect/StatePage';
-import { Fishes } from './pages/Fishes';
+import { Fishes } from './pages/_Sample/Fishes';
 import { UseMemoPage } from './pages/_Inspect/UseMemoPage';
 import { DownloadCSVExcel } from './pages/_Sample/DownloadCSVExcel';
 import { UseCallBackPage } from './pages/_Inspect/UseCallBackPage';

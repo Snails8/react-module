@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { APIPostUserCreate } from "../../endpoint";
-import { usePost } from "../../hooks/usePost";
-import { UserRole } from '../../types/user';
+import { APIPostUserCreate } from "../../../endpoint";
+import { usePost } from "../../../hooks/usePost";
+import { UserRole } from '../../../types/user';
 
 export const useUserForm = () => {
   const [company, setCompany] = useState('');
