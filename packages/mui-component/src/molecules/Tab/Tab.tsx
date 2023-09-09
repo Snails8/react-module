@@ -14,7 +14,7 @@ type TabMUIProps = {
   centered?: boolean
 }
 
-export const TabMUI = (props: TabMUIProps ) => {
+const TabMUI = (props: TabMUIProps ) => {
   const {headers, tabIdx, handleChange, children, width=100,color="primary", centered=false } = props;
 
   return (
@@ -31,6 +31,7 @@ export const TabMUI = (props: TabMUIProps ) => {
   );
 };
 
+export default TabMUI;
 /**
  * https://mui.com/material-ui/react-tabs/
 

@@ -8,7 +8,7 @@ type ListMUIprops = {
 }
 
 // https://mui.com/material-ui/react-list/
-export const ListMUI = (props: ListMUIprops) => {
+const MUIList = (props: ListMUIprops) => {
   const {list, listStyle} = props;
 
   return (
@@ -24,6 +24,7 @@ export const ListMUI = (props: ListMUIprops) => {
   );
 }
 
+export default MUIList;
 /**
  * usage:
  

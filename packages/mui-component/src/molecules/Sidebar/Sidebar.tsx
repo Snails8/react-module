@@ -10,7 +10,7 @@ type SidebarProps = {
   width?: number
 }
 
-export const Sidebar = (props: SidebarProps) => {
+const Sidebar = (props: SidebarProps) => {
   const { anchor, open, handleClose, children, width=200 } = props;
 
   const style = {
@@ -31,6 +31,7 @@ export const Sidebar = (props: SidebarProps) => {
   );
 };
 
+export default Sidebar;
 /**
  * usage
 

@@ -9,7 +9,7 @@ type ModalProps = {
   width?: number,
 }
 
-export const ModalMUI = (props: ModalProps) => {
+const ModalMUI = (props: ModalProps) => {
   const { open, handleClose, children, width=200} = props;
 
   const style = {
@@ -38,6 +38,8 @@ export const ModalMUI = (props: ModalProps) => {
     </Modal>
   )
 }
+
+export default ModalMUI;
 
 /**
 usage: 
