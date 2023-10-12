@@ -6,6 +6,7 @@ type ButtonProps = {
   handleClick: (() => void) |  ((e: React.MouseEvent<any>) => any),
   variant?: "text" | "contained" | "outlined"
   color?: "primary" | "secondary" | "success" | "error",
+  style?: any,
   disabled?: boolean,
 };
 
@@ -14,7 +15,8 @@ const MUIButton: FC<ButtonProps> = ({
   label, 
   variant = "contained",
   color = "primary", 
-  disabled=false 
+  disabled=false,
+  style={}
 }) => {
   return (
     <Button
@@ -23,6 +25,7 @@ const MUIButton: FC<ButtonProps> = ({
       onClick={handleClick}
       disabled={disabled}
       data-testid={'test'}
+      style={style}
     >
       {label}
     </Button>

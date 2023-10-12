@@ -11,14 +11,15 @@ type ControlTextFieldProps<T extends Obj>  = {
   control: Control<T, any>,
   trigger:  UseFormTrigger<T>,
   variant?: "outlined" | "filled" | "standard"
-  label?: string
-  multiline?: boolean 
+  label?: string 
   width?: number
+  multiline?: boolean
   inputProps?: InputBaseComponentProps
+  rows?: number
 }
 
 const ControlTextField = <T extends Obj>(props: ControlTextFieldProps<T>) => {
-  const {name, type = 'text', control, trigger, variant="outlined", label=null, multiline=false,inputProps={}, width={}} = props;
+  const {name, type = 'text', control, trigger, variant="outlined", label=null, multiline=false, inputProps={}, width={}, rows=1 } = props;
 
   return (
     <FormControl fullWidth>
@@ -41,6 +42,7 @@ const ControlTextField = <T extends Obj>(props: ControlTextFieldProps<T>) => {
               multiline={multiline}
               inputProps={inputProps}
               sx={{ minWidth: width }}
+              rows={rows}
             />
           </>
         )}
