@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Dropdown.module.css";
-import BaseCaretIcon from './dropdown.svg';
 
 export type DropdownOption<T> = {
   label: string
@@ -44,7 +43,7 @@ const Dropdown = (props: DropdownProps<any>) => {
           {options.find((option) => option.value === selectedValue)?.label || ''}
         </span>
         <div className={styles.icon}>
-          <BaseCaretIcon />
+          <img src='./dropdown.svg' alt='Dropdown Icon' />
         </div>
       </div>
       { isExpanded && (
