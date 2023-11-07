@@ -14,12 +14,12 @@
     "format": "prettier --write src/**/*.{js,ts,tsx}"
   },
   "dependencies": {
-    "@module/ui-component": "*",
-    "@module/mui-component": "*",
     "@emotion/react": "^11.10.5",
     "@emotion/server": "^11.10.0",
     "@emotion/styled": "^11.10.5",
     "@hookform/resolvers": "^2.9.10",
+    "@module/mui-component": "*",
+    "@module/ui-component": "*",
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.4",
     "@mui/x-date-pickers": "^5.0.13",
@@ -40,6 +40,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.42.0",
+    "react-icons": "^4.11.0",
     "react-query": "^3.39.2",
     "react-redux": "^8.0.4",
     "react-router-dom": "^6.3.0",
