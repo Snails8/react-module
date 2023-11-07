@@ -39,10 +39,10 @@ mui-install:
 	yarn workspace @module/ui-component install
 
 ui-install:
-	yarn workspace @module/ui install
+	yarn workspace @module/ui-component install
 
 ui-build:
-	yarn workspace @module/ui build
+	yarn workspace @module/ui-component build
 
 frontend-start:
 	yarn workspace frontend start
