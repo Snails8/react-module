@@ -6,22 +6,26 @@ type ModalProps = {
   open: boolean,
   handleClose: () => void,
   children: ReactNode,
-  width?: number,
+  width?: number | string,
+  height?: number | string,
 }
 
-const ModalMUI = (props: ModalProps) => {
-  const { open, handleClose, children, width=200} = props;
+export const ModalMUI = (props: ModalProps) => {
+  const { open, handleClose, children, width="99.9%", height=500} = props;
 
   const style = {
-    position: 'absolute',
+    position: 'absolute' as 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    minWidth: width,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
+    backgroundColor: 'white',
+    border: '0.3px solid #000',
+    boxShadow: `5px 5px 14px rgba(0, 0, 0, 0.2)`,
+    paddingTop: "30px",
+    paddingBottom: "30px",
+    width: width,
+    height: height,
+    borderRadius: "15px"
   };
 
   return (
@@ -30,7 +34,6 @@ const ModalMUI = (props: ModalProps) => {
       onClose={handleClose}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
-      sx={{ overflow: "scroll" }}
     >
       <Box sx={style}>
         {children}
@@ -38,7 +41,6 @@ const ModalMUI = (props: ModalProps) => {
     </Modal>
   )
 }
-
 export default ModalMUI;
 
 /**
