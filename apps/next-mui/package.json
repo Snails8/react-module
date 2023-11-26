@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@module/mui-component": "*",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@module/mui-component": "*",
     "@mui/material": "^5.14.18",
     "next": "14.0.3",
     "react": "^18",
