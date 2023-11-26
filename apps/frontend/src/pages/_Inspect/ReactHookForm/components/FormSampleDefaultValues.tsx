@@ -1,6 +1,6 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useState } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { useEffect, useState } from 'react';
+import { SubmitHandler, set, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 
 type InputValues = {
@@ -13,7 +13,7 @@ type InputValues = {
 
 const errorMsgStyle = { color: "red" };
 
-export function ReactHookFormBase() {
+export function ReactHookFormDefaultValues() {
   const schema = yup.object().shape({
     name: yup.string().required('名前は必須です'),
     email: yup.string().email('正しい形式で入力してください').required('メールアドレスは必須です'),
@@ -22,9 +22,11 @@ export function ReactHookFormBase() {
     hobbies: yup.array().of(yup.string()).min(1, "少なくとも一つの趣味を選択してください").required("入力は必須です").nullable(),
   });
 
-  const { register, handleSubmit, watch, formState: { errors }, getValues } = useForm<InputValues>({
+  const data: InputValues = { name: "test", email: "test@test.com", age: 10, gender: "Male", hobbies: ["Reading"]};
+  const { register, setValue, handleSubmit, watch, formState: { errors }, getValues } = useForm<InputValues>({
     resolver: yupResolver(schema),
     mode: 'onChange', // 'onBlur', 'onChange', 'onTouched', 'all' から選択可能。defaultは onSubmit
+    defaultValues: data
   });
   const onSubmit: SubmitHandler<InputValues> = (data) => console.log("onsubmit", data);
   

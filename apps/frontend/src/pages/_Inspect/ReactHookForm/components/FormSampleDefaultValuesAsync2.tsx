@@ -1,6 +1,6 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useState } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { useEffect, useState } from 'react';
+import { SubmitHandler, set, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 
 type InputValues = {
@@ -13,19 +13,39 @@ type InputValues = {
 
 const errorMsgStyle = { color: "red" };
 
-export function ReactHookFormBase() {
-  const schema = yup.object().shape({
-    name: yup.string().required('名前は必須です'),
-    email: yup.string().email('正しい形式で入力してください').required('メールアドレスは必須です'),
-    age: yup.number().required("入力は必須です").positive('整数を入力してください').integer(),
-    gender: yup.string().required("入力は必須です").nullable(),
-    hobbies: yup.array().of(yup.string()).min(1, "少なくとも一つの趣味を選択してください").required("入力は必須です").nullable(),
-  });
-
-  const { register, handleSubmit, watch, formState: { errors }, getValues } = useForm<InputValues>({
-    resolver: yupResolver(schema),
+export function ReactHookFormDefaultValuesAsync2() {
+  const { register, reset, handleSubmit, watch, formState: { errors }, getValues } = useForm<InputValues>({
     mode: 'onChange', // 'onBlur', 'onChange', 'onTouched', 'all' から選択可能。defaultは onSubmit
   });
+  useEffect(() => {
+    // 非同期関数を定義
+    const fetchAsyncData = async () => {
+      try {
+        // setTimeoutを使用して非同期操作をシミュレート
+        const asyncData = await new Promise<InputValues>((resolve) => {
+          setTimeout(() => {
+            const data: InputValues = { 
+              name: "test async-reset", 
+              email: "test-async-reset@test.com", 
+              age: 10, 
+              gender: "Male", 
+              hobbies: ["Reading"]
+            };
+            resolve(data);
+          }, 1000); // 1秒の遅延
+        });
+  
+        // setValueを使用してフォームの状態を更新
+        reset(asyncData);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchAsyncData();
+  }, [reset]);
+  
+
   const onSubmit: SubmitHandler<InputValues> = (data) => console.log("onsubmit", data);
   
   console.log(watch("name"));
