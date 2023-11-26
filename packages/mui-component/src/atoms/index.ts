@@ -2,6 +2,8 @@
 export { default as Alert } from './Alert/AlertField';
 export { default as AlertTitle } from './BackButton/BackButton';
 export { default as Button } from './Button/Button';
+export { default as TextField } from './TextField/TextField';
+export { default as RhfTextField } from './TextField/RhfTextField';
 export { default as ControlSelect } from './ControlSelect/ControlSelect';
 export { default as ControlCheckBox } from './ControlCheckbox/ControlCheckbox';
 export { default as ControlDatePicker } from './ControlDatePicker/ControlDatePicker';
