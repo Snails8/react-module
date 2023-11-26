@@ -33,16 +33,13 @@ image-prune: # remove unused docker imgae
 # yarn cmd
 # =======================================================
 mui-build:
-	yarn workspace @module/ui-component build
-
-mui-install:
-	yarn workspace @module/ui-component install
-
-ui-install:
-	yarn workspace @module/ui-component install
+	yarn workspace @module/mui-component build
 
 ui-build:
 	yarn workspace @module/ui-component build
 
 frontend-start:
 	yarn workspace frontend start
+
+next-mui-dev:
+	yarn workspace next-mui dev
