@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 type Props = {
   label: string;
   name?: string;
-  selectedDate?: Date;
+  value?: Date | null;
   onChange?: (date: Date | null) => void;
   type?: "date" | "datetime" | undefined;
   minDate?: Date;
@@ -27,7 +27,7 @@ export function DatePickerComponent(props: Props) {
           props.type === "datetime" ? "yyyy/MM/dd HH:mm" : "yyyy-MM-dd"
         }
         locale={ja}
-        selected={props.selectedDate} //value
+        selected={props.value} //value
         onChange={props.onChange}
         showTimeSelect={props.type === "datetime"}
         timeIntervals={30}

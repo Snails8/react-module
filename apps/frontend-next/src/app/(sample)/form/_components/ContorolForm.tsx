@@ -10,6 +10,10 @@ import { useState } from "react";
 export function ControlForm() {
   const [inputText, setInputText] = useState("");
   const [inputTextarea, setInputTextarea] = useState("");
+  const [inputSelect, setInputSelect] = useState<string>();
+  const [inputRadio, setInputRadio] = useState<string>();
+  const [inputCheckbox, setInputCheckbox] = useState<boolean>(false);
+  const [inputDate, setInputDate] = useState<Date | null>();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(e.target.value);
@@ -22,9 +26,16 @@ export function ControlForm() {
     <>
       <section className="pb-8">
         <div className="bg-gray-200 w-full">
-          <div className="p-4">ここに結果出るよ</div>
-          <div>
-            <p>name：{inputText}</p>
+          <div className="p-4">
+            ここに結果出るよ
+            <div>
+              <p>name：{inputText}</p>
+              <p>textarea：{inputTextarea}</p>
+              <p>select：{inputSelect}</p>
+              <p>radio：{inputRadio}</p>
+              <p>checkbox：{inputCheckbox ? "true" : "false"}</p>
+              <p>date：{inputDate?.toLocaleDateString()}</p>
+            </div>
           </div>
         </div>
       </section>
@@ -50,6 +61,8 @@ export function ControlForm() {
           label={"選択"}
           placeholder="選択してください"
           name={"select"}
+          value={inputSelect}
+          onChange={(e) => setInputSelect(e.target.value)}
           options={["選択1", "選択2", "選択3"]}
         />
 
@@ -57,6 +70,8 @@ export function ControlForm() {
           label={"ラジオボタン"}
           name="radio"
           format="row"
+          value={inputRadio}
+          onChange={(e) => setInputRadio(e.target.value)}
           radioGroups={[
             { id: "radio1", title: "ラジオ1", value: "radio1" },
             { id: "radio2", title: "ラジオ2", value: "radio2" },
@@ -64,9 +79,24 @@ export function ControlForm() {
           ]}
         />
 
-        <Checkbox label={"チェックボックス"} name="checkbox" value="checkbox" />
+        <Checkbox
+          label={"チェックボックス"}
+          name="checkbox"
+          checked={inputCheckbox}
+          onChange={() => setInputCheckbox(!inputCheckbox)}
+        />
 
-        <DatePickerComponent label="日付" />
+        <DatePickerComponent
+          name="date-picker"
+          label="日付"
+          value={inputDate}
+          onChange={(date) => setInputDate(date)}
+        />
+
+        <button
+          type="submit"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >送信(GET)</button>
       </form>
     </>
   );

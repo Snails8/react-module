@@ -4,6 +4,7 @@ type Props = {
   label: string | JSX.Element;
   labelDetail?: string | JSX.Element;
   name?: string;
+  checked?: string | number | boolean;
   value?: string | number;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
@@ -15,6 +16,7 @@ export function Checkbox(props: Props) {
         id={props.name}
         name={props.name}
         value={props.value}
+        checked={!!props.checked}
         type="checkbox"
         className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
         onChange={props.onChange}

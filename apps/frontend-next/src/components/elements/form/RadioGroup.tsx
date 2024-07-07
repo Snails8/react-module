@@ -18,7 +18,7 @@ type Props = {
   disabled?: boolean;
   readOnly?: boolean;
   error?: string;
-  onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export function RadioGroup(props: Props) {
@@ -35,6 +35,8 @@ export function RadioGroup(props: Props) {
               name={props.name}
               type="radio"
               className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+              onChange={props.onChange}
+              value={radio.value}
             />
             <label htmlFor={radio.id} className="ml-3 block text-sm font-medium leading-6 text-gray-900">
               {radio.title}
