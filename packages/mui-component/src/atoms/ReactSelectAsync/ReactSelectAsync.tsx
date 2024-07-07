@@ -1,3 +1,4 @@
+"use client"
 import { ActionMeta, GroupBase, OptionsOrGroups, SingleValue } from 'react-select';
 import AsyncSelect from 'react-select/async';
 import { Option } from './useReactSelectAsync';
