@@ -25,6 +25,12 @@ export default function Home() {
         <a href="#" className="no-underline">no-underline</a>
         </section>
 
+        <section className="p-3 bg-gray-50">
+          <p className=" rounded-md whitespace-pre-wrap">
+            {`aaaaaa\nbbbbbb\ncccccc\ndddddd\n`}
+          </p>
+        </section>
+
       </div>
       </main>
   )

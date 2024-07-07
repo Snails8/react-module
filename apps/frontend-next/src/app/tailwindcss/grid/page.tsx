@@ -70,6 +70,28 @@ export default function Grid() {
           <div className="p-4 col-start-1 col-end-3 bg-blue-400">アイテム3</div>
         </div>
       </ItemComponent>
+
+      <div className="grid grid-cols-10 space-x-2">
+          <div className="col-span-7">
+            <TextField
+              label="予算"
+              name="price"
+              type="number"
+              placeholder="例) 1000"
+              value=""
+              className="w-full"
+              onChange={() => {}}
+            />
+          </div>
+
+          <div className="col-span-3">
+            <Checkbox
+              label="相談する"
+              name="price"
+              value=""
+            />
+          </div>
+        </div>
     </section>
   )
 }
