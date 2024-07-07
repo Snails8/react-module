@@ -1,3 +1,5 @@
+import { TextField } from "@module/mui-component"
+import { Checkbox } from "@module/ui-component"
 
 export default function Grid() {
   return (
@@ -87,8 +89,9 @@ export default function Grid() {
           <div className="col-span-3">
             <Checkbox
               label="相談する"
-              name="price"
-              value=""
+              // name="price"
+              // value=""
+              onChangeHandler={() => {}}
             />
           </div>
         </div>
