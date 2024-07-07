@@ -2505,7 +2505,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@floating-ui/react@npm:^0.26.16":
+"@floating-ui/react@npm:^0.26.16, @floating-ui/react@npm:^0.26.2":
   version: 0.26.19
   resolution: "@floating-ui/react@npm:0.26.19"
   dependencies:
@@ -9128,6 +9128,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"clsx@npm:^2.1.0":
+  version: 2.1.1
+  resolution: "clsx@npm:2.1.1"
+  checksum: acd3e1ab9d8a433ecb3cc2f6a05ab95fe50b4a3cfc5ba47abb6cbf3754585fcb87b84e90c822a1f256c4198e3b41c7f6c391577ffc8678ad587fc0976b24fd57
+  languageName: node
+  linkType: hard
+
 "co@npm:^4.6.0":
   version: 4.6.0
   resolution: "co@npm:4.6.0"
@@ -10080,6 +10087,13 @@ __metadata:
     whatwg-mimetype: ^2.3.0
     whatwg-url: ^8.0.0
   checksum: 97caf828aac25e25e04ba6869db0f99c75e6859bb5b424ada28d3e7841941ebf08ddff3c1b1bb4585986bd507a5d54c2a716853ea6cb98af877400e637393e71
+  languageName: node
+  linkType: hard
+
+"date-fns@npm:^3.3.1":
+  version: 3.6.0
+  resolution: "date-fns@npm:3.6.0"
+  checksum: 0daa1e9a436cf99f9f2ae9232b55e11f3dd46132bee10987164f3eebd29f245b2e066d7d7db40782627411ecf18551d8f4c9fcdf2226e48bb66545407d448ab7
   languageName: node
   linkType: hard
 
@@ -12343,6 +12357,7 @@ __metadata:
     next: 13.5.4
     postcss: ^8
     react: ^18
+    react-datepicker: ^7.2.0
     react-dom: ^18
     remark: ^15.0.1
     remark-gfm: ^4.0.0
@@ -19923,6 +19938,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-datepicker@npm:^7.2.0":
+  version: 7.2.0
+  resolution: "react-datepicker@npm:7.2.0"
+  dependencies:
+    "@floating-ui/react": ^0.26.2
+    clsx: ^2.1.0
+    date-fns: ^3.3.1
+    prop-types: ^15.7.2
+    react-onclickoutside: ^6.13.0
+  peerDependencies:
+    react: ^16.9.0 || ^17 || ^18
+    react-dom: ^16.9.0 || ^17 || ^18
+  checksum: f9f71299f5a6a2970421199fd4ee2710958a608fabd655ac3656c137e1eac45a27edc26efb5d8c77616618fe1c267c43c3387891f28ee0efc4550e9f4929296f
+  languageName: node
+  linkType: hard
+
 "react-dev-utils@npm:^12.0.1":
   version: 12.0.1
   resolution: "react-dev-utils@npm:12.0.1"
@@ -20102,6 +20133,16 @@ __metadata:
     react-icons: ^5.2.1
   languageName: unknown
   linkType: soft
+
+"react-onclickoutside@npm:^6.13.0":
+  version: 6.13.1
+  resolution: "react-onclickoutside@npm:6.13.1"
+  peerDependencies:
+    react: ^15.5.x || ^16.x || ^17.x || ^18.x
+    react-dom: ^15.5.x || ^16.x || ^17.x || ^18.x
+  checksum: 6c5727bfcd6e0ecc1fd83ac865a23382b7784aa54e3d0cb67520a53f9d02a1d312b9493d150fb8fa2f912b6cf4b23b228809c2513096ef6e53c7553162c048c7
+  languageName: node
+  linkType: hard
 
 "react-query@npm:^3.39.2":
   version: 3.39.3
