@@ -15,5 +15,8 @@
   "volta": {
     "node": "20.10.0",
     "yarn": "4.1.0"
+  },
+  "dependencies": {
+    "@headlessui/react": "^2.1.2"
   }
 }
