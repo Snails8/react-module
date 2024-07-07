@@ -10,13 +10,17 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "yarn workspace frontend-next dev"
+    "dev": "yarn workspace frontend-next dev",
+    "build": "yarn workspace frontend-next build",
+    "build:ui": "yarn workspace @module/ui-component build",
+    "build:mui": "yarn workspace @module/mui-component build"
   },
   "volta": {
     "node": "20.10.0",
     "yarn": "4.1.0"
   },
   "dependencies": {
-    "@headlessui/react": "^2.1.2"
+    "@headlessui/react": "^2.1.2",
+    "react-icons": "^5.2.1"
   }
 }
