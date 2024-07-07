@@ -4,11 +4,12 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { useState } from "react";
 import { IoCloseOutline, IoIosMenu } from "../../infrastructure/ReactIcons";
 import Link from "next/link";
+import { route } from "@/const/route";
 
 const navigation = [
   { name: "Product", href: "#" },
   { name: "Features", href: "#" },
-  { name: "Marketplace", href: "#" },
+  { name: "TailwindCSS", href: route.tailwindcss },
   { name: "Company", href: "#" },
 ];
 
@@ -22,13 +23,13 @@ export function GlobalHeader() {
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
       >
-        <a href="#" className="-m-1.5 p-1.5">
+        <Link href={route.home} className="-m-1.5 p-1.5">
           <span className="sr-only">{blogName}</span>
           <h1 className="font-semibold leading-6 item-center ml-2">
             {blogName}
           </h1>
           {/* <img alt="" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" className="h-8 w-auto" /> */}
-        </a>
+        </Link>
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -62,14 +63,14 @@ export function GlobalHeader() {
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
+            <Link href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">{blogName}</span>
               <img
                 alt=""
                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                 className="h-8 w-auto"
               />
-            </a>
+            </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
